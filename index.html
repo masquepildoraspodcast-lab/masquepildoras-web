@@ -379,7 +379,7 @@ footer{background:var(--navy);padding:52px 56px 28px;}
     "@type": "ContactPoint",
     "telephone": "+34-XXX-XXX-XXXX",
     "contactType": "Customer Support",
-    "email": "podcast@masquepildoras.com"
+    "email": "hola@masquepildoraspodcast.com"
   }
 }
 </script>
@@ -427,7 +427,6 @@ footer{background:var(--navy);padding:52px 56px 28px;}
     <li><a href="#hosts">El podcast</a></li>
     <li><a href="#eps">Episodios</a></li>
     <li><a href="#pat">Partners</a></li>
-    <li><a href="#mentoria">Mentoría</a></li>
     <li><a href="#contact" class="nc">Contáctanos</a></li>
   </ul>
 </nav>
@@ -570,13 +569,34 @@ footer{background:var(--navy);padding:52px 56px 28px;}
           <span class="epbd">Disponible</span>
         </div>
       </div>
+      <div class="epc feat fia">
+        <img src="images/ep03-fernando.jpg" alt="Fernando Zaragoza - De ambulancia a Medical Affairs" class="ephoto" loading="lazy" onclick="openEpisodeModal(3, 'https://youtu.be/8J3ZS9-cXhA')" style="cursor:pointer;">
+        <div class="epb">
+          <div class="epn">Ep. 03 · Disponible</div>
+          <div class="epg">Fernando Zaragoza</div>
+          <div class="epco">Medical Advisor · Sanofi</div>
+          <div class="ep-hook">
+            <p>De técnico de emergencias a Medical Advisor con doctorado: la trayectoria que nadie espera y todo lo que nadie te cuenta sobre Medical Affairs.</p>
+            <div class="ep-hook-tags">
+              <span class="ep-tag">De ambulancia a pharma</span>
+              <span class="ep-tag">Medical Affairs</span>
+              <span class="ep-tag">Farmacovigilancia</span>
+              <span class="ep-tag">Reconversión profesional</span>
+            </div>
+          </div>
+        </div>
+        <div class="epf">
+          <a href="javascript:void(0)" onclick="openEpisodeModal(3, 'https://youtu.be/8J3ZS9-cXhA')" class="eppl">▶ Ver en YouTube →</a>
+          <span class="epbd">Disponible</span>
+        </div>
+      </div>
     </div>
 
     <span class="coming-label fia">Próximos episodios de la temporada</span>
     <div class="epgrid">
       <div class="epc fia">
-        <div class="epph"><span class="epph-num">03</span><span class="epph-label">Lanzamiento 3 Junio</span></div>
-        <div class="epb"><div class="epn">Ep. 03</div><div class="epg">Fernando Zaragoza</div><div class="epco">Medical Advisor · Sanofi</div><div class="epti">Medical Affairs en una compañía global: ciencia y mercado</div></div>
+        <div class="epph"><span class="epph-num">04</span><span class="epph-label">Disponible el 17 Junio</span></div>
+        <div class="epb"><div class="epn">Ep. 04</div><div class="epg"></div><div class="epco">Próximamente</div><div class="epti">Una nueva historia desde dentro de la industria farmacéutica</div></div>
         <div class="epf"><span class="epsoon">En camino</span><span class="epbd">T1</span></div>
       </div>
     </div>
@@ -653,17 +673,301 @@ footer{background:var(--navy);padding:52px 56px 28px;}
           <div class="met"><span class="metn">∞</span><span class="metl">Nuevas iniciativas en construcción</span></div>
           <div class="met"><span class="metn">💡</span><span class="metl">Si tienes una idea, pongámosla en marcha</span></div>
         </div>
-        <a href="mailto:podcast@masquepildoras.com" class="ctabtn">✉ podcast@masquepildoras.com</a>
+        <a href="mailto:hola@masquepildoraspodcast.com" class="ctabtn">✉ hola@masquepildoraspodcast.com</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════
-     SECCIÓN MENTORÍA — insertar antes del footer en index.html
-     ═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="fi2">
+    <div class="ftop">
+      <div class="fbrand">
+        <a href="#" class="flogo"><span style="color:var(--gold)">+</span>Que Píldoras</a>
+        <p>Las verdaderas historias detrás de la industria farmacéutica. Por Jaime Manzanera y Miren Alonso.</p>
+      </div>
+      <div class="fcol">
+        <h4>Escúchanos</h4>
+        <a href="#">Spotify</a>
+        <a href="#">Apple Podcasts</a>
+        <a href="https://youtu.be/V1co36PD74M" target="_blank">YouTube</a>
+        <a href="#">Amazon Music</a>
+      </div>
+      <div class="fcol">
+        <h4>Síguenos</h4>
+        <a href="https://www.linkedin.com/company/masquepildoraspodcast/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/masquepildoraspodcast/" target="_blank">Instagram</a>
+        <a href="#eps">Episodios</a>
+        <a href="#pat">Partners</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span class="fcopy">© 2025 +Que Píldoras · masquepildoraspodcast.com</span>
+      <div class="fems">
+        <a href="mailto:hola@masquepildoraspodcast.com">hola@masquepildoraspodcast.com</a>
+        <a href="mailto:hola@masquepildoraspodcast.com">hola@masquepildoraspodcast.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<!-- CSS adicional — añadir dentro del <style> existente -->
+<div id="episodeModal" class="modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:1000; overflow-y:auto;">
+  <div style="background:white; max-width:900px; margin:40px auto; padding:40px; border-radius:12px; position:relative;">
+    <button onclick="closeEpisodeModal()" style="position:absolute; top:20px; right:20px; background:none; border:none; font-size:28px; cursor:pointer;">&times;</button>
+    <div id="modalContent" style="margin-top:20px;"></div>
+  </div>
+</div>
+
+<script>
+function openEpisodeModal(ep, videoUrl) {
+  const modal = document.getElementById('episodeModal');
+  const content = document.getElementById('modalContent');
+  const videoId = videoUrl.split('?')[0].split('/').pop();
+  
+  let transcriptionContent = `<p>La transcripción de este episodio estará disponible próximamente. Mientras tanto, puedes escuchar el episodio completo arriba.</p>`;
+  
+  if (ep === 1) {
+    transcriptionContent = `
+      <p><strong>Jaime:</strong> Miren, ¿qué haces aquí?</p>
+      <p><strong>Miren:</strong> Qué pasa, ¿Jaime? ¿Y tú?</p>
+      <p><strong>Jaime:</strong> Pues nada, aquí andamos a grabar. ¿Y tú quién eres?</p>
+      <p><strong>Miren:</strong> Yo Miren, Miren Alonso.</p>
+      <p><strong>Jaime:</strong> Ah, ¿sí? ¿Y qué haces en la industria?</p>
+      <p><strong>Miren:</strong> Pues trabajo en ensayos clínicos actualmente.</p>
+      <p><strong>Jaime:</strong> Ah, ¿sí? Cuéntame un poquito más de ti.</p>
+      
+      <p><strong>Miren:</strong> Pues yo, como muchos que seguro que nos están escuchando, empecé en el laboratorio.</p>
+      <p><strong>Jaime:</strong> ¿A la bata blanca?</p>
+      <p><strong>Miren:</strong> Bata blanca, sí, sí. Bata blanca, pipeta, ratones. Esa vida.</p>
+      <p><strong>Jaime:</strong> Qué vida dura.</p>
+      <p><strong>Miren:</strong> Sí, la verdad que un poquito. Y nada, empecé en el laboratorio y luego me cambié a ensayos clínicos.</p>
+      <p><strong>Jaime:</strong> ¿Directamente?</p>
+      <p><strong>Miren:</strong> Sí, directamente, así. Al cual. Y sí, acabé aquí. De trabajar en ensayos en distintos puestos, primero en el hospital, luego en la empresa, y ahora para el sponsor. También, gracias a la marca personal, me hice colaboradora de nuestro sponsor y aquí acabamos. ¿Y tú?</p>
+      
+      <p><strong>Jaime:</strong> Pues mira, yo ya no puedo decir que venga de la bata, porque la bata la solté hace muchos años. Creo que ya hace más de 15, 16 años que trabajo en la industria farmacéutica. Soy bioquímico de formación, aunque me encanta la tecnología. He hecho biotecnología, nanotecnología… me fascina la tecnología en general, no solo la aplicada a la ciencia en salud, sino en general. De hecho, fíjate, ahora mismo estamos viviendo un momento increíble con el tema de los astronautas yendo a dar la vuelta a la luna y yo estoy enganchadísimo. O sea, me fascina.</p>
+      
+      <p><strong>Jaime:</strong> Pero bueno, dejé el laboratorio aunque tenía intención de dedicarme a la ciencia. Yo en el colegio decía que iba a curar el cáncer y que iba a ganar el premio Nobel. Así aspiramos, ¿sabes? Pero bueno, esto no se ha acabado. He trabajado en laboratorio, he pasado por posiciones en el ámbito comercial, tanto en ventas como en marketing y estrategia. Actualmente trabajo en oncología y tengo la suerte de tener una posición internacional, que me permite acceder a otras culturas y otros sistemas sanitarios. Me encanta la estrategia y también me gusta compartir y enseñar. Y fue a través de unas clases de marketing y commerce excellence donde apareciste tú y se nos ocurrió llegar aquí.</p>
+      
+      <p><strong>Miren:</strong> Y aquí estamos, la verdad. Fue bonito, una sinergia.</p>
+      <p><strong>Jaime:</strong> Interesante, ¿eh? Comentando juventud y no tanta juventud. Pero bueno, pues oye, a ver qué nos da esto del podcast.</p>
+      
+      <p><strong>Jaime:</strong> Pues oye, Miren, ¿tienes algún mito que quieras derribar con este podcast?</p>
+      <p><strong>Miren:</strong> Pues la verdad que sí. Se me ocurre uno que creo que está bastante extendido en la sociedad: que la industria es muy fría y distante. Muy oscura.</p>
+      <p><strong>Jaime:</strong> Negra como el set este que tenemos. Nada, yo no lo creo. Pero me parece una muy buena idea intentar tirar abajo ese mito. Pues qué mito tengo yo...</p>
+      
+      <p><strong>Jaime:</strong> Yo quiero tirar con uno que va en esa línea. Creo que muchas veces la opinión que hay del sector es que somos "estos de los visitadores" que quitamos tiempo a los pacientes en consulta, y la verdad que a mí siempre que escucho algo parecido no me agrada. Creo que es una cosa que hay que derribar. Somos un sector que ha contribuido mucho alargando la esperanza de vida de la población en general. Sin embargo, también te digo: creo que no es solo el sector, son las personas que trabajan en él.</p>
+      
+      <p><strong>Miren:</strong> Sí, yo creo que con este podcast nuestro objetivo principal es un poco humanizar la industria, y que también se conozcan más roles que no solo el delegado de ventas.</p>
+      <p><strong>Jaime:</strong> Solo los visitadores, ¿eh?</p>
+      <p><strong>Miren:</strong> Eso, los visitadores. Bueno, Jaime, ¿y por qué has decidido empezar este podcast?</p>
+      
+      <p><strong>Jaime:</strong> Pues mira, yo lo tengo clarísimo. Yo leo un montón de noticias y siempre es o el fármaco, con contenido muy técnico, o la enfermedad de los pacientes. Y yo creo que eso da una visión muy sesgada. Está muy bien centrarse en lo que se hace en el sector y en lo que contribuimos, pero es una industria que a veces parece muy nicho, muy cerrada. Y yo siempre he pensado que, de cara a atraer talento y a que venga gente joven, necesitan saber qué hacemos.</p>
+      
+      <p><strong>Miren:</strong> Totalmente.</p>
+      <p><strong>Jaime:</strong> Es un poco la idea. Que vean los distintos perfiles que puede haber, que hay algo más allá, y cómo pueden llegar a ello.</p>
+      <p><strong>Miren:</strong> Porque si no, siempre parecen farmacéuticos, biólogos y médicos, ¿verdad?</p>
+      <p><strong>Jaime:</strong> Sí, la verdad que sí. Esa es la regla. Así que bueno, yo creo que podemos aportar bastante valor con este podcast.</p>
+      
+      <p><strong>Miren:</strong> Totalmente de acuerdo. Hay que invitar a la gente a entender que este sector se llega con trayectorias diversas, que acepta perfiles muy distintos y que no hay una carrera única para ello. No es una línea recta, al final muchos no hemos hecho líneas rectas, hemos ido saltando.</p>
+      <p><strong>Jaime:</strong> Exactamente. Y para mí hay una cosa clave: pasármelo bien.</p>
+      <p><strong>Miren:</strong> Eso, 100%. De manera cercana, ¿no? Con pilloritas para que a la gente le quede claro lo que hacemos.</p>
+      <p><strong>Jaime:</strong> Me encantan las pilloritas. A ver si la gente se lo pasa bien con nosotros.</p>
+      <p><strong>Miren:</strong> Pues sí, yo creo que sí.</p>
+      
+      <p><strong>Jaime:</strong> Bueno, pues vamos a por ello. Miren, vamos a contarles a la gente para quién es este podcast.</p>
+      <p><strong>Miren:</strong> Yo creo que para aquella gente que trabaja en el sector y quiere saber qué hacen otros como ellos en otros laboratorios, en otras posiciones, y así no sentirse solos o entender otras circunstancias.</p>
+      <p><strong>Jaime:</strong> Muy importante también para todos aquellos que quieran entrar en el sector y que estén perdidos, que no tengan muy claro cómo hacerlo.</p>
+      <p><strong>Miren:</strong> Y por supuesto, para todo aquel que tenga un interés en el sector más allá de su día a día, que simplemente quiera estar informado y conocer lo que hacen otras personas que trabajan en esta industria.</p>
+      
+      <p><strong>Jaime:</strong> Pues esto es más que píldoras.</p>
+      <p><strong>Miren:</strong> Pues nada, bienvenidos.</p>
+      <p><strong>Jaime:</strong> Os esperamos en todas nuestras plataformas, que os dejamos aquí abajo. ¡Bienvenidos a nuestro podcast!</p>
+    `;
+  } else if (ep === 3) {
+    transcriptionContent = `
+      <p><strong>Jaime:</strong> Pues eh vamos a ello. Miren, ¿qué tal? ¿Cómo estás?</p>
+      <p><strong>Miren:</strong> Pues muy bien, la verdad. Tenemos un invitado bastante curioso en su trayectoria.</p>
+      <p><strong>Jaime:</strong> Tengo muchas ganas de hablar con él, a ver qué nos cuenta sobre sus trabajos, su formación, hasta dónde ha llegado. La verdad que va a sorprender, yo creo.</p>
+      <p><strong>Miren:</strong> Pues ya me estás levantando a mí la curiosidad. Y este episodio está patrocinado por Bifarma Institute, que se dedica a dar formación de calidad para aquella gente que quiere entrar en el sector de la industria farmacéutica o evolucionar dentro de él. Así que si estáis interesados, ya sabéis.</p>
+      <p><strong>Jaime:</strong> Bienvenido, Fernando.</p>
+      <p><strong>Fernando:</strong> Muchas gracias por tenerme aquí hoy.</p>
+      <p><strong>Jaime:</strong> Fernando es medical advisor y fue técnico de emergencias. Tiene un doctorado y ahora trabaja en departamento médico. Cuéntanos un poco sobre ti, tu trayectoria.</p>
+      <p><strong>Fernando:</strong> Pues yo he trabajado 15 años en extrahospitalaria, en una ambulancia, y decidí hacer un cambio en mi vida. Como estudié farmacia durante ese periodo, pues qué mejor que la industria farmacéutica. Ya con mis años me incorporé como becario a una compañía farmacéutica... Fue un poco gracioso. Y después hice un doctorado, un máster, bueno, otra serie de cosas. Curiosidad, como decías antes, y formación.</p>
+      <p><strong>Jaime:</strong> ¿Qué habilidad es necesaria para entrar en Medical Affairs?</p>
+      <p><strong>Fernando:</strong> Capacidad analítica, por supuesto, pero también mucho networking, mucho conocer a las personas, mucha empatía, muchas habilidades sociales. Tratamos con muchísima gente en Medical: no solo networking interno, sino externo. Médicos, proveedores, un montón de gente, cada uno con sus circunstancias. Tienes que aprender a llevarte bien y a manejarte con todo tipo de perfiles.</p>
+      <p><strong>Jaime:</strong> O sea, que ese viejo mito de ratas de laboratorio aquí no.</p>
+      <p><strong>Fernando:</strong> Absolutamente. Aquí la gente es abierta, sale, está en contacto con mucha gente.</p>
+      <p><strong>Miren:</strong> ¿Tuviste algún choque al pasar de técnico de emergencias a Medical Affairs?</p>
+      <p><strong>Fernando:</strong> Completamente. Han sido 15 años trabajando en una ambulancia en la calle. Jamás en mi vida había trabajado en una oficina. Y ya con mis años entro como becario en farmacovigilancia. El primer día de oficina fue como… ¿me puedo levantar? ¿Me puedo mover? ¿Puedo hablar? Las primeras semanas fueron un poco de shock. Pero gracias a ese aprendizaje de 6 meses, he entendido un montón de cosas, especialmente la necesidad de la farmacovigilancia.</p>
+      <p><strong>Jaime:</strong> ¿Puedes explicar qué es farmacovigilancia para la gente que no lo sabe?</p>
+      <p><strong>Fernando:</strong> Farmacovigilancia son los que velan por la seguridad de los fármacos. Cuando te tomas un medicamento, tiene que ser seguro además de eficaz. Se encargan de verificar que no hay efectos adversos fuera de lo conocido, y de saber si en situaciones especiales se puede administrar ese fármaco o no. Y lo miro directamente a la cámara: recoged todos los acontecimientos adversos, reportadlos, por favor. En menos de 24 horas. Gracias a toda esa información luego se pueden solucionar situaciones que si no sería imposible resolver.</p>
+      <p><strong>Jaime:</strong> ¿Qué valor aportas a los pacientes desde Medical Advisor?</p>
+      <p><strong>Fernando:</strong> Intentamos siempre que los pacientes reciban el tratamiento idóneo para su patología. A veces eso significa que no es el medicamento que tú estás llevando, sino que hay otro más adecuado. Aportamos conocimiento de todo el espectro de fármacos con los que podemos tratar una patología concreta, no solo del nuestro propio.</p>
+      <p><strong>Jaime:</strong> ¿Qué parte del puesto no estaba en la job description?</p>
+      <p><strong>Fernando:</strong> En todos los job descriptions siempre viene que para posiciones de Medical Office es un 20% máximo de tiempo de viaje. Admiro muchísimo a todos los que tienen hijos, porque te pasas la vida viajando. Pero es completamente necesario: tienes que ir a congresos, a reuniones externas, hacer visitas, apoyar a los MSLs... Todas las salidas de la oficina van a favor de tu conocimiento y tu desempeño en el puesto.</p>
+      <p><strong>Miren:</strong> ¿Cuándo dijiste "esto es lo mío"?</p>
+      <p><strong>Fernando:</strong> No hay un momento concreto. Pero sí, cuando estás hablando con un KOL y le descubres cosas sobre el mecanismo de acción de tu fármaco que él no sabía, y dices "oye, a lo mejor es que esto sé algo"... O cuando analizas insights y eso te conduce a cambiar la estrategia en mitad del año. La primera vez que te ocurre es como: "esto está muy bien".</p>
+      <p><strong>Jaime:</strong> ¿Qué piensan tus antiguos compañeros de que te hayas ido al "lado oscuro"?</p>
+      <p><strong>Fernando:</strong> Noto esa mirada de "¿por qué te has ido a una oficina?". Y lo que les digo es: esto es igual de apasionante que lo que estáis haciendo vosotros, y a fin de cuentas también trabajamos de cara a la salud de los pacientes.</p>
+      <p><strong>Jaime:</strong> ¿Algo del rol que la gente no se imagina?</p>
+      <p><strong>Fernando:</strong> Que detrás de cada viaje a un congreso hay miles de horas de preparación. Si tienes un simposio, es un one shot: una oportunidad para que un ponente lance los mensajes que quieres que lancen. Eso lleva mucho trabajo detrás. Y lo que más energía consume...</p>
+      <p><strong>Jaime:</strong> ¿La burocracia?</p>
+      <p><strong>Fernando:</strong> Burocracia. Lo entiendo, lo defiendo: somos un sector hiperregulado y sometido a escrutinio constante. Eso nos lleva a que haya mucha burocracia interna. Lo defiendo, pero no deja de ser una parte tediosa.</p>
+      <p><strong>Jaime:</strong> ¿El doctorado te entrena para ser mejor en tu puesto?</p>
+      <p><strong>Fernando:</strong> Yo lo hice ya trabajando en industria, sobre el Plan Profarma y su impacto en la industria farmacéutica. Me aportó capacidad de trabajo, organización, y sobre todo, estructurar la cabeza para entender qué es lo importante, qué es prioritario, cómo llegar a un equilibrio entre tesis, familia y trabajo. Y soy la prueba de que un doctor no tiene que ser perfil de laboratorio ni solo investigación.</p>
+
+      <h3 style="margin:30px 0 15px; color:#0d1f4e;">💊 La Dosis Concentrada</h3>
+      <p><em>Preguntas rápidas, respuestas sin filtro.</em></p>
+      <p><strong>Tus tres valores reales:</strong> Compromiso, honestidad, tranquilidad.</p>
+      <p><strong>Una palabra para definir el sector:</strong> Innovación.</p>
+      <p><strong>Un personaje del sector que admires:</strong> Belén Ajo.</p>
+      <p><strong>Si pudieras crear un fármaco social, ¿qué atacarías?</strong> El egoísmo, la mala educación.</p>
+      <p><strong>Un sector donde trabajarías si cambias de rumbo:</strong> Nutrición, gastro.</p>
+      <p><strong>Tres habilidades clave para tu rol:</strong> Empatía, networking, análisis.</p>
+      <p><strong>¿Un paciente con resaca a las 11 de la noche o un médico tras 45 pacientes?</strong> El médico, siempre.</p>
+      <p><strong>¿Cristiano Ronaldo o Michael Jordan?</strong> Michael Jordan.</p>
+
+      <h3 style="margin:30px 0 15px; color:#0d1f4e;">Consejo final</h3>
+      <p><strong>Fernando:</strong> Para entrar en Medical Affairs, conocer el terreno es fundamental. Conocer la realidad del médico, esos 45 pacientes en un día. Hay que conocerlo, vivirlo, ver la cara del médico, entender el día a día de los delegados de ventas, de los MSLs, de los RAMs. Conocer terreno es clave para que tu trabajo tenga sentido, porque detrás de la pantalla del ordenador todo funciona y todo es bonito. Cuando conoces el terreno, la realidad es bien distinta.</p>
+      <p><strong>Jaime:</strong> ¿Un mensaje para la audiencia?</p>
+      <p><strong>Fernando:</strong> Veniros a Medical: es el mejor departamento donde mejor os lo vais a pasar. Y en serio: como interactuamos con todos los departamentos, vemos la empresa entera desde dentro. Es la parte más bonita.</p>
+      <p><strong>Jaime:</strong> Pues gracias a todos por acompañarnos. Si queréis más episodios o tenéis alguna sugerencia, nos la mandáis. Somos Jaime Manzanera y Miren Alonso. Y recordad que detrás de cada tratamiento siempre hay muchos.</p>
+    `;
+  } else if (ep === 2) {
+    transcriptionContent = `
+      <p><strong>Jaime:</strong> Pues buenas tardes, Miren, ¿qué tal estás?</p>
+      <p><strong>Miren:</strong> Pues muy bien, hoy muy contenta, muy emocionada, porque tenemos un perfil que yo creo que va a aportar muchísimo en el podcast. Viene de un background bastante diferente, ha pasado por muchos departamentos y creo que va a aportar algo muy valioso que no se habla suficiente en la industria: que puedes llegar a un rol de distintos caminos. Así que nos va a enseñar un poco cómo construir nuestro camino en la industria farmacéutica.</p>
+      <p><strong>Jaime:</strong> Sabes todos los circuitos. Genial. Oye, pero antes de nada, ¿por qué no introducimos a nuestro sponsor?</p>
+      <p><strong>Miren:</strong> Vale, sí, es verdad. Pues mira, este episodio está patrocinado por Bifarma Institute, que es un centro de formación para la industria farmacéutica que forma a profesionales que quieren tanto entrar como crecer dentro del sector.</p>
+      
+      <p><strong>Jaime:</strong> Y ahora sí, sin más, Miren, cuéntame: ¿quién es la persona que tenemos hoy?</p>
+      <p><strong>Miren:</strong> Pues nuestro invitado es Pablo del Pino, Medical Advisor y MSL Manager. ¿Qué tal, Pablo?</p>
+      <p><strong>Pablo:</strong> Muy buenas. Gracias a vosotros por traerme. Yo encantado de estar aquí y participar.</p>
+      
+      <p><strong>Jaime:</strong> Pablo, para los que no te conozcan: eres veterinario, has pasado por marketing, por ventas, por ensayos clínicos y ahora estás en el departamento médico. Es un perfil muy completo. Así que te quería preguntar, ¿qué aprendizajes te has llevado de los distintos roles que has tenido, y qué te ha valido para el departamento médico?</p>
+      <p><strong>Pablo:</strong> ¡Uf! Es que como he pasado por distintos departamentos, si te tengo que decir un aprendizaje de cada uno... El primero fue cuando estuve de becario en marketing en MSD: que el marketing no era para mí. Me gustaba algo más la acción, y por eso salté a ventas. De ventas aprendí que no hay que tener vergüenza, ir con el cuchillo en la boca y no tener miedo a los "noes". De CRA, como monitor de ensayos clínicos, aprendí a ser muy ordenado, pulcro y estructurado, que era quizá lo que más me costaba. Y de ahí pasé a MSL, y vi que eso encajaba perfectamente con mi personalidad: la parte relacional con los opinion leaders y la parte de trabajo con papers, redacción, recogida de datos, eventos científicos, formaciones... Ahí vi que ambos mundos se conectaban y que era donde yo encajaba.</p>
+      
+      <p><strong>Jaime:</strong> A ver, un momento. Ventas, marketing, ensayos clínicos, y ahora departamento médico. ¿Qué viste en esos departamentos que te hizo decir "aquí tiene que haber algo más"?</p>
+      <p><strong>Pablo:</strong> No fue algo extremadamente premeditado ni buscado. La vida me fue llevando hasta que encontré mi sitio. Tuve que probar muchas cosas hasta encontrar donde me encontraba realmente a gusto. Las ventas me gustaban, se me daban bien, todo el mundo me decía que tenía un perfil comercial buenísimo. Y es verdad que a día de hoy es de las partes que más disfruto. Al final, los médicos, después de tantos años de relación, ya son amigos. Pero fue cogiendo trenes y oportunidades como llegué al departamento médico.</p>
+      
+      <p><strong>Miren:</strong> Y me parece muy interesante para desarrollar distintas habilidades que luego puedes poner en práctica en otros roles.</p>
+      <p><strong>Pablo:</strong> No sería yo el que diga lo contrario.</p>
+      
+      <p><strong>Jaime:</strong> Y oye, cuando le intentas explicar a alguien a qué te dedicas, ¿saben lo que haces? ¿No te miran raro?</p>
+      <p><strong>Pablo:</strong> A ver, mis niños todavía son chiquititos. Yo teletrabajo pero también viajo mucho porque mi oficina está en Barcelona. Para ellos Barcelona es otro país directamente. Les digo que tengo una cena con médicos, o que hemos montado una clase para que aprendan sobre una patología y viene gente experta de todo el mundo. Mi entorno sabe que trabajo en la industria farmacéutica y que veo médicos, aunque creo que me confunden mucho con un visitador médico. Siempre digo "no exactamente, hago otras funciones, pero sí, por ahí va la cosa".</p>
+      
+      <p><strong>Jaime:</strong> Y yo creo que ese es el gran handicap que tenemos en la industria farmacéutica. Oye, Pablo, tengo entendido que también tienes gente a tu cargo. ¿Qué parte de tu rol encuentras más compleja: tomar decisiones estratégicas o desarrollar a las personas de tu equipo?</p>
+      <p><strong>Pablo:</strong> Ambas son bastante complejas y requieren esfuerzo, no te voy a mentir. Pero quizá diseñar y ejecutar planes a mí me cuesta menos: soy de coger el toro por los cuernos. El management te llega en algún momento de tu vida sin buscarlo. Te ponen alguien a tu cargo, primero es un becario, luego un MSL... y desarrollar personas nadie te enseña. Con las reuniones de feedback y poquito a poquito te das cuenta que con empatía y con buen hacer es más fácil de lo que parece. O por lo menos yo he dado con perfiles lo suficientemente buenos para que me lo hayan puesto fácil.</p>
+      
+      <p><strong>Jaime:</strong> El feedback, ¿no te da miedo el feedback?</p>
+      <p><strong>Pablo:</strong> El feedback es un horror, sinceramente.</p>
+      <p><strong>Miren:</strong> Eh, no digas eso, porque lo que recibo de la gente joven es que les cuesta mucho.</p>
+      <p><strong>Pablo:</strong> Lo digo porque sufro el management intermedio: tengo una directora y tengo gente a mi cargo, así que doy y recibo feedback. Y digo que es un horror no por el tema personal, que eso lo llevo muy bien, hay muy buena relación en mi empresa. Pero a veces dices: ¿y qué le digo si lo está haciendo todo fenomenal? En ese caso es fácil y positivo. Pero en otras ocasiones hay que retarles para que sigan creciendo, y eso es el verdadero reto de desarrollar personas.</p>
+      
+      <p><strong>Jaime:</strong> ¿Y cuál dirías que es la decisión más difícil que tomas como Medical Advisor?</p>
+      <p><strong>Pablo:</strong> Las decisiones más difíciles suelen ser aquellas que involucran personas: una entrevista, decidir a quién contratar, un despido si fuera el caso, o un feedback no tan agradable. El resto del trabajo del día a día, como dónde poner el grueso del presupuesto y asumir ese riesgo de retorno de inversión, eso también tiene su dificultad, pero lo de las personas siempre es lo más complicado.</p>
+      
+      <p><strong>Jaime:</strong> Pablo, cambiando el tema, me quedé con lo de ensayos clínicos y ventas. Tú que has estado ejecutando ensayos y ahora estás interpretando resultados y comunicándolos: ¿dónde crees que tienes mayor impacto?</p>
+      <p><strong>Pablo:</strong> Ahí lo tengo muy claro: ahora. Antes era más ejecutor. Me mandaban a monitorizar pacientes en distintos centros, hacía mis informes y dejaba mi boli. A día de hoy voy captando ideas de mis conversaciones con los médicos y se va montando en mi mente: "oye, sería muy bueno recoger este dato". Lo voy testando y cuando todo el mundo dice que sí, lo planteo internamente y lo llevamos a cabo. Para mí es mucho más realizado poder diseñarlo desde cero.</p>
+      
+      <p><strong>Miren:</strong> ¿Y has tenido que desaprender algo de la etapa de ensayos para el departamento médico?</p>
+      <p><strong>Pablo:</strong> Yo te diría que no desaprender, sino que hay cosas que he olvidado por desuso. Los criterios RECIST 2.0 de los ensayos de oncología, por ejemplo, ya no los recuerdo como antes. Pero a cambio he seguido avanzando en otras patologías. Cuanto más puedas retener, más valor aportas. Cuando te sientas a diseñar sobre una servilleta un ensayo clínico, calculas la N, los objetivos principales y secundarios, los comités éticos... como tienes el ensayo clínico a caballo rey en la cabeza, lo diseñas en un momento.</p>
+      
+      <p><strong>Jaime:</strong> Oye, algo que te haga reír o que te desquicie del departamento médico. Algo que quieras compartir.</p>
+      <p><strong>Pablo:</strong> Lo que más me hace gracia es la idea que tiene la gente de que estamos todo el día diseñando estudios y escribiendo papers. Ojalá, porque es una parte que disfruto mucho. Pero pensar que con yo solo y un MSL empujando un departamento entero llegamos a publicar como mucho cuatro o cinco papers al año... eso sería un año muy bueno. El resto es: buscar llamadas, visitas para arriba y para abajo, hacer formación interna, los onboardings, los eventos formativos a médicos, los cursos, los vídeos... El departamento médico cubre un espectro de actividades muy diversas más allá de la interpretación de datos.</p>
+      
+      <p><strong>Jaime:</strong> ¿Cuáles serían los cuatro pilares del departamento médico?</p>
+      <p><strong>Pablo:</strong> La gestión de Key Opinion Leaders y la conversación científica con ellos, que requiere mucho tiempo y viajes por toda España. La formación interna a delegados, equipo de marketing, etcétera. La data generation, la generación de datos. Y por último la difusión de datos: ir a congresos, buscar esos KOLs que tengan poder de difusión y que sean buenos speakers.</p>
+      
+      <p><strong>Miren:</strong> Madre mía, vaya máquina. Y oye, ahora que el departamento médico está muy en auge y todo el mundo quiere dedicarse a ello, ¿cuál es esa realidad del rol que nadie se imagina?</p>
+      <p><strong>Pablo:</strong> Que no es todo diseñar papers y hablar con médicos. Las reuniones administrativas, los correos, los reportes, los RFI... Es un rol muy completo pero está lejos de ser ese "investigador con los médicos charlando" que la gente cree. Además, hay viajes, eres el buffer entre lo comercial y lo médico, requiere mucha comunicación transversal, y al final se complica mucho más de lo que parece.</p>
+      
+      <p><strong>Jaime:</strong> Y ya para cerrar los temas más sustanciales, ¿cuáles crees que son las tres habilidades imprescindibles para un buen MSL?</p>
+      <p><strong>Pablo:</strong> Sin lugar a dudas: la empatía, saber vender aunque no lo parezca, y el orden.</p>
+      
+      <p><strong>Miren:</strong> Una palabra que defina Medical Affairs.</p>
+      <p><strong>Pablo:</strong> Excelencia.</p>
+      
+      <p><strong>Jaime:</strong> El mayor error que puede cometer alguien al pasar de ensayos clínicos a Medical Affairs.</p>
+      <p><strong>Pablo:</strong> Pensar que por lo atractivo del trabajo su vida va a ser más sencilla, porque como hemos comentado, se complica.</p>
+      
+      <p><strong>Miren:</strong> ¿Qué prefieres: una reunión con un MSL a las 8 de la mañana un lunes o una reunión con un líder de opinión a las 7 un viernes?</p>
+      <p><strong>Pablo:</strong> Las dos pasan bastante a menudo, pero ninguna de las dos.</p>
+      
+      <p><strong>Jaime:</strong> Si pudieras crear un fármaco social, ¿a qué defecto de la sociedad atacarías?</p>
+      <p><strong>Pablo:</strong> Esa la tengo muy clara: atacaría a la envidia, la envidia mala.</p>
+      
+      <p><strong>Miren:</strong> Tres cualidades imprescindibles para liderar equipos médicos.</p>
+      <p><strong>Pablo:</strong> La empatía, importantísimo, y saber escuchar.</p>
+      
+      <p><strong>Jaime:</strong> Un departamento aliado en la empresa.</p>
+      <p><strong>Pablo:</strong> Marketing. A pesar de los roces que puedan surgir, siempre he estado codo con codo con ellos y para mí son aliados.</p>
+      
+      <p><strong>Miren:</strong> ¿Y el departamento más divertido?</p>
+      <p><strong>Pablo:</strong> El departamento médico. Y el más intenso también son ventas.</p>
+      
+      <p><strong>Jaime:</strong> Una película de ciencia con final feliz.</p>
+      <p><strong>Pablo:</strong> La primera que me viene a la cabeza es Interstellar.</p>
+      
+      <p><strong>Miren:</strong> Bueno, ya estamos llegando al final del podcast. Qué pena, la verdad, porque está siendo superinteresante. Vamos a cerrar con unas preguntas finales. Viendo el auge que tiene este departamento y que hay un montón de gente que quiere entrar, ¿qué consejo le darías a alguien para empezar en este camino?</p>
+      <p><strong>Pablo:</strong> Por suerte o por desgracia, ya he formado como seis o siete generaciones de becarios en distintas empresas. El consejo que les daría es: haz todo lo que puedas durante tu beca. Cuantas más cosas aprendas, no tengas prisa por irte a casa a las 5 para el gimnasio. Ese rato extra, lejos de la explotación laboral, puede darte contactos, nombres, vivencias que te sirvan mucho en tu próximo paso profesional. El networking hay que aprenderlo desde las primeras etapas.</p>
+      
+      <p><strong>Jaime:</strong> ¿Y qué tiene que tener un buen MSL para trabajar en tu equipo?</p>
+      <p><strong>Pablo:</strong> Si cumple el sota-caballo-rey de formación científica, máster y experiencia, siempre es un plus. Pero en la entrevista lo que noto es la actitud y la energía. Busco alguien que encaje conmigo y con el resto del equipo. Si hablamos de colores, yo busco azul: alguien muy analítico para los datos, pero sin dejar de lado la parte relacional. Sobre todo si va a ser MSL, necesito que sea bastante verde, con mucha empatía para trabajar el día a día. Azules y verdes.</p>
+      
+      <p><strong>Miren:</strong> Y en 10 años, ¿más guía, más líos o más milagros?</p>
+      <p><strong>Pablo:</strong> IA va a haber, segurísimo. Nosotros ya tenemos Copilot en todos los ordenadores, hemos hecho agentes que alimentamos con los papers y les puedes hacer preguntas directamente. Para tema de cálculo y análisis estadístico, agiliza muchísimo. Lo que veo es que una persona va a poder hacer el trabajo mucho más rápido, y lo que antes llevaba externalizar, ahora lo hace la IA. Espero que sean más milagros. Esta capacidad de análisis de datos irá por ahí. Me viene a la cabeza lo que hizo AlphaFold publicando los plegamientos de las proteínas: un gran avance para la ciencia accesible para todo el mundo. Espero que sigamos esa dinámica.</p>
+      
+      <p><strong>Jaime:</strong> Ojalá sea verdad. Y ya para acabar, ¿qué mensaje te gustaría lanzar a nuestra audiencia?</p>
+      <p><strong>Pablo:</strong> Para aquellos que quieran entrar en el departamento médico o en la industria farmacéutica: aquí vas a encontrar mucha diversión, mucho trabajo, mucho compañerismo y mucha relación social. Al final del día, aunque estés durmiendo en un hotel lejos de tu casa, te vas muy contento porque te lo has pasado muy bien y has hecho muchas cosas. Es sacrificado y es duro, pero es muy satisfactorio saber que estás ayudando a empujar la ciencia hacia adelante buscando el bienestar y la calidad de vida de los pacientes.</p>
+      
+      <p><strong>Jaime:</strong> Esto que has dicho al final es muy importante. Hay que recordar que el sector tiene su principal foco en los pacientes. ¿Quieres decir algo final sobre ello?</p>
+      <p><strong>Pablo:</strong> Sin el paciente, en principio no existiríamos. Alejándonos de la posible mala fama de que la industria busca hacer dinero, solo tiene sentido si conseguimos mejorar la vida de los pacientes. Y siempre es lo que te empuja por la mañana cuando suena el despertador: tenemos que conseguir esos resultados porque creemos que podemos mejorar la vida de la gente. Son pequeñas victorias las que se van consiguiendo, pero es lo que hace que la ciencia avance poquito a poquito.</p>
+      
+      <p><strong>Miren:</strong> Lo que nos une a todos los departamentos al final.</p>
+      <p><strong>Pablo:</strong> Pues sí, el pegamento.</p>
+      
+      <p><strong>Jaime:</strong> Pues nada, hasta aquí nuestro episodio. Muchas gracias, Pablo, por estar aquí.</p>
+      <p><strong>Pablo:</strong> Ha estado muy bien. Lo agradezco.</p>
+      <p><strong>Miren:</strong> ¿Qué tal la sección de preguntas rápidas?</p>
+      <p><strong>Pablo:</strong> Esa es la que más he sufrido, pero ha estado bien.</p>
+      <p><strong>Jaime:</strong> Pues muchas gracias, Pablo, y gracias a todos vosotros que nos estáis escuchando o viendo. Si queréis entrar a la industria farmacéutica o simplemente os interesa este sector, este podcast es para vosotros. Os dejamos nuestras plataformas en la cajita de descripción aquí abajo. Somos Jaime Manzanera y Miren Alonso, y nos vemos en el próximo episodio, porque detrás de cada tratamiento siempre hay mucho más que píldoras. ¡Adiós!</p>
+    `;
+  }
+  
+  content.innerHTML = `
+    <div style="margin-bottom:30px;">
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
+    </div>
+    <h2 style="margin-bottom:20px; color:#0d1f4e;">Transcripción del episodio</h2>
+    <div id="transcriptionPlaceholder" style="color:#666; padding:20px; background:#f4f7fc; border-radius:8px; max-height:600px; overflow-y:auto;">
+      ${transcriptionContent}
+    </div>
+  `;
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeEpisodeModal() {
+  document.getElementById('episodeModal').style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+window.addEventListener('click', function(e) {
+  const modal = document.getElementById('episodeModal');
+  if (e.target === modal) {
+    closeEpisodeModal();
+  }
+});
+</script>
+
+<script>
+const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');}),{threshold:0.1});
+document.querySelectorAll('.fia').forEach(el=>o.observe(el));
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.boxShadow=window.scrollY>40?'0 4px 32px rgba(13,31,78,0.08)':'none';
+});
+</script>
 <style id="mentoria-styles">
 .ment-sec{background:linear-gradient(180deg,var(--off) 0%,var(--white) 100%);}
 .ment-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);border-radius:24px;padding:56px 52px;position:relative;overflow:hidden;margin-bottom:56px;}
@@ -1269,4 +1573,3 @@ window.addEventListener('scroll',()=>{
 });
 </script>
 </body>
-</html>
