@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Constructor de CV · +Que Píldoras Mentoría</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d1f4e;--blue:#1a3a8f;--accent:#2d6fd4;
+  --gold:#c9a84c;--white:#fff;--off:#f4f7fc;
+  --text:#0d1f4e;--muted:#4a6090;--border:rgba(13,31,78,0.12);
+  --green:#0e6e55;--red:#c0392b;--sky:#c8deff;--sky4:#f7fbff;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--off);color:var(--text);min-height:100vh;}
+
+/* NAV */
+nav{background:rgba(200,222,255,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(13,31,78,0.08);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.nl{font-family:'Playfair Display',serif;font-size:17px;font-weight:900;color:var(--navy);text-decoration:none;}
+.nl span{color:var(--accent);}
+.nav-tag{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.back{font-size:13px;color:var(--muted);text-decoration:none;display:flex;align-items:center;gap:5px;}
+.back:hover{color:var(--navy);}
+
+/* HEADER */
+.header{background:linear-gradient(135deg,var(--navy),var(--blue));padding:20px 32px 0;position:sticky;top:57px;z-index:90;}
+.header-inner{max-width:700px;margin:0 auto;}
+.header-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.header-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sky);margin-bottom:2px;}
+.header-step{color:#fff;font-weight:800;font-size:14px;}
+.header-badge{background:rgba(255,255,255,0.12);color:#fff;font-size:10px;padding:3px 10px;border-radius:20px;}
+.progress-track{background:rgba(255,255,255,0.15);border-radius:4px;height:4px;margin-bottom:10px;}
+.progress-fill{height:4px;border-radius:4px;background:var(--sky);transition:width 0.3s;}
+.step-tabs{display:flex;gap:2px;overflow-x:auto;padding-bottom:0;}
+.step-tab{padding:7px 10px;background:none;border:none;color:rgba(255,255,255,0.35);font-size:11px;cursor:default;border-bottom:2px solid transparent;font-family:inherit;font-weight:400;white-space:nowrap;transition:all .15s;}
+.step-tab.active{color:#fff;border-bottom-color:var(--sky);font-weight:700;}
+.step-tab.done{color:var(--sky);cursor:pointer;}
+
+/* CONTENT */
+.main{max-width:700px;margin:0 auto;padding:24px 16px 100px;}
+
+/* CARDS */
+.card{background:#fff;border-radius:14px;border:1px solid var(--border);padding:20px;margin-bottom:14px;}
+.card-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.card-hint{font-size:12px;color:var(--muted);font-style:italic;margin-bottom:14px;line-height:1.5;}
+.tip{background:var(--sky4);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:8px 12px;margin-bottom:14px;}
+.tip p{font-size:12px;color:var(--navy);line-height:1.5;}
+
+/* FORM */
+.label{font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;display:block;}
+.req{color:var(--red);}
+input[type=text],input[type=email],input[type=tel],input[type=password],select,textarea{width:100%;padding:9px 12px;border-radius:8px;border:1.5px solid var(--border);background:#fff;font-size:14px;color:var(--text);outline:none;font-family:inherit;box-sizing:border-box;line-height:1.5;transition:border-color .2s;}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);}
+textarea{resize:vertical;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.field{margin-bottom:12px;}
+
+/* CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+.chip{padding:5px 12px;border-radius:16px;font-size:12px;border:1.5px solid var(--border);background:#fff;color:var(--muted);cursor:pointer;font-family:inherit;transition:all .15s;}
+.chip.on{border-color:var(--navy);background:var(--navy);color:#fff;}
+.chip.disabled{opacity:.4;cursor:default;}
+
+/* TYPE BUTTONS */
+.type-btn{width:100%;padding:14px 16px;border-radius:10px;border:2px solid var(--border);background:#fff;text-align:left;cursor:pointer;font-family:inherit;margin-bottom:8px;transition:all .2s;}
+.type-btn.on{border-color:var(--navy);background:var(--sky4);}
+.type-btn-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:2px;}
+.type-btn-desc{font-size:12px;color:var(--muted);}
+
+/* FOOTER NAV */
+.footer-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;z-index:80;}
+.btn-back{padding:10px 22px;border-radius:8px;border:1.5px solid var(--border);background:#fff;color:var(--text);font-size:14px;font-family:inherit;cursor:pointer;font-weight:600;}
+.btn-back:disabled{color:var(--muted);cursor:default;}
+.btn-next{padding:10px 28px;border-radius:8px;background:var(--navy);color:#fff;border:none;font-size:14px;font-family:inherit;cursor:pointer;font-weight:700;transition:background .2s;}
+.btn-next:disabled{background:var(--border);color:var(--muted);cursor:default;}
+
+/* GENERATE HERO */
+.gen-hero{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:14px;padding:24px;margin-bottom:16px;text-align:center;}
+.gen-hero h3{color:#fff;font-family:'Playfair Display',serif;font-size:20px;margin-bottom:8px;}
+.gen-hero p{color:rgba(255,255,255,.7);font-size:13px;margin-bottom:16px;line-height:1.6;}
+.gen-btn{background:var(--gold);color:#fff;border:none;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;}
+.gen-btn:hover{background:#b8941f;}
+.gen-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.gen-btn-green{background:var(--green);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;}
+.gen-btn-blue{background:var(--blue);color:#fff;border:none;padding:10px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;}
+.gen-btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);padding:10px 18px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;}
+
+/* TABS */
+.result-tabs{display:flex;gap:4px;background:#fff;border-radius:10px;padding:4px;border:1px solid var(--border);margin-bottom:16px;}
+.result-tab{flex:1;padding:8px;border:none;border-radius:7px;font-size:13px;cursor:pointer;font-family:inherit;font-weight:400;color:var(--muted);background:none;transition:all .15s;}
+.result-tab.active{background:var(--navy);color:#fff;font-weight:700;}
+
+/* COMPETENCIAS TAGS */
+.tag{background:#e8eef8;color:var(--navy);padding:3px 9px;border-radius:10px;font-size:12px;font-weight:600;display:inline-block;margin:2px;}
+
+/* GAPS */
+.gap-card{background:#fff;border-radius:10px;border:1px solid var(--border);border-left:4px solid var(--gold);padding:14px 16px;margin-bottom:10px;}
+.gap-title{font-weight:700;color:var(--navy);font-size:14px;margin-bottom:6px;}
+.gap-tip{color:var(--text);font-size:13px;line-height:1.6;}
+
+/* INSIGHTS */
+.insight-card{background:var(--off);border-radius:10px;border:1px solid rgba(13,31,78,0.1);padding:14px 16px;margin-top:8px;}
+.insight-card p{font-size:12px;line-height:1.6;}
+.insight-card .quote{font-style:italic;color:var(--muted);margin:6px 0;}
+
+/* MODAL DOCUMENTO */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;display:flex;flex-direction:column;}
+.modal-bar{background:var(--navy);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;}
+.modal-bar span{color:#fff;font-weight:700;font-size:13px;}
+.modal-bar-btns{display:flex;gap:8px;}
+.modal-switch{background:rgba(255,255,255,.15);color:#fff;border:none;padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-family:inherit;}
+.modal-close{background:var(--red);color:#fff;border:none;padding:6px 14px;border-radius:6px;font-size:13px;cursor:pointer;font-family:inherit;font-weight:700;}
+.modal-body{flex:1;overflow:auto;background:#d0cdc8;padding:24px 16px;}
+.doc-page{max-width:680px;margin:0 auto;background:#fff;border-radius:4px;padding:48px 52px;box-shadow:0 4px 24px rgba(0,0,0,.2);font-family:Arial,sans-serif;font-size:11pt;color:#1a1a2e;line-height:1.5;}
+.doc-h1{font-size:18pt;color:#0d1f4e;margin:0 0 3px;}
+.doc-contact{font-size:9pt;color:#6b7280;margin:0 0 18px;}
+.doc-h2{font-size:9pt;color:#0d1f4e;text-transform:uppercase;letter-spacing:1px;border-bottom:1.5px solid #0d1f4e;padding-bottom:2px;margin:16px 0 6px;}
+.doc-summary{background:#f4f2ed;border-left:3px solid #0d1f4e;padding:8px 10px;margin-bottom:14px;font-size:10pt;}
+.doc-exp-title{font-weight:700;font-size:10.5pt;}
+.doc-exp-co{font-size:9.5pt;color:#1a3a8f;font-weight:600;}
+.doc-exp-date{font-size:9pt;color:#6b7280;}
+.doc-bullet{font-size:9.5pt;margin-bottom:1px;}
+.doc-competencia{background:#e8eef8;color:#0d1f4e;padding:2px 7px;border-radius:10px;font-size:8.5pt;font-weight:600;display:inline-block;margin:2px;}
+.doc-footer{font-size:7.5pt;color:#bbb;text-align:center;margin-top:28px;}
+.copy-tip{max-width:680px;margin:10px auto 0;background:#fffbea;border:1px solid #f6d860;border-radius:8px;padding:10px 14px;}
+.copy-tip p{font-size:11px;line-height:1.5;}
+
+/* API KEY */
+.apikey-box{background:#fff;border-radius:12px;border:1.5px solid var(--gold);padding:16px;margin-bottom:14px;}
+.apikey-box p{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.5;}
+
+/* ADD/REMOVE EXP */
+.dashed-btn{width:100%;padding:10px;border:2px dashed var(--border);border-radius:8px;background:none;color:var(--muted);font-size:14px;cursor:pointer;font-family:inherit;margin-top:4px;}
+.remove-btn{background:none;border:none;color:var(--red);font-size:12px;cursor:pointer;font-family:inherit;margin-top:8px;}
+
+/* NEXT STEP BOX */
+.next-step-box{background:#e6f4f0;border-radius:10px;padding:14px 16px;margin-top:8px;border:1px solid rgba(14,110,85,0.3);}
+.next-step-box p{font-size:13px;line-height:1.6;}
+
+@media(max-width:600px){
+  .grid2{grid-template-columns:1fr;}
+  .header,.nav{padding-left:16px;padding-right:16px;}
+  .doc-page{padding:32px 24px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nl"><span>+</span>Que Píldoras</a>
+  <span class="nav-tag">Mentoría · CV Builder</span>
+  <a href="index.html#mentoria" class="back">← Volver</a>
+</nav>
+
+<div class="header" id="appHeader">
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="header-label">+QuePíldoras · Constructor de CV</div>
+        <div class="header-step" id="headerStep">👤 Perfil</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <span id="badgeTipo" class="header-badge" style="display:none"></span>
+        <span id="badgeCount" class="header-badge">1 / 7</span>
+      </div>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:14%"></div></div>
+    <div class="step-tabs" id="stepTabs"></div>
+  </div>
+</div>
+
+<div class="main" id="mainContent"></div>
+
+<div class="footer-nav" id="footerNav">
+  <button class="btn-back" id="btnBack" onclick="prevStep()">← Anterior</button>
+  <button class="btn-next" id="btnNext" onclick="nextStep()">Siguiente →</button>
+</div>
+
+<!-- MODAL DOCUMENTO -->
+<div class="modal-overlay" id="docModal" style="display:none;">
+  <div class="modal-bar">
+    <span id="modalTitle">📄 CV</span>
+    <div class="modal-bar-btns">
+      <button class="modal-switch" id="modalSwitch" onclick="toggleDocView()">Ver Carta →</button>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="doc-page" id="docContent"></div>
+    <div class="copy-tip">
+      <p><strong style="color:#92600a;">📋 Cómo guardar:</strong> Selecciona todo el documento (Ctrl+A dentro del recuadro blanco), copia (Ctrl+C) y pega en Word o Google Docs. O usa Ctrl+P → Guardar como PDF.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── DATOS Y CONSTANTES ───────────────────────────────────────────────────────
+const ROLES = [
+  {value:"MSL",label:"Medical Science Liaison (MSL)"},
+  {value:"MedAdvisor",label:"Medical Advisor / Medical Affairs"},
+  {value:"CRA",label:"Clinical Research Associate (CRA)"},
+  {value:"CTM",label:"Clinical Trial Manager"},
+  {value:"Regulatory",label:"Regulatory Affairs"},
+  {value:"MarketAccess",label:"Market Access"},
+  {value:"ProductManager",label:"Product Manager / Brand Manager"},
+  {value:"KAM",label:"Key Account Manager (KAM)"},
+  {value:"Delegado",label:"Delegado/a de Ventas / Visitador/a Médico/a"},
+  {value:"Farmacovigilancia",label:"Farmacovigilancia"},
+  {value:"Laboratorio",label:"Técnico/a de Laboratorio / I+D"},
+  {value:"Produccion",label:"Técnico/a de Producción / Control de Calidad"},
+  {value:"Otro",label:"Otro"},
+];
+
+const CARRERAS = ["Farmacia","Medicina","Biología","Bioquímica","Química","Biotecnología","Enfermería","Nutrición y Dietética","Fisioterapia","Veterinaria","Psicología","Otro"];
+const NIVELES_IDIOMA = ["Nativo","C2 – Mastery","C1 – Avanzado","B2 – Intermedio alto","B1 – Intermedio","A2 – Básico"];
+
+const RASGOS = [
+  "Me gusta explicar cosas complejas de forma sencilla",
+  "Soy muy organizado/a y metódico/a",
+  "Me adapto rápido a situaciones nuevas",
+  "Disfruto trabajando con personas y construyendo relaciones",
+  "Me apasiona la investigación y el análisis de datos",
+  "Soy proactivo/a y tomo iniciativa sin que me lo pidan",
+  "Tengo mucha empatía y escucha activa",
+  "Me motiva trabajar con impacto real en pacientes",
+  "Soy muy detallista y riguroso/a",
+  "Me siento cómodo/a presentando en público",
+  "Aprendo rápido tecnologías y herramientas nuevas",
+  "Sé trabajar bien bajo presión y con plazos ajustados",
+  "Me gusta liderar y organizar equipos o proyectos",
+  "Soy persistente y no me rindo fácilmente",
+  "Tengo curiosidad científica constante",
+];
+
+const ACTIVIDADES = [
+  "Prácticas en farmacia comunitaria u hospitalaria",
+  "Prácticas en laboratorio de investigación",
+  "Prácticas en empresa farmacéutica o CRO",
+  "Trabajo fin de grado / máster experimental",
+  "Participación en congresos científicos",
+  "Delegado/a de clase o representante estudiantil",
+  "Voluntariado relacionado con salud",
+  "Colaboración con grupos de investigación",
+  "Monitor/a de clases o tutor/a",
+  "Trabajo en atención al cliente (cualquier sector)",
+  "Deporte federado o competición",
+  "Actividades artísticas o culturales",
+  "Asociaciones universitarias o clubs",
+  "Proyectos propios o emprendimiento",
+];
+
+const COMPETENCIAS_FARMA = [
+  "Visita médica","Ensayos clínicos GCP","Regulatory Affairs","Medical Affairs",
+  "Market Access","Farmacovigilancia","KOL Management","MSL activities",
+  "Clinical data analysis","Gestión de proyectos","CRM (Veeva/Salesforce)",
+  "Presentaciones científicas","Inglés técnico científico","Cross-functional collaboration",
+  "Comunicación científica adaptada","Networking con KOLs","Síntesis de evidencia científica",
+];
+
+const ROLE_INSIGHTS = {
+  MSL: {
+    fuente: "Pablo del Pino · Medical Advisor & MSL Manager · Uriach (EP02)",
+    skillsCriticas: [
+      "Empatía — skill #1 que busca un MSL Manager al contratar",
+      "Capacidad de venta consultiva — 'saber vender aunque no lo parezca'",
+      "Organización y estructura — imprescindible para gestionar múltiples KOLs",
+      "Escucha activa — clave en la relación con opinion leaders",
+      "Perfil analítico + perfil relacional — el balance que buscan",
+      "Comunicación cross-funcional — buffer entre equipos médico y comercial",
+      "Actitud y energía — lo que decide la contratación en la entrevista",
+    ],
+    fraseLiteral: "Busco a alguien azul — muy analítico con los datos — pero sin descuidar el lado verde, con mucha empatía para el día a día.",
+    consejoEntrada: "Durante las prácticas, quédate más tiempo del necesario. Los contactos y experiencias que consigues valen más que irte a casa puntual.",
+  },
+};
+
+// ─── ESTADO ───────────────────────────────────────────────────────────────────
+let state = {
+  tipoPerfil:"",
+  nombre:"",apellidos:"",email:"",telefono:"",linkedin:"",ciudad:"",
+  rolObjetivo:"",otroRol:"",
+  carrera:"Farmacia",otraCarrera:"",universidad:"",anioFin:"",notaMedia:"",
+  tieneTFG:false,tituloTFG:"",descripcionTFG:"",
+  rasgos:[],actividades:[],descripcionActividades:"",motivacion:"",
+  resumenProfesional:"",
+  experiencias:[{empresa:"",cargo:"",inicio:"",fin:"",actual:false,descripcion:"",logros:""}],
+  formaciones:[{titulo:"",institucion:"",anio:"",tipo:"Grado/Licenciatura"}],
+  competencias:[],otrasCompetencias:"",
+  idiomas:[{idioma:"Inglés",nivel:"B2 – Intermedio alto"}],
+  publicaciones:"",congresos:"",
+  apiKey: localStorage.getItem("mqp_apikey")||"",
+};
+
+let currentStep = 0;
+let generationResult = null;
+let generationStatus = "idle"; // idle | loading | done | error
+let generationError = "";
+let activeResultTab = "cv";
+let activeDocView = "cv"; // cv | carta
+
+const STEPS_JUNIOR = [
+  {id:"personal",label:"Perfil",icon:"👤"},
+  {id:"objetivo",label:"Objetivo",icon:"🎯"},
+  {id:"carrera",label:"Tu carrera",icon:"🎓"},
+  {id:"personalidad",label:"Cómo eres",icon:"🧠"},
+  {id:"actividades",label:"Qué has hecho",icon:"⚡"},
+  {id:"idiomas",label:"Idiomas",icon:"🌍"},
+  {id:"generar",label:"Generar",icon:"✨"},
+];
+
+const STEPS_SENIOR = [
+  {id:"personal",label:"Perfil",icon:"👤"},
+  {id:"objetivo",label:"Objetivo",icon:"🎯"},
+  {id:"experiencia",label:"Experiencia",icon:"💼"},
+  {id:"formacion",label:"Formación",icon:"🎓"},
+  {id:"habilidades",label:"Habilidades",icon:"⚡"},
+  {id:"idiomas",label:"Idiomas",icon:"🌍"},
+  {id:"generar",label:"Generar",icon:"✨"},
+];
+
+function getSteps(){ return state.tipoPerfil==="senior" ? STEPS_SENIOR : STEPS_JUNIOR; }
+function isJunior(){ return state.tipoPerfil !== "senior"; }
+function getCurrentStepDef(){ return getSteps()[currentStep]; }
+
+// ─── RENDER ───────────────────────────────────────────────────────────────────
+function render(){
+  const steps = getSteps();
+  const step = steps[currentStep];
+
+  // Header
+  document.getElementById("headerStep").textContent = (step?.icon||"") + " " + (step?.label||"");
+  document.getElementById("badgeCount").textContent = (currentStep+1) + " / " + steps.length;
+  const badgeTipo = document.getElementById("badgeTipo");
+  if(state.tipoPerfil){
+    badgeTipo.style.display="inline-block";
+    badgeTipo.textContent = isJunior() ? "🎓 Junior" : "💼 Senior";
+  } else { badgeTipo.style.display="none"; }
+
+  const pct = Math.round((currentStep/(steps.length-1))*100);
+  document.getElementById("progressFill").style.width = pct+"%";
+
+  // Step tabs
+  const tabsEl = document.getElementById("stepTabs");
+  tabsEl.innerHTML = steps.map((s,i)=>`
+    <button class="step-tab ${i===currentStep?"active":i<currentStep?"done":""}"
+      onclick="${i<currentStep?`goToStep(${i})`:""}">${s.icon} ${s.label}</button>
+  `).join("");
+
+  // Footer
+  const isGenerar = step?.id==="generar";
+  document.getElementById("footerNav").style.display = isGenerar ? "none" : "flex";
+  document.getElementById("btnBack").disabled = currentStep===0;
+  document.getElementById("btnNext").disabled = !canProceed();
+  document.getElementById("btnNext").textContent = currentStep===steps.length-2 ? "Ir a generar →" : "Siguiente →";
+
+  // Main content
+  const content = document.getElementById("mainContent");
+  content.innerHTML = renderStep(step?.id);
+  bindEvents();
+}
+
+function canProceed(){
+  const id = getCurrentStepDef()?.id;
+  if(id==="personal") return state.tipoPerfil && state.nombre && state.apellidos && state.email;
+  if(id==="objetivo") return !!state.rolObjetivo;
+  return true;
+}
+
+// ─── STEP RENDERERS ───────────────────────────────────────────────────────────
+function renderStep(id){
+  if(id==="personal") return renderPersonal();
+  if(id==="objetivo") return renderObjetivo();
+  if(id==="carrera") return renderCarrera();
+  if(id==="personalidad") return renderPersonalidad();
+  if(id==="actividades") return renderActividades();
+  if(id==="experiencia") return renderExperiencia();
+  if(id==="formacion") return renderFormacion();
+  if(id==="habilidades") return renderHabilidades();
+  if(id==="idiomas") return renderIdiomas();
+  if(id==="generar") return renderGenerar();
+  return "";
+}
+
+function renderPersonal(){ return `
+  <div class="card">
+    <div class="card-title">¿Cómo describirías tu experiencia?</div>
+    <div class="card-hint">Esto adapta el formulario a tu situación.</div>
+    <button class="type-btn ${state.tipoPerfil==="junior"?"on":""}" onclick="set('tipoPerfil','junior');render()">
+      <div class="type-btn-title">🎓 Soy recién graduado/a o tengo menos de 1 año de experiencia</div>
+      <div class="type-btn-desc">Acabas de terminar la carrera o llevas poco tiempo trabajando</div>
+    </button>
+    <button class="type-btn ${state.tipoPerfil==="senior"?"on":""}" onclick="set('tipoPerfil','senior');render()">
+      <div class="type-btn-title">💼 Tengo experiencia profesional relevante</div>
+      <div class="type-btn-desc">Ya has trabajado en el sector o en puestos relacionados</div>
+    </button>
+  </div>
+  ${state.tipoPerfil ? `
+  <div class="card">
+    <div class="card-title">Datos de contacto</div>
+    <div class="grid2">
+      <div class="field"><label class="label">Nombre <span class="req">*</span></label><input type="text" value="${esc(state.nombre)}" oninput="set('nombre',this.value)" placeholder="Tu nombre"></div>
+      <div class="field"><label class="label">Apellidos <span class="req">*</span></label><input type="text" value="${esc(state.apellidos)}" oninput="set('apellidos',this.value)" placeholder="Tus apellidos"></div>
+      <div class="field"><label class="label">Email <span class="req">*</span></label><input type="email" value="${esc(state.email)}" oninput="set('email',this.value)" placeholder="tu@email.com"></div>
+      <div class="field"><label class="label">Teléfono</label><input type="tel" value="${esc(state.telefono)}" oninput="set('telefono',this.value)" placeholder="+34 6XX XXX XXX"></div>
+      <div class="field"><label class="label">Ciudad</label><input type="text" value="${esc(state.ciudad)}" oninput="set('ciudad',this.value)" placeholder="Madrid, España"></div>
+      <div class="field"><label class="label">LinkedIn</label><input type="text" value="${esc(state.linkedin)}" oninput="set('linkedin',this.value)" placeholder="linkedin.com/in/tu-perfil"></div>
+    </div>
+  </div>` : ""}
+`;}
+
+function renderObjetivo(){
+  const insights = ROLE_INSIGHTS[state.rolObjetivo];
+  return `
+  <div class="tip"><p>💡 El rol objetivo define todo el CV y la carta. Claude adaptará el lenguaje específicamente a este puesto.</p></div>
+  <div class="card">
+    <div class="card-title">¿A qué puesto quieres orientar tu candidatura?</div>
+    <div class="field"><select onchange="set('rolObjetivo',this.value);render()">
+      <option value="">Selecciona el rol...</option>
+      ${ROLES.map(r=>`<option value="${r.value}" ${state.rolObjetivo===r.value?"selected":""}>${r.label}</option>`).join("")}
+    </select></div>
+    ${state.rolObjetivo==="Otro"?`<div class="field"><label class="label">Especifica</label><input type="text" value="${esc(state.otroRol)}" oninput="set('otroRol',this.value)" placeholder="Ej: Clinical Data Manager"></div>`:""}
+  </div>
+  ${state.rolObjetivo && insights ? `
+  <div class="card" style="border-color:rgba(14,110,85,0.3);background:#e6f4f0;">
+    <div class="card-title" style="color:var(--green);">✅ Tenemos insights reales para este rol</div>
+    <p style="font-size:12px;color:var(--text);line-height:1.5;">Fuente: <strong>${insights.fuente}</strong>. Se aplicarán automáticamente a tu CV y carta.</p>
+  </div>` : ""}
+`;}
+
+function renderCarrera(){ return `
+  <div class="tip"><p>💡 Tu formación académica es tu mayor activo ahora mismo. Cuéntanos todo sobre ella.</p></div>
+  <div class="card">
+    <div class="card-title">Tu titulación</div>
+    <div class="grid2">
+      <div class="field"><label class="label">Carrera <span class="req">*</span></label>
+        <select onchange="set('carrera',this.value);render()">
+          ${CARRERAS.map(c=>`<option value="${c}" ${state.carrera===c?"selected":""}>${c}</option>`).join("")}
+        </select>
+      </div>
+      ${state.carrera==="Otro"?`<div class="field"><label class="label">Especifica</label><input type="text" value="${esc(state.otraCarrera)}" oninput="set('otraCarrera',this.value)" placeholder="Ej: Ciencias Ambientales"></div>`:""}
+      <div class="field"><label class="label">Universidad</label><input type="text" value="${esc(state.universidad)}" oninput="set('universidad',this.value)" placeholder="Ej: Universidad de Barcelona"></div>
+      <div class="field"><label class="label">Año de graduación</label><input type="text" value="${esc(state.anioFin)}" oninput="set('anioFin',this.value)" placeholder="2024"></div>
+      <div class="field"><label class="label">Nota media (opcional)</label><input type="text" value="${esc(state.notaMedia)}" oninput="set('notaMedia',this.value)" placeholder="Ej: 7,8"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">TFG / TFM</div>
+    <div class="card-hint">Si tienes trabajo fin de grado o máster relevante, inclúyelo — puede ser muy valioso.</div>
+    <label style="display:flex;gap:8px;align-items:center;cursor:pointer;margin-bottom:12px;">
+      <input type="checkbox" id="checkTFG" ${state.tieneTFG?"checked":""} onchange="set('tieneTFG',this.checked);render()">
+      <span style="font-size:14px;">Tengo TFG/TFM relevante para incluir</span>
+    </label>
+    ${state.tieneTFG?`
+    <div class="field"><label class="label">Título</label><input type="text" value="${esc(state.tituloTFG)}" oninput="set('tituloTFG',this.value)" placeholder="Ej: Evaluación de anticuerpos monoclonales en cáncer de pulmón"></div>
+    <div class="field"><label class="label">Describe brevemente en qué consistió</label><textarea rows="3" oninput="set('descripcionTFG',this.value)" placeholder="Ej: Revisión sistemática, análisis estadístico, técnicas utilizadas...">${esc(state.descripcionTFG)}</textarea></div>
+    `:""}
+  </div>
+`;}
+
+function renderPersonalidad(){ return `
+  <div class="tip"><p>💡 No necesitas saber el nombre técnico de tus habilidades — nosotros lo traducimos al lenguaje del sector. Selecciona hasta 8 rasgos.</p></div>
+  <div class="card">
+    <div class="card-title">¿Cómo eres?</div>
+    <div class="card-hint">Sé honesto/a. Esto nos ayuda a construir un perfil auténtico y diferencial.</div>
+    <div class="chips" id="rasgosChips">
+      ${RASGOS.map(r=>{
+        const on = state.rasgos.includes(r);
+        const disabled = !on && state.rasgos.length>=8;
+        return `<button class="chip ${on?"on":""} ${disabled?"disabled":""}" onclick="toggleChip('rasgos','${r.replace(/'/g,"\\'")}',8)">${on?"✓ ":""}${r}</button>`;
+      }).join("")}
+    </div>
+    ${state.rasgos.length>=8?`<p style="font-size:11px;color:var(--gold);margin-top:8px;">Máximo 8 rasgos seleccionados</p>`:""}
+  </div>
+  <div class="card">
+    <div class="card-title">¿Por qué quieres este sector y este rol?</div>
+    <div class="card-hint">Con tus palabras, sin filtros. Claude lo convertirá en motivación potente.</div>
+    <textarea rows="4" oninput="set('motivacion',this.value)" placeholder="Ej: Me llama mucho comunicar la evidencia científica a médicos...">${esc(state.motivacion)}</textarea>
+  </div>
+`;}
+
+function renderActividades(){ return `
+  <div class="tip"><p>💡 Todo cuenta: las prácticas, trabajar de dependiente, el deporte de equipo, haber sido delegado/a de clase...</p></div>
+  <div class="card">
+    <div class="card-title">¿Qué has hecho?</div>
+    <div class="card-hint">Selecciona todo lo que aplique, aunque te parezca poco relevante.</div>
+    <div class="chips">
+      ${ACTIVIDADES.map(a=>{
+        const on = state.actividades.includes(a);
+        return `<button class="chip ${on?"on":""}" onclick="toggleChip('actividades','${a.replace(/'/g,"\\'")}',null)">${on?"✓ ":""}${a}</button>`;
+      }).join("")}
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">Cuéntanos más</div>
+    <div class="card-hint">Describe brevemente las actividades más importantes con algo de detalle.</div>
+    <textarea rows="5" oninput="set('descripcionActividades',this.value)" placeholder="Ej: Trabajé 3 años de dependienta en una librería, gestionando clientes y reclamaciones...">${esc(state.descripcionActividades)}</textarea>
+  </div>
+`;}
+
+function renderExperiencia(){
+  return `
+  <div class="tip"><p>💡 Incluye toda experiencia relevante aunque no sea 100% de farma. Claude la reorientará al sector.</p></div>
+  ${state.experiencias.map((e,i)=>`
+  <div class="card">
+    <div class="card-title">Experiencia ${i+1}${e.empresa?" — "+e.empresa:""}</div>
+    <div class="grid2">
+      <div class="field"><label class="label">Empresa</label><input type="text" value="${esc(e.empresa)}" oninput="updateExp(${i},'empresa',this.value)" placeholder="Nombre empresa"></div>
+      <div class="field"><label class="label">Cargo</label><input type="text" value="${esc(e.cargo)}" oninput="updateExp(${i},'cargo',this.value)" placeholder="Tu título/rol"></div>
+      <div class="field"><label class="label">Inicio</label><input type="text" value="${esc(e.inicio)}" oninput="updateExp(${i},'inicio',this.value)" placeholder="Mar 2021"></div>
+      <div class="field"><label class="label">Fin</label>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input type="text" value="${esc(e.actual?"Presente":e.fin)}" oninput="updateExp(${i},'fin',this.value)" placeholder="Dic 2023" ${e.actual?"disabled":""}>
+          <label style="display:flex;gap:4px;align-items:center;font-size:12px;color:var(--muted);white-space:nowrap;cursor:pointer;">
+            <input type="checkbox" ${e.actual?"checked":""} onchange="updateExp(${i},'actual',this.checked);render()"> Actual
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="field"><label class="label">¿Qué hacías?</label><textarea rows="3" oninput="updateExp(${i},'descripcion',this.value)" placeholder="Describe tus responsabilidades principales...">${esc(e.descripcion)}</textarea></div>
+    <div class="field"><label class="label">Logros concretos (muy recomendado)</label><textarea rows="2" oninput="updateExp(${i},'logros',this.value)" placeholder="Ej: Reduje el tiempo de enrolamiento un 30%...">${esc(e.logros)}</textarea></div>
+    ${state.experiencias.length>1?`<button class="remove-btn" onclick="removeExp(${i})">✕ Eliminar esta experiencia</button>`:""}
+  </div>`).join("")}
+  <button class="dashed-btn" onclick="addExp()">+ Añadir experiencia</button>
+`;}
+
+function renderFormacion(){
+  return `
+  ${state.formaciones.map((f,i)=>`
+  <div class="card">
+    <div class="card-title">Formación ${i+1}</div>
+    <div class="grid2">
+      <div class="field"><label class="label">Tipo</label>
+        <select onchange="updateForm(${i},'tipo',this.value)">
+          ${["Grado/Licenciatura","Máster/Posgrado","Doctorado","Curso específico","Certificación profesional"].map(t=>`<option ${f.tipo===t?"selected":""}>${t}</option>`).join("")}
+        </select>
+      </div>
+      <div class="field"><label class="label">Año fin</label><input type="text" value="${esc(f.anio)}" oninput="updateForm(${i},'anio',this.value)" placeholder="2020"></div>
+      <div class="field" style="grid-column:1/-1"><label class="label">Título</label><input type="text" value="${esc(f.titulo)}" oninput="updateForm(${i},'titulo',this.value)" placeholder="Ej: Grado en Farmacia"></div>
+      <div class="field" style="grid-column:1/-1"><label class="label">Institución</label><input type="text" value="${esc(f.institucion)}" oninput="updateForm(${i},'institucion',this.value)" placeholder="Ej: Universidad Complutense / CESIF"></div>
+    </div>
+  </div>`).join("")}
+  <button class="dashed-btn" onclick="addFormacion()">+ Añadir formación</button>
+`;}
+
+function renderHabilidades(){ return `
+  <div class="card">
+    <div class="card-title">Resumen profesional (borrador)</div>
+    <div class="card-hint">No tiene que ser perfecto. Claude lo reescribirá y optimizará con keywords ATS.</div>
+    <textarea rows="4" oninput="set('resumenProfesional',this.value)" placeholder="Cuéntanos quién eres, qué has hecho y qué buscas...">${esc(state.resumenProfesional)}</textarea>
+  </div>
+  <div class="card">
+    <div class="card-title">Competencias clave</div>
+    <div class="chips">
+      ${COMPETENCIAS_FARMA.map(c=>{
+        const on = state.competencias.includes(c);
+        return `<button class="chip ${on?"on":""}" onclick="toggleChip('competencias','${c.replace(/'/g,"\\'")}',null)">${on?"✓ ":""}${c}</button>`;
+      }).join("")}
+    </div>
+    <div class="field" style="margin-top:12px;"><label class="label">Otras competencias</label><input type="text" value="${esc(state.otrasCompetencias)}" oninput="set('otrasCompetencias',this.value)" placeholder="Ej: R Studio, Python, gestión de equipos..."></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Congresos / Publicaciones (opcional)</div>
+    <div class="field"><label class="label">Congresos</label><input type="text" value="${esc(state.congresos)}" oninput="set('congresos',this.value)" placeholder="Ej: Asistente al Congreso SEOM 2023"></div>
+    <div class="field" style="margin-bottom:0"><label class="label">Publicaciones</label><input type="text" value="${esc(state.publicaciones)}" oninput="set('publicaciones',this.value)" placeholder="Ej: Autor en Journal of Clinical Pharmacy 2023"></div>
+  </div>
+`;}
+
+function renderIdiomas(){ return `
+  <div class="tip"><p>💡 El inglés es prácticamente obligatorio en la industria farmacéutica. Sé honesto/a con tu nivel.</p></div>
+  <div class="card">
+    <div class="card-title">Idiomas</div>
+    ${state.idiomas.map((id,i)=>`
+    <div class="grid2" style="margin-bottom:10px;">
+      <div><label class="label">Idioma</label>
+        <select onchange="updateIdioma(${i},'idioma',this.value)">
+          ${["Español","Inglés","Francés","Alemán","Italiano","Portugués","Chino","Otro"].map(l=>`<option ${id.idioma===l?"selected":""}>${l}</option>`).join("")}
+        </select>
+      </div>
+      <div><label class="label">Nivel</label>
+        <select onchange="updateIdioma(${i},'nivel',this.value)">
+          ${NIVELES_IDIOMA.map(n=>`<option ${id.nivel===n?"selected":""}>${n}</option>`).join("")}
+        </select>
+      </div>
+    </div>`).join("")}
+    <button style="background:none;border:none;color:var(--accent);font-size:13px;font-weight:600;cursor:pointer;padding:0;font-family:inherit;" onclick="addIdioma()">+ Añadir idioma</button>
+  </div>
+`;}
+
+function renderGenerar(){
+  const rolLabel = ROLES.find(r=>r.value===state.rolObjetivo)?.label || state.otroRol;
+  const insights = ROLE_INSIGHTS[state.rolObjetivo];
+
+  let heroContent = "";
+  if(generationStatus==="idle"){ heroContent=`
+    <button class="gen-btn" onclick="generarPack()">✨ Generar CV + Carta + Tips →</button>
+  `;}
+  else if(generationStatus==="loading"){ heroContent=`<p style="color:var(--sky);font-size:14px;">⏳ Analizando perfil y generando documentos con Claude...</p>`; }
+  else if(generationStatus==="done"){ heroContent=`
+    <div class="gen-btns">
+      <button class="gen-btn-green" onclick="openModal('cv')">📄 Ver CV</button>
+      <button class="gen-btn-blue" onclick="openModal('carta')">✉️ Ver Carta</button>
+      <button class="gen-btn-ghost" onclick="generarPack()">🔄 Regenerar</button>
+    </div>
+  `;}
+  else if(generationStatus==="error"){ heroContent=`
+    <p style="color:#ff9090;font-size:13px;margin-bottom:12px;">${generationError}</p>
+    <button class="gen-btn" onclick="generarPack()">Reintentar</button>
+  `;}
+
+  let resultContent = "";
+  if(generationStatus==="done" && generationResult){
+    const r = generationResult;
+    const exps = isJunior() ? r.experienciasFormativas : r.experiencias;
+
+    resultContent = `
+    <div class="result-tabs">
+      ${[{id:"cv",label:"📄 CV"},{id:"carta",label:"✉️ Carta"},{id:"gaps",label:"🎯 Tips de mejora"}].map(t=>`
+        <button class="result-tab ${activeResultTab===t.id?"active":""}" onclick="switchResultTab('${t.id}')">${t.label}</button>
+      `).join("")}
+    </div>
+
+    ${activeResultTab==="cv"?`
+    <div class="card">
+      <div style="background:var(--off);border-left:3px solid var(--navy);padding:8px 12px;border-radius:0 6px 6px 0;margin-bottom:14px;">
+        <p style="margin:0;font-size:13px;color:var(--text);line-height:1.6;font-style:italic;">${esc(r.resumenProfesional)}</p>
+      </div>
+      ${(exps||[]).map(e=>`
+        <div style="margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--border);">
+          <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;">
+            <div>
+              <p style="font-weight:700;font-size:14px;color:var(--text);margin:0;">${esc(e.cargo||e.titulo)}</p>
+              <p style="font-size:12px;color:var(--blue);font-weight:600;margin:1px 0;">${esc(e.empresa||e.institucion)}</p>
+            </div>
+            <p style="font-size:11px;color:var(--muted);margin:0;">${esc(e.periodo)}</p>
+          </div>
+          <ul style="margin:5px 0 0 14px;padding:0;">
+            ${(e.bullets||[]).map(b=>`<li style="font-size:13px;margin-bottom:2px;">${esc(b)}</li>`).join("")}
+          </ul>
+        </div>`).join("")}
+      <p style="font-weight:700;font-size:11px;color:var(--navy);text-transform:uppercase;letter-spacing:1px;margin:10px 0 6px;">Competencias Clave</p>
+      <div>${(r.competenciasClave||[]).map(c=>`<span class="tag">${esc(c)}</span>`).join("")}</div>
+      <button onclick="openModal('cv')" style="margin-top:14px;width:100%;padding:10px;background:var(--navy);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">📄 Ver CV completo y listo para copiar</button>
+    </div>
+    `:""}
+
+    ${activeResultTab==="carta"?`
+    <div class="card">
+      <div style="font-family:Georgia,serif;font-size:14px;line-height:1.8;color:var(--text);">
+        ${(r.cartaPresentacion||"").split("\n").filter(p=>p.trim()).map(p=>`<p style="margin:0 0 12px;">${esc(p)}</p>`).join("")}
+      </div>
+      <button onclick="openModal('carta')" style="margin-top:10px;width:100%;padding:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">✉️ Ver Carta completa y lista para copiar</button>
+    </div>
+    `:""}
+
+    ${activeResultTab==="gaps"?`
+    <div class="tip"><p>💡 Estos puntos los trabajaréis con Jaime y Miren en la sesión de mentoría.</p></div>
+    ${(r.gaps||[]).map(g=>`
+      <div class="gap-card">
+        <div class="gap-title">⚠️ ${esc(g.gap)}</div>
+        <div class="gap-tip">💡 <strong>Consejo:</strong> ${esc(g.consejo)}</div>
+      </div>`).join("")}
+    ${insights?`
+    <div class="insight-card">
+      <p><strong>🎙️ Lo que dice el sector</strong><br><em style="font-size:11px;color:var(--muted);">${esc(insights.fuente)}</em></p>
+      <p class="quote">"${esc(insights.fraseLiteral)}"</p>
+      <ul style="margin:0 0 8px 14px;padding:0;">
+        ${insights.skillsCriticas.map(s=>`<li style="font-size:12px;color:var(--text);margin-bottom:2px;">${esc(s)}</li>`).join("")}
+      </ul>
+      <p style="font-size:12px;color:var(--green);font-weight:600;margin:0;">💡 ${esc(insights.consejoEntrada)}</p>
+    </div>`:""}
+    <div class="next-step-box" style="margin-top:8px;">
+      <p><strong style="color:var(--green);">📩 Próximo paso</strong><br>
+      Descarga tu CV y carta y envíalos a <strong>podcast@masquepildoras.com</strong>. Jaime o Miren os contactarán en 48h para la sesión de mentoría.</p>
+    </div>
+    `:""}
+    `;
+  }
+
+  return `
+  <div class="apikey-box">
+    <label class="label">🔑 API Key de Anthropic <span class="req">*</span></label>
+    <input type="password" id="apiKeyInput" value="${esc(state.apiKey)}" oninput="set('apiKey',this.value);localStorage.setItem('mqp_apikey',this.value)" placeholder="sk-ant-api03-...">
+    <p>Necesaria para generar el CV con Claude. Se guarda solo en tu navegador. <a href="https://console.anthropic.com/settings/keys" target="_blank" style="color:var(--accent);">Obtener clave →</a></p>
+  </div>
+
+  <div class="gen-hero">
+    <div style="font-size:36px;margin-bottom:8px;">${generationStatus==="done"?"🎉":"✨"}</div>
+    <h3>${generationStatus==="done"?"¡Tu pack está listo!":"Generar tu pack de candidatura"}</h3>
+    <p>${isJunior()?"Claude traducirá tus rasgos y actividades en competencias del sector":"Claude optimizará tu CV con lenguaje de farma y keywords ATS"} para el rol de <strong style="color:var(--sky);">${esc(rolLabel)}</strong>${insights?`<br><span style="font-size:11px;color:var(--sky);">✅ Incluye insights reales de un ${isJunior()?"MSL Manager":"experto del sector"}</span>`:""}.</p>
+    ${heroContent}
+  </div>
+
+  ${resultContent}
+  `;
+}
+
+// ─── EVENTOS ──────────────────────────────────────────────────────────────────
+function bindEvents(){}
+
+function set(key, val){
+  state[key] = val;
+  if(getCurrentStepDef()?.id==="personal" && (key==="nombre"||key==="apellidos"||key==="email"||key==="tipoPerfil")){
+    document.getElementById("btnNext").disabled = !canProceed();
+  }
+  if(getCurrentStepDef()?.id==="objetivo" && key==="rolObjetivo"){
+    document.getElementById("btnNext").disabled = !canProceed();
+  }
+}
+
+function toggleChip(field, value, max){
+  const arr = state[field];
+  const idx = arr.indexOf(value);
+  if(idx>-1){ state[field] = arr.filter(x=>x!==value); }
+  else {
+    if(max && arr.length>=max) return;
+    state[field] = [...arr, value];
+  }
+  render();
+}
+
+function updateExp(i,k,v){ state.experiencias[i][k]=v; }
+function removeExp(i){ state.experiencias=state.experiencias.filter((_,j)=>j!==i); render(); }
+function addExp(){ state.experiencias.push({empresa:"",cargo:"",inicio:"",fin:"",actual:false,descripcion:"",logros:""}); render(); }
+function updateForm(i,k,v){ state.formaciones[i][k]=v; }
+function addFormacion(){ state.formaciones.push({titulo:"",institucion:"",anio:"",tipo:"Máster/Posgrado"}); render(); }
+function updateIdioma(i,k,v){ state.idiomas[i][k]=v; }
+function addIdioma(){ state.idiomas.push({idioma:"",nivel:"B1 – Intermedio"}); render(); }
+function switchResultTab(tab){ activeResultTab=tab; render(); }
+
+// ─── NAVEGACIÓN ───────────────────────────────────────────────────────────────
+function nextStep(){
+  if(!canProceed()) return;
+  const steps=getSteps();
+  if(currentStep<steps.length-1){ currentStep++; render(); window.scrollTo(0,0); }
+}
+function prevStep(){
+  if(currentStep>0){ currentStep--; render(); window.scrollTo(0,0); }
+}
+function goToStep(i){ currentStep=i; render(); window.scrollTo(0,0); }
+
+// ─── API CALL ─────────────────────────────────────────────────────────────────
+async function generarPack(){
+  if(!state.apiKey){ alert("Introduce tu API Key de Anthropic primero."); return; }
+  generationStatus="loading"; generationResult=null; render();
+
+  const prompt = buildPrompt();
+
+  try {
+    const res = await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "x-api-key": state.apiKey,
+        "anthropic-version":"2023-06-01",
+        "anthropic-dangerous-direct-browser-access":"true",
+      },
+      body:JSON.stringify({
+        model:"claude-sonnet-4-6",
+        max_tokens:4000,
+        messages:[{role:"user",content:prompt}],
+      }),
+    });
+    if(!res.ok){ const err=await res.json(); throw new Error(err.error?.message||"HTTP "+res.status); }
+    const d = await res.json();
+    const text = d.content?.find(b=>b.type==="text")?.text||"";
+    const m = text.match(/\{[\s\S]*\}/);
+    if(!m) throw new Error("Respuesta sin JSON válido");
+    generationResult = JSON.parse(m[0]);
+    generationStatus = "done";
+    activeResultTab = "cv";
+  } catch(e){
+    generationStatus="error";
+    generationError = "Error: " + e.message;
+  }
+  render();
+}
+
+function buildPrompt(){
+  const junior = isJunior();
+  const rol = ROLES.find(r=>r.value===state.rolObjetivo)?.label || state.otroRol;
+  const insights = ROLE_INSIGHTS[state.rolObjetivo];
+
+  if(junior){
+    return `Eres un experto en selección de personal de la industria farmacéutica española y redacción de CVs orientados a ATS.
+Genera el CV completo, carta de presentación y gaps para un recién graduado que quiere entrar en farma.
+
+CANDIDATO: ${state.nombre} ${state.apellidos} | ${state.email} | ${state.telefono} | ${state.ciudad} | ${state.linkedin}
+ROL OBJETIVO: ${rol}
+MOTIVACIÓN: ${state.motivacion}
+CARRERA: ${state.carrera==="Otro"?state.otraCarrera:state.carrera} — ${state.universidad} (${state.anioFin})${state.notaMedia?" — Nota: "+state.notaMedia:""}
+${state.tieneTFG?`TFG/TFM: ${state.tituloTFG} — ${state.descripcionTFG}`:"Sin TFG indicado"}
+RASGOS: ${state.rasgos.join(", ")}
+ACTIVIDADES: ${state.actividades.join(", ")}
+DESCRIPCIÓN ACTIVIDADES: ${state.descripcionActividades}
+IDIOMAS: ${state.idiomas.map(i=>i.idioma+": "+i.nivel).join(", ")}
+${state.congresos?"CONGRESOS: "+state.congresos:""}
+${insights?`
+INSIGHTS REALES (${insights.fuente}):
+Skills más valoradas: ${insights.skillsCriticas.join(" | ")}
+Frase literal del hiring manager: "${insights.fraseLiteral}"
+Consejo para candidatos: ${insights.consejoEntrada}`:""}
+
+INSTRUCCIONES:
+1. Transforma rasgos de personalidad en competencias concretas de farma
+2. Transforma actividades en experiencias con valor para el sector
+3. Usa las skills críticas del hiring manager para este rol
+4. Sé honesto en los gaps, no inventes experiencia
+5. La carta debe usar lenguaje y criterios reales del sector
+6. Los bullets de experiencia deben empezar con verbo de acción
+
+Devuelve SOLO este JSON sin markdown ni explicaciones:
+{"resumenProfesional":"3-4 frases orientadas al rol destacando formación y rasgos diferenciales","experienciasFormativas":[{"titulo":"nombre actividad","institucion":"universidad o empresa","periodo":"fechas aproximadas","bullets":["competencia en clave farma","otro punto diferencial"]}],"competenciasClave":["hasta 10 competencias en lenguaje farma ATS"],"cartaPresentacion":"carta completa 3 párrafos separados por salto de línea: 1-motivación por el sector y rol, 2-qué aporta este perfil con lenguaje del sector, 3-cierre con llamada a la acción","gaps":[{"gap":"qué le falta","consejo":"acción concreta para compensarlo"}]}`;
+  } else {
+    return `Eres un experto en redacción de CVs para la industria farmacéutica española.
+Genera CV completo, carta de presentación y gaps para un profesional con experiencia.
+
+CANDIDATO: ${state.nombre} ${state.apellidos} | ${state.email} | ${state.telefono} | ${state.ciudad} | ${state.linkedin}
+ROL OBJETIVO: ${rol}
+RESUMEN BORRADOR: ${state.resumenProfesional}
+EXPERIENCIAS: ${state.experiencias.map((e,i)=>`${i+1}. ${e.cargo} en ${e.empresa} (${e.inicio}-${e.actual?"Presente":e.fin}): ${e.descripcion}. Logros: ${e.logros}`).join("\n")}
+FORMACIÓN: ${state.formaciones.map(f=>f.tipo+": "+f.titulo+" — "+f.institucion+" ("+f.anio+")").join(", ")}
+IDIOMAS: ${state.idiomas.map(i=>i.idioma+": "+i.nivel).join(", ")}
+COMPETENCIAS: ${state.competencias.join(", ")} ${state.otrasCompetencias}
+${state.publicaciones?"PUBLICACIONES: "+state.publicaciones:""}
+${state.congresos?"CONGRESOS: "+state.congresos:""}
+
+INSTRUCCIONES:
+1. Optimiza cada bullet con verbo de acción + resultado cuantificable si es posible
+2. Añade keywords ATS específicas del sector farma
+3. La carta debe orientarse específicamente al rol objetivo
+4. Los gaps deben ser accionables y concretos
+
+Devuelve SOLO este JSON sin markdown ni explicaciones:
+{"resumenProfesional":"3-4 frases con keywords ATS orientadas al rol","experiencias":[{"empresa":"nombre","cargo":"cargo con keywords","periodo":"inicio-fin","bullets":["logro con verbo acción + resultado","responsabilidad clave en lenguaje farma"]}],"formaciones":[{"titulo":"título","institucion":"institución","anio":"año","tipo":"tipo"}],"competenciasClave":["hasta 10 competencias en lenguaje farma"],"cartaPresentacion":"carta completa 3 párrafos separados por salto de línea orientada al rol objetivo","gaps":[{"gap":"qué le falta","consejo":"cómo compensarlo con acciones concretas"}]}`;
+  }
+}
+
+// ─── MODAL DOCUMENTO ─────────────────────────────────────────────────────────
+function openModal(tipo){
+  activeDocView = tipo;
+  buildDocModal();
+  document.getElementById("docModal").style.display="flex";
+}
+function closeModal(){ document.getElementById("docModal").style.display="none"; }
+function toggleDocView(){ activeDocView = activeDocView==="cv"?"carta":"cv"; buildDocModal(); }
+
+function buildDocModal(){
+  const r = generationResult;
+  const esCarta = activeDocView==="carta";
+  document.getElementById("modalTitle").textContent = esCarta ? "✉️ Carta de Presentación" : "📄 CV";
+  document.getElementById("modalSwitch").textContent = esCarta ? "← Ver CV" : "Ver Carta →";
+
+  const exps = isJunior() ? r.experienciasFormativas : r.experiencias;
+
+  let html = "";
+  if(!esCarta){
+    html = `
+    <h1 class="doc-h1">${esc(state.nombre)} ${esc(state.apellidos)}</h1>
+    <p class="doc-contact">${[state.email,state.telefono,state.ciudad,state.linkedin].filter(Boolean).map(esc).join(" · ")}</p>
+
+    <h2 class="doc-h2">Perfil Profesional</h2>
+    <div class="doc-summary">${esc(r.resumenProfesional)}</div>
+
+    <h2 class="doc-h2">${isJunior()?"Experiencia Formativa":"Experiencia Profesional"}</h2>
+    ${(exps||[]).map(e=>`
+      <div style="margin-bottom:10px;">
+        <div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
+          <div>
+            <div class="doc-exp-title">${esc(e.cargo||e.titulo)}</div>
+            <div class="doc-exp-co">${esc(e.empresa||e.institucion)}</div>
+          </div>
+          <div class="doc-exp-date">${esc(e.periodo)}</div>
+        </div>
+        <ul style="margin:3px 0 0 14px;padding:0;">
+          ${(e.bullets||[]).map(b=>`<li class="doc-bullet">${esc(b)}</li>`).join("")}
+        </ul>
+      </div>`).join("")}
+
+    <h2 class="doc-h2">Formación Académica</h2>
+    ${isJunior()?`
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;margin-bottom:6px;">
+      <div>
+        <strong>${esc(state.carrera==="Otro"?state.otraCarrera:state.carrera)}</strong>
+        <div class="doc-exp-co">${esc(state.universidad)}</div>
+        ${state.tieneTFG?`<div style="font-size:9pt;margin-top:2px;"><em>TFG/TFM: ${esc(state.tituloTFG)}</em></div>`:""}
+      </div>
+      <div class="doc-exp-date">Graduado/a · ${esc(state.anioFin)}</div>
+    </div>`
+    :(r.formaciones||[]).map(f=>`
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;margin-bottom:4px;">
+      <div><strong style="font-size:10pt;">${esc(f.titulo)}</strong><div class="doc-exp-co">${esc(f.institucion)}</div></div>
+      <div class="doc-exp-date">${esc(f.tipo)} · ${esc(f.anio)}</div>
+    </div>`).join("")}
+
+    <h2 class="doc-h2">Idiomas</h2>
+    <p style="font-size:9.5pt;margin:0 0 10px;">${state.idiomas.map(i=>esc(i.idioma)+": "+esc(i.nivel)).join(" · ")}</p>
+
+    <h2 class="doc-h2">Competencias Clave</h2>
+    <div>${(r.competenciasClave||[]).map(c=>`<span class="doc-competencia">${esc(c)}</span>`).join("")}</div>
+
+    <p class="doc-footer">Generado con la metodología +QuePíldoras · masquepildoraspodcast.com</p>
+    `;
+  } else {
+    html = `
+    <p style="color:#6b7280;font-size:10pt;margin:0 0 20px;">${esc(state.ciudad)}, ${new Date().toLocaleDateString("es-ES",{day:"numeric",month:"long",year:"numeric"})}</p>
+    <p style="font-weight:700;font-size:12pt;color:#0d1f4e;margin:0 0 6px;">Carta de Presentación</p>
+    <p style="margin:0 0 14px;">Estimado/a equipo de selección,</p>
+    ${(r.cartaPresentacion||"").split("\n").filter(p=>p.trim()).map(p=>`<p style="margin:0 0 12px;line-height:1.8;">${esc(p)}</p>`).join("")}
+    <div style="margin-top:24px;">
+      <p style="margin:0 0 4px;">Atentamente,</p>
+      <p style="font-weight:700;margin:0 0 2px;">${esc(state.nombre)} ${esc(state.apellidos)}</p>
+      <p style="color:#6b7280;font-size:10pt;margin:0;">${esc(state.email)}${state.telefono?" · "+esc(state.telefono):""}</p>
+    </div>
+    <p class="doc-footer">Generado con la metodología +QuePíldoras · masquepildoraspodcast.com</p>
+    `;
+  }
+  document.getElementById("docContent").innerHTML = html;
+}
+
+// ─── UTILS ────────────────────────────────────────────────────────────────────
+function esc(s){
+  if(s==null) return "";
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+render();
+</script>
+</body>
+</html>
