@@ -611,14 +611,26 @@ footer{background:var(--navy);padding:52px 56px 28px;}
           <span class="epbd">Disponible</span>
         </div>
       </div>
-    </div>
-
-    <span class="coming-label fia">Próximos episodios de la temporada</span>
-    <div class="epgrid">
-      <div class="epc fia">
-        <div class="epph"><span class="epph-num">05</span><span class="epph-label">Disponible el 1 Julio</span></div>
-        <div class="epb"><div class="epn">Ep. 05</div><div class="epg"></div><div class="epco">Próximamente</div><div class="epti">Una nueva historia desde dentro de la industria farmacéutica</div></div>
-        <div class="epf"><span class="epsoon">En camino</span><span class="epbd">T1</span></div>
+      <div class="epc feat fia">
+        <img src="images/ep05-cristina.jpg" alt="Cristina González Junco - 20 años en Medical Affairs: la verdad que nadie te cuenta" class="ephoto" loading="lazy" onclick="openEpisodeModal(5, 'https://youtu.be/49Q31WXeRC0')" style="cursor:pointer;">
+        <div class="epb">
+          <div class="epn">Ep. 05 · Disponible el 16 Julio</div>
+          <div class="epg">Cristina González Junco</div>
+          <div class="epco">Medical Affairs Director</div>
+          <div class="ep-hook">
+            <p>Más de dos décadas en oncología y hematología. Cristina desvela cómo ha evolucionado Medical Affairs de soporte a función estratégica y qué necesitas realmente para llegar a liderarlo.</p>
+            <div class="ep-hook-tags">
+              <span class="ep-tag">Medical Affairs</span>
+              <span class="ep-tag">Liderazgo médico</span>
+              <span class="ep-tag">Oncología</span>
+              <span class="ep-tag">Carrera en pharma</span>
+            </div>
+          </div>
+        </div>
+        <div class="epf">
+          <a href="javascript:void(0)" onclick="openEpisodeModal(5, 'https://youtu.be/49Q31WXeRC0')" class="eppl">▶ Ver en YouTube →</a>
+          <span class="epbd">16 Julio</span>
+        </div>
       </div>
     </div>
 
@@ -1022,8 +1034,83 @@ function openEpisodeModal(ep, videoUrl) {
       <p><strong>Pablo:</strong> Esa es la que más he sufrido, pero ha estado bien.</p>
       <p><strong>Jaime:</strong> Pues muchas gracias, Pablo, y gracias a todos vosotros que nos estáis escuchando o viendo. Si queréis entrar a la industria farmacéutica o simplemente os interesa este sector, este podcast es para vosotros. Os dejamos nuestras plataformas en la cajita de descripción aquí abajo. Somos Jaime Manzanera y Miren Alonso, y nos vemos en el próximo episodio, porque detrás de cada tratamiento siempre hay mucho más que píldoras. ¡Adiós!</p>
     `;
+  } else if (ep === 5) {
+    transcriptionContent = `
+      <p><strong>Jaime:</strong> Hola, Jaime, ¿qué tal hoy? ¿Cómo estás, Miren?</p>
+      <p><strong>Miren:</strong> Pues mira, aquí en Madrid está un poco nublado, pero estoy contento. Tengo un perfil hoy curioso, porque en esto del marketing a veces es un departamento con el que nos peleamos. Hoy tenemos un perfil muy interesante: industria farmacéutica, larga trayectoria en el sector casi siempre en departamento médico. Me parece que vamos a aprender un montón: posiciones de liderazgo, tacto con las personas... Va a estar interesante la entrevista.</p>
+      <p><strong>Jaime:</strong> En ese sentido, queremos hablar del sponsor de nuestro podcast, Bifarma Institute, que es el Centro Educativo para formaciones de industria farmacéutica. Para aquellos que estéis interesados en el sector o bien queráis entrar o desarrollar vuestra carrera. Así que nada, vamos a empezar.</p>
+      <p><strong>Miren:</strong> Pues nada, tenemos con nosotros a Cristina González Junco, Medical Affairs Lead y también directora médica, con un montón de experiencia. ¿Qué tal estás? Bienvenida.</p>
+      <p><strong>Cristina:</strong> Muchas gracias. Un placer estar aquí con vosotros y reencontrarnos después de mucho tiempo.</p>
+
+      <p><strong>Jaime:</strong> Como decíamos, has pasado por muchísimos laboratorios y tienes una larga trayectoria en departamento médico. Pero la primera pregunta que tenemos es: ¿tú lo elegiste o la vida te llevó? ¿Acabaste en el departamento médico porque siempre lo habías deseado o fue una cosa que entraste y ya te has dejado llevar?</p>
+      <p><strong>Cristina:</strong> Bueno, fue un poco de mezcla. Yo empecé como becaria en marketing y continué en marketing cuando me ofrecieron la posición de Medical Affairs. Poco a poco fui viendo que era aquello y, cómo me desarrollaba, me di cuenta de que realmente era la posición que más encajaba en mi forma de entender la ciencia, en mi forma de entender el trabajo desde la industria farmacéutica con los médicos y con los pacientes. La verdad es que me ha ido gustando más según he ido conociendo y trabajando más, y es la posición en la que me siento más cómoda.</p>
+      <p><strong>Jaime:</strong> ¿Tú crees que hay perfil para el departamento médico o no?</p>
+      <p><strong>Cristina:</strong> Yo creo que cualquier persona puede estar en cualquier departamento mientras le guste, mientras encaje con su forma de entender el trabajo y quiera desarrollarse y quiera aprender. Creo que es una cuestión de querer, de actitud.</p>
+
+      <p><strong>Jaime:</strong> Después de tantos años, llevas como dos décadas dedicándote a la industria farmacéutica. ¿Cómo dirías que ha evolucionado tu rol? ¿Algún cambio significativo que hayas visto en Medical Affairs?</p>
+      <p><strong>Cristina:</strong> Pues yo creo que el rol de Medical Affairs ha cambiado bastante en estos más de 20 años. Inicialmente era probablemente un rol más enfocado a soporte a ventas y soporte a marketing. Ahora es un rol mucho más estratégico, científico y estratégico. Se trata de tener no solamente la capacidad de comunicar los datos científicos, sino la capacidad de anticiparte a lo que va a llegar al mercado, la capacidad de analizar, de tener una relación muy sólida con los líderes de opinión y con los profesionales sanitarios. En ese sentido, ahora es un partner estratégico de otros departamentos, como el comercial o el de acceso, con el cual se colabora muchísimo.</p>
+
+      <p><strong>Jaime:</strong> Cuando tú le explicas a tu familia lo que haces, ¿qué les cuentas?</p>
+      <p><strong>Cristina:</strong> Al principio yo creo que daba mucho detalle, mucha explicación técnica. Ahora trato de hacerlo más sencillo: desde Medical Affairs tratamos de dar las mejores herramientas y el mejor conocimiento a los clínicos para que hagan un uso del fármaco en el paciente adecuado y de la manera que le va a proporcionar mayor beneficio. Algo así.</p>
+      <p><strong>Jaime:</strong> ¿Y ellos piensan más que te pasas el día investigando medicamentos o en reuniones infinitas?</p>
+      <p><strong>Cristina:</strong> Yo creo que no lo tienen claro del todo. La realidad es que hay muchas reuniones, esa es la realidad. Hay una parte pequeña de investigación, pero la hay, y una parte importante de traducir los datos, la evidencia en algo tangible para que el clínico realmente entienda cuál es el valor de tu fármaco. Y no solo el clínico: hablamos de farmacéuticos, de gestores, para que todos esos colectivos puedan entender cuál es el valor del fármaco y la mejor forma de usarlo.</p>
+
+      <p><strong>Jaime:</strong> La figura del MSL, ¿es igual en oncología que en hematología? Y segunda, ¿qué tiene que tener un MSL para ser excelente?</p>
+      <p><strong>Cristina:</strong> En oncología y hematología, en mi experiencia, el trabajo es muy parecido. ¿Qué tiene que tener un MSL excelente? No solo ser capaz de comunicar, primero de entender y conocer los datos y segundo de comunicarlos al clínico, sino también tener esa capacidad científico-estratégica, esa capacidad de entender el mercado y el entorno, de ver cuáles son las necesidades del médico y del paciente. Porque en el centro de todo lo que hacemos tiene que estar el paciente, siempre. Ser capaz de trasladar los insights que detectas en el campo a la compañía para que tengan un impacto estratégico. No solo es el rol de "voy al médico y le comunico mis datos", sino tener esa interacción y discusión científica de valor.</p>
+
+      <p><strong>Jaime:</strong> ¿Cuál ha sido el cambio científico que más te ha impactado en oncohematología en estos años?</p>
+      <p><strong>Cristina:</strong> En los últimos 10-15 años ha habido una revolución en cuanto a tratamientos, manejo del paciente y diagnóstico. Fundamentado en un mayor conocimiento de la biología tumoral que ha permitido tener tratamientos personalizados para los pacientes y para los distintos tipos de tumores. Ejemplos: la inmunoterapia y las terapias dirigidas. Esto ha cambiado el pronóstico de varios tumores, el manejo de los pacientes y lo que ellos pueden esperar. Incluso ha cambiado la calidad de vida de los pacientes, a mejor, por supuesto.</p>
+
+      <p><strong>Jaime:</strong> Dentro de todo lo que no está escrito en la job description, ¿cuál dirías es la parte más complicada de tu rol en la toma de decisiones?</p>
+      <p><strong>Cristina:</strong> Hay como dos puntos que son difíciles. Uno es la toma de decisiones en entornos muy cambiantes y con bastante incertidumbre, que están evolucionando a una rapidez increíble. Y la otra es cuando tienes que tomar decisiones relacionadas con personas. Eso también es muy difícil.</p>
+
+      <p><strong>Jaime:</strong> Tú desde tu posición, ¿cómo dirías que impacta tu trabajo en los pacientes?</p>
+      <p><strong>Cristina:</strong> Yo diría que no estamos tan alejados de los pacientes. Aunque no los vemos directamente, sí hablamos mucho con los médicos. Conocemos las necesidades de los médicos pero también las de los pacientes. También se trabaja con asociaciones de pacientes, así que sí conocemos sus necesidades. Si somos capaces de trasladar el valor que tiene el fármaco para que se use en el perfil de paciente adecuado y de la forma que produzca mayor beneficio, ya estamos teniendo un impacto en los pacientes.</p>
+
+      <p><strong>Jaime:</strong> ¿Qué consejo te darías a ti misma, a tu yo del primer día en Medical Affairs?</p>
+      <p><strong>Cristina:</strong> Le diría que confíe en sí misma, que trate de aprender, que no tenga miedo a dar sus opiniones, que todas las opiniones tienen un valor importante, y que se lance.</p>
+      <p><strong>Miren:</strong> Es muy importante ese punto. Muchas veces como más juniors tenemos miedo de dar nuestra opinión o de sugerir cambios. Os tenéis que atrever a dar vuestras opiniones, a plantear vuestras ideas. Muchas veces son ideas innovadoras. Y también aprender de compañeros que llevan mucho tiempo. Las dos cosas.</p>
+
+      <p><strong>Jaime:</strong> ¿Qué mito sobre el departamento médico te sigue sorprendiendo que la gente crea?</p>
+      <p><strong>Cristina:</strong> Uno de los mitos es que en el departamento médico somos muy serios y aburridos, o menos activos. Yo tengo que decir que esto no es así. Hay todo tipo de perfiles, no somos tan serios, podemos ser incluso divertidos. Yo creo que no tiene que ver con departamentos, que tiene que ver con la personalidad de cada uno.</p>
+
+      <p><strong>Miren:</strong> ¿Cuál dirías que es la función más estratégica de Medical Affairs?</p>
+      <p><strong>Cristina:</strong> Ser capaz de entender el mercado y de anticiparse a lo que está llegando próximamente. Entender al clínico y las necesidades que tiene, ser capaz de proponer actividades o incluso estrategias para abordar lo que viene en un futuro próximo. Lo más importante: ser capaz de llevar insights del campo a la oficina.</p>
+
+      <p><strong>Miren:</strong> ¿Cómo se desarrolla esa habilidad estratégica?</p>
+      <p><strong>Cristina:</strong> Hay tres pilares para el aprendizaje. Hay un pilar más teórico, más formativo, lo que puedes estudiar. Hay otro pilar que es observar y aprender de los demás, preguntar y tratar de entender con lo que otras personas están haciendo. Y el tercero, que es el más importante, es ponerte en situación: ponerte a hacerlo, ponerte a desarrollar la estrategia, a escuchar a los clínicos y preguntarles, a anticipar lo que va a ocurrir y pensar cuál es la estrategia y cuáles son las actividades orientadas al objetivo.</p>
+      <p><strong>Jaime:</strong> Y además, si haces el mismo plan para el lanzamiento de cualquier producto 3 años después, seguro que cambiarías cosas.</p>
+      <p><strong>Cristina:</strong> Seguro. Entre otras cosas porque ocurren cosas en el mercado, algunas las has anticipado, otras no. Hay cosas que funcionan fenomenal de las cuales hay que quedarse, y hay cosas que no funcionan de las cuales tienes que aprender e implementarlo en los siguientes años.</p>
+
+      <p><strong>Jaime:</strong> ¿Qué es lo más complejo cuando trabajas con personas?</p>
+      <p><strong>Cristina:</strong> Lo más complejo es ser capaz de alinear distintas perspectivas, distintas formas de ver las cosas, distintas formas de trabajar, diferentes caracteres. Ser capaz de conseguir que cada una de las personas den lo mejor de sí mismos y a la vez aprendan de los demás, y todo ello se integre en una línea de trabajo estratégica. Y en el manejo de personas nunca se aprende del todo, siempre hay muchísimo espacio para aprender.</p>
+
+      <h3 style="margin:30px 0 15px; color:#0d1f4e;">💊 La Dosis Concentrada</h3>
+      <p><em>Preguntas rápidas, respuestas sin filtro.</em></p>
+      <p><strong>Tres valores que han guiado tu carrera:</strong> Integridad, comunicación y transparencia.</p>
+      <p><strong>Una palabra honesta para definir el sector farmacéutico:</strong> Ciencia y paciente.</p>
+      <p><strong>Un líder o referente del sector que admires:</strong> Maribi Mateos, especialista en mieloma múltiple.</p>
+      <p><strong>Si pudieras inventar un medicamento para la sociedad, ¿qué problema intentarías curar?</strong> Me encantaría curar todo tipo de tumores, pero también las enfermedades mentales.</p>
+      <p><strong>Si mañana dejaras la industria farmacéutica, ¿en qué otro sector trabajarías?</strong> En algo tipo filosofía.</p>
+      <p><strong>Tres habilidades imprescindibles para liderar Medical Affairs hoy:</strong> Visión estratégica, comunicación y anticipación.</p>
+      <p><strong>Un don que transformaría por completo tu trabajo:</strong> La capacidad de ver el futuro.</p>
+      <p><strong>¿Café antes de hablar con farmacovigilancia o tila antes de entrar a reunión con ventas?</strong> Mucha empatía con los dos y un café con cada uno.</p>
+      <p><strong>¿PubMed o ChatGPT?</strong> La mezcla de los dos.</p>
+
+      <h3 style="margin:30px 0 15px; color:#0d1f4e;">Consejos finales</h3>
+      <p><strong>Jaime:</strong> ¿Qué consejo le darías a quien quiere entrar en Medical Affairs?</p>
+      <p><strong>Cristina:</strong> Que confíen en ellos mismos, que investiguen, que pregunten. Medical Affairs es un departamento que aporta valor a los clínicos y a los pacientes, que les permite tener esa visión estratégica e implementarla y conocer a expertos muy interesantes. Es un buen departamento para trabajar en él.</p>
+      <p><strong>Jaime:</strong> ¿Y un error frecuente de estudiantes o recién titulados que quieren entrar?</p>
+      <p><strong>Cristina:</strong> Pensar que solamente el conocimiento y la comunicación científica es suficiente. Aquí hay mucho más que todo eso.</p>
+      <p><strong>Jaime:</strong> ¿Cómo ves el futuro de oncohematología de aquí a 10 años?</p>
+      <p><strong>Cristina:</strong> Pienso que va hacia una medicina mucho más individualizada. Va a ser superimportante integrar todas las nuevas tecnologías y especialmente la inteligencia artificial y el análisis de datos. Sigue siendo fundamental el trabajo crossfuncional, la visión estratégica, la capacidad de anticipación, el tener una buena relación y engagement con los clínicos y profesionales sanitarios.</p>
+
+      <h3 style="margin:30px 0 15px; color:#0d1f4e;">Mensaje final</h3>
+      <p><strong>Cristina:</strong> Me gustaría que se quedaran con la idea de que Medical Affairs es un departamento científico, pero también estratégico, muy conectado con el paciente, muy conectado con los clínicos y muy dinámico. Donde se puede aprender muchísimo y realmente es un departamento bonito para trabajar en él.</p>
+      <p><strong>Jaime:</strong> Ha sido un placer estar aquí con vosotros hoy. Nos lo hemos pasado genial escuchando a Cristina. Esperamos que os haya gustado tanto como nosotros esta conversación. Si os ha gustado, seguidnos en las redes. Habrá más episodios como este. Ya sabéis que detrás de cada tratamiento siempre hay mucho más que píldoras. ¡Hasta luego!</p>
+    `;
   }
-  
+
   content.innerHTML = `
     <div style="margin-bottom:30px;">
       <iframe width="100%" height="500" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius:8px;"></iframe>
@@ -1057,6 +1144,368 @@ window.addEventListener('scroll',()=>{
   document.getElementById('nav').style.boxShadow=window.scrollY>40?'0 4px 32px rgba(13,31,78,0.08)':'none';
 });
 </script>
+<style id="mentoria-styles">
+.ment-sec{background:linear-gradient(180deg,var(--off) 0%,var(--white) 100%);}
+.ment-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);border-radius:24px;padding:56px 52px;position:relative;overflow:hidden;margin-bottom:56px;}
+.ment-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:rgba(200,222,255,0.06);}
+.ment-hero::after{content:'';position:absolute;bottom:-60px;left:40%;width:240px;height:240px;border-radius:50%;background:rgba(200,222,255,0.04);}
+.ment-hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.ment-hero-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;display:block;}
+.ment-hero-title{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,42px);font-weight:900;color:#fff;line-height:1.1;letter-spacing:-.5px;margin-bottom:14px;}
+.ment-hero-sub{font-size:15px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:28px;}
+.ment-hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--sky);color:var(--navy);padding:14px 26px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;}
+.ment-hero-cta:hover{background:#fff;transform:translateY(-2px);}
+.ment-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.ment-stat{background:rgba(255,255,255,.07);border-radius:14px;padding:20px 16px;text-align:center;border:1px solid rgba(255,255,255,.08);}
+.ment-stat-n{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#fff;display:block;line-height:1;}
+.ment-stat-l{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;display:block;margin-top:5px;}
+.ment-for{margin-bottom:56px;}
+.ment-for-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;}
+.ment-for-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 20px;text-align:center;transition:all .25s;}
+.ment-for-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,31,78,0.08);border-color:var(--accent);}
+.ment-for-icon{font-size:28px;margin-bottom:10px;display:block;}
+.ment-for-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.ment-for-desc{font-size:12px;color:var(--muted);line-height:1.5;}
+.ment-phases{margin-bottom:56px;}
+.ment-phases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px;}
+.ment-phase{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:22px 18px;position:relative;transition:all .25s;}
+.ment-phase:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(13,31,78,0.07);}
+.ment-phase-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--navy);opacity:.06;position:absolute;top:12px;right:16px;line-height:1;}
+.ment-phase-icon{font-size:22px;margin-bottom:10px;display:block;}
+.ment-phase-tag{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block;}
+.ment-phase-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.ment-phase-desc{font-size:12px;color:var(--muted);line-height:1.55;}
+.ment-packs{margin-bottom:56px;}
+.ment-packs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;}
+.ment-pack{background:var(--white);border:1.5px solid var(--border);border-radius:20px;padding:28px 22px;display:flex;flex-direction:column;transition:all .25s;position:relative;}
+.ment-pack:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(13,31,78,0.1);}
+.ment-pack.featured{border-color:var(--accent);background:linear-gradient(180deg,var(--sky4) 0%,var(--white) 100%);}
+.ment-pack-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap;}
+.ment-pack-name{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.ment-pack-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:var(--navy);margin-bottom:4px;}
+.ment-pack-profile{font-size:12px;color:var(--muted);margin-bottom:18px;font-style:italic;line-height:1.4;}
+.ment-pack-price{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:var(--navy);margin-bottom:4px;line-height:1;}
+.ment-pack-price span{font-size:13px;font-weight:400;color:var(--muted);font-family:'DM Sans',sans-serif;}
+.ment-pack-note{font-size:11px;color:var(--accent);font-weight:600;margin-bottom:20px;}
+.ment-pack-divider{height:1px;background:var(--border);margin-bottom:16px;}
+.ment-pack-features{list-style:none;padding:0;margin:0 0 24px;flex:1;}
+.ment-pack-features li{font-size:12px;color:var(--muted);padding:5px 0;border-bottom:1px solid rgba(13,31,78,0.04);display:flex;align-items:flex-start;gap:7px;line-height:1.45;}
+.ment-pack-features li::before{content:'✓';color:var(--accent);font-weight:700;font-size:11px;flex-shrink:0;margin-top:1px;}
+.ment-pack-cta{display:block;text-align:center;padding:11px 16px;border-radius:10px;font-size:13px;font-weight:700;text-decoration:none;transition:all .2s;margin-top:auto;}
+.ment-pack-cta-primary{background:var(--navy);color:#fff;}
+.ment-pack-cta-primary:hover{background:var(--accent);}
+.ment-pack-cta-secondary{background:rgba(13,31,78,.07);color:var(--navy);border:1.5px solid rgba(13,31,78,.12);}
+.ment-pack-cta-secondary:hover{background:rgba(13,31,78,.12);}
+.ment-pilot{background:linear-gradient(135deg,var(--sky2),var(--sky3));border-radius:20px;padding:36px 40px;border:1px solid rgba(45,111,212,.15);display:flex;align-items:center;gap:36px;margin-top:28px;}
+.ment-pilot-icon{font-size:40px;flex-shrink:0;}
+.ment-pilot-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:block;}
+.ment-pilot-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--navy);margin-bottom:6px;}
+.ment-pilot-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+.ment-tools{margin-bottom:56px;}
+.ment-tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px;}
+.ment-tool{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .25s;}
+.ment-tool:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,31,78,0.08);border-color:var(--accent);}
+.ment-tool-top{padding:28px 24px 20px;border-bottom:1px solid var(--border);}
+.ment-tool-icon{font-size:28px;margin-bottom:10px;display:block;}
+.ment-tool-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:5px;}
+.ment-tool-desc{font-size:13px;color:var(--muted);line-height:1.55;}
+.ment-tool-bottom{padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+.ment-tool-tag{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--accent);}
+.ment-tool-lock{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:4px;}
+@media(max-width:960px){
+  .ment-hero-inner{grid-template-columns:1fr;}
+  .ment-for-grid{grid-template-columns:1fr 1fr;}
+  .ment-phases-grid{grid-template-columns:1fr 1fr;}
+  .ment-packs-grid{grid-template-columns:1fr 1fr;}
+  .ment-tools-grid{grid-template-columns:1fr;}
+  .ment-pilot{flex-direction:column;text-align:center;}
+}
+@media(max-width:580px){
+  .ment-for-grid{grid-template-columns:1fr;}
+  .ment-packs-grid{grid-template-columns:1fr;}
+  .ment-hero{padding:36px 24px;}
+}
+</style>
+
+<!-- SECCIÓN MENTORÍA -->
+<section class="ment-sec" id="mentoria">
+  <div class="si">
+    <span class="ey">Mentoría</span>
+    <h2 class="st">Tu carrera en la industria<br>farmacéutica, con quien ya está dentro</h2>
+    <p class="sl2">Un programa estructurado y personalizado para entrar o crecer en el sector farmacéutico. Con Jaime Manzanera y Miren Alonso.</p>
+
+    <!-- Hero -->
+    <div class="ment-hero fia">
+      <div class="ment-hero-inner">
+        <div>
+          <span class="ment-hero-label">Por Jaime Manzanera y Miren Alonso</span>
+          <h3 class="ment-hero-title">No es un curso.<br>Es alguien que ya<br>está donde tú quieres ir.</h3>
+          <p class="ment-hero-sub">17 años de experiencia nacional e internacional en la industria. Experiencia real como mentores. Y una red de profesionales activos dispuestos a abrirte puertas.</p>
+          <a href="mailto:podcast@masquepildoras.com?subject=Solicitud%20Discovery%20Call%20Mentoría" class="ment-hero-cta">Solicitar Discovery Call gratuita →</a>
+        </div>
+        <div class="ment-stats">
+          <div class="ment-stat">
+            <span class="ment-stat-n">17</span>
+            <span class="ment-stat-l">Años en el sector</span>
+          </div>
+          <div class="ment-stat">
+            <span class="ment-stat-n">4</span>
+            <span class="ment-stat-l">Paquetes disponibles</span>
+          </div>
+          <div class="ment-stat">
+            <span class="ment-stat-n">30'</span>
+            <span class="ment-stat-l">Discovery gratuita</span>
+          </div>
+          <div class="ment-stat">
+            <span class="ment-stat-n">MSL</span>
+            <span class="ment-stat-l">Ensayos · Ventas · MA</span>
+          </div>
+          <div class="ment-stat">
+            <span class="ment-stat-n">CV</span>
+            <span class="ment-stat-l">+ Carta + Plan carrera</span>
+          </div>
+          <div class="ment-stat">
+            <span class="ment-stat-n">Red</span>
+            <span class="ment-stat-l">Real del sector</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Para quién -->
+    <div class="ment-for fia">
+      <span class="ey">¿Para quién?</span>
+      <h3 class="st" style="font-size:clamp(22px,2.5vw,34px);">Dos perfiles, un mismo objetivo</h3>
+      <div class="ment-for-grid">
+        <div class="ment-for-card">
+          <span class="ment-for-icon">🎓</span>
+          <div class="ment-for-title">Recién graduado/a</div>
+          <div class="ment-for-desc">Farmacia, Biología, Química, Biotecnología... Quieres entrar al sector y no sabes por dónde empezar.</div>
+        </div>
+        <div class="ment-for-card">
+          <span class="ment-for-icon">🔄</span>
+          <div class="ment-for-title">Cambio de sector</div>
+          <div class="ment-for-desc">Vienes de otro ámbito y quieres reconvertirte a la industria farmacéutica con un plan sólido.</div>
+        </div>
+        <div class="ment-for-card">
+          <span class="ment-for-icon">📈</span>
+          <div class="ment-for-title">Crecimiento interno</div>
+          <div class="ment-for-desc">Ya estás en el sector pero quieres dar el salto a un rol de mayor responsabilidad o a otro departamento.</div>
+        </div>
+        <div class="ment-for-card">
+          <span class="ment-for-icon">🌍</span>
+          <div class="ment-for-title">Proyección internacional</div>
+          <div class="ment-for-desc">Quieres acceder a posiciones en multinacionales o con alcance europeo o global.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fases del programa -->
+    <div class="ment-phases fia">
+      <span class="ey">El programa</span>
+      <h3 class="st" style="font-size:clamp(22px,2.5vw,34px);">Un proceso estructurado,<br>no una conversación suelta</h3>
+      <div class="ment-phases-grid">
+        <div class="ment-phase">
+          <span class="ment-phase-num">1</span>
+          <span class="ment-phase-icon">☕</span>
+          <span class="ment-phase-tag">Sesión 1 · Gratuita</span>
+          <div class="ment-phase-title">Discovery Call</div>
+          <div class="ment-phase-desc">30 minutos sin compromiso. Evaluamos el fit y te explicamos el programa.</div>
+        </div>
+        <div class="ment-phase">
+          <span class="ment-phase-num">2</span>
+          <span class="ment-phase-icon">🔍</span>
+          <span class="ment-phase-tag">Sesión 2</span>
+          <div class="ment-phase-title">Diagnóstico de perfil</div>
+          <div class="ment-phase-desc">Entrevista profunda. Historia profesional, motivaciones, objetivos y gaps reales.</div>
+        </div>
+        <div class="ment-phase">
+          <span class="ment-phase-num">3</span>
+          <span class="ment-phase-icon">📄</span>
+          <span class="ment-phase-tag">Entregable</span>
+          <div class="ment-phase-title">CV + Carta optimizados</div>
+          <div class="ment-phase-desc">Reescritos con lenguaje del sector y keywords ATS. Orientados al rol objetivo.</div>
+        </div>
+        <div class="ment-phase">
+          <span class="ment-phase-num">4</span>
+          <span class="ment-phase-icon">🗺️</span>
+          <span class="ment-phase-tag">Entregable</span>
+          <div class="ment-phase-title">Plan de carrera</div>
+          <div class="ment-phase-desc">Hitos a 30, 90 días, 6 y 12 meses. Concreto, medible y con fechas reales.</div>
+        </div>
+        <div class="ment-phase">
+          <span class="ment-phase-num">5</span>
+          <span class="ment-phase-icon">🎤</span>
+          <span class="ment-phase-tag">Sesión 3</span>
+          <div class="ment-phase-title">Prep de entrevistas</div>
+          <div class="ment-phase-desc">Simulacro real con feedback detallado. Preguntas frecuentes en farma.</div>
+        </div>
+        <div class="ment-phase">
+          <span class="ment-phase-num">6</span>
+          <span class="ment-phase-icon">📊</span>
+          <span class="ment-phase-tag">Seguimiento</span>
+          <div class="ment-phase-title">Acompañamiento activo</div>
+          <div class="ment-phase-desc">2 sesiones de check-in mientras el proceso está activo. No te dejamos solo/a.</div>
+        </div>
+        <div class="ment-phase">
+          <span class="ment-phase-num">7</span>
+          <span class="ment-phase-icon">🔗</span>
+          <span class="ment-phase-tag">LinkedIn</span>
+          <div class="ment-phase-title">Audit de LinkedIn</div>
+          <div class="ment-phase-desc">Optimización completa para que los recruiters del sector te encuentren.</div>
+        </div>
+        <div class="ment-phase" style="border-color:rgba(201,168,76,0.3);background:rgba(201,168,76,0.04);">
+          <span class="ment-phase-num">+</span>
+          <span class="ment-phase-icon">⭐</span>
+          <span class="ment-phase-tag" style="color:var(--gold);">Plus exclusivo</span>
+          <div class="ment-phase-title">Reunión con un manager</div>
+          <div class="ment-phase-desc">Acceso real a alguien que trabaja en el rol que buscas, a través de la red +QuePíldoras.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paquetes -->
+    <div class="ment-packs fia">
+      <span class="ey">Inversión</span>
+      <h3 class="st" style="font-size:clamp(22px,2.5vw,34px);">Elige tu paquete</h3>
+      <div class="ment-packs-grid">
+
+        <!-- Esencial -->
+        <div class="ment-pack">
+          <div class="ment-pack-name">Paquete 1</div>
+          <div class="ment-pack-title">Esencial</div>
+          <div class="ment-pack-profile">Recién graduado/a · Primera vez en farma</div>
+          <div class="ment-pack-price">Desde 490€ <span>/ único pago</span></div>
+          <div class="ment-pack-note">Sin entrevista personal</div>
+          <div class="ment-pack-divider"></div>
+          <ul class="ment-pack-features">
+            <li>Discovery Call gratuita (30 min)</li>
+            <li>Diagnóstico de perfil</li>
+            <li>CV optimizado para ATS</li>
+            <li>Carta de presentación</li>
+            <li>Plan de carrera a 12 meses</li>
+            <li>Audit de LinkedIn</li>
+          </ul>
+          <a href="mailto:podcast@masquepildoras.com?subject=Paquete%20Esencial%20-%20Mentoría" class="ment-pack-cta ment-pack-cta-secondary">Empezar →</a>
+        </div>
+
+        <!-- Completo -->
+        <div class="ment-pack featured">
+          <div class="ment-pack-badge">Más elegido</div>
+          <div class="ment-pack-name">Paquete 2</div>
+          <div class="ment-pack-title">Completo</div>
+          <div class="ment-pack-profile">Perfil junior o reconversión profesional</div>
+          <div class="ment-pack-price">790€ <span>/ único pago</span></div>
+          <div class="ment-pack-note">Con entrevista personal incluida</div>
+          <div class="ment-pack-divider"></div>
+          <ul class="ment-pack-features">
+            <li>Todo el Paquete Esencial</li>
+            <li>Sesión de preparación de entrevistas</li>
+            <li>Simulacro real con feedback escrito</li>
+            <li>2 sesiones de seguimiento activo</li>
+          </ul>
+          <a href="mailto:podcast@masquepildoras.com?subject=Paquete%20Completo%20-%20Mentoría" class="ment-pack-cta ment-pack-cta-primary">El más elegido →</a>
+        </div>
+
+        <!-- Senior -->
+        <div class="ment-pack">
+          <div class="ment-pack-name">Paquete 3</div>
+          <div class="ment-pack-title">Senior</div>
+          <div class="ment-pack-profile">Profesional con experiencia · Cambio de rol</div>
+          <div class="ment-pack-price">Consultar</div>
+          <div class="ment-pack-note">2 entrevistas personales incluidas</div>
+          <div class="ment-pack-divider"></div>
+          <ul class="ment-pack-features">
+            <li>Todo el Paquete Completo</li>
+            <li>Segunda sesión de entrevista profunda</li>
+            <li>Estrategia de posicionamiento senior</li>
+            <li>Acceso a red de contactos del sector</li>
+          </ul>
+          <a href="mailto:podcast@masquepildoras.com?subject=Paquete%20Senior%20-%20Mentoría" class="ment-pack-cta ment-pack-cta-secondary">Consultar →</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="ment-pack" style="border-color:rgba(201,168,76,0.3);">
+          <div class="ment-pack-name" style="color:var(--gold);">Paquete 4</div>
+          <div class="ment-pack-title">Premium</div>
+          <div class="ment-pack-profile">Acceso completo · Red +QuePíldoras</div>
+          <div class="ment-pack-price">Consultar</div>
+          <div class="ment-pack-note" style="color:var(--gold);">Incluye el Plus Exclusivo ⭐</div>
+          <div class="ment-pack-divider"></div>
+          <ul class="ment-pack-features">
+            <li>Todo el Paquete Senior</li>
+            <li>Reunión con un manager real del sector</li>
+            <li>Conexión directa en LinkedIn</li>
+            <li>Prioridad en próximas convocatorias</li>
+          </ul>
+          <a href="mailto:podcast@masquepildoras.com?subject=Paquete%20Premium%20-%20Mentoría" class="ment-pack-cta" style="background:rgba(201,168,76,0.1);color:var(--gold);border:1.5px solid rgba(201,168,76,0.3);">Acceso total →</a>
+        </div>
+      </div>
+
+      <!-- Piloto -->
+      <div class="ment-pilot fia">
+        <span class="ment-pilot-icon">🧪</span>
+        <div>
+          <span class="ment-pilot-label">Programa piloto</span>
+          <div class="ment-pilot-title">Primera mentee — Bonificación especial</div>
+          <div class="ment-pilot-desc">La primera participante accede a un <strong>50% de descuento</strong> a cambio de su participación como caso de estudio: una breve entrevista para el podcast compartiendo su experiencia. Visibilidad real en la comunidad de +QuePíldoras.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Herramientas (solo visible para mentees) -->
+    <div class="ment-tools fia">
+      <span class="ey">Herramientas incluidas</span>
+      <h3 class="st" style="font-size:clamp(22px,2.5vw,34px);">Tecnología que trabaja<br>por ti antes de cada sesión</h3>
+      <div class="ment-tools-grid">
+        <div class="ment-tool">
+          <div class="ment-tool-top">
+            <span class="ment-tool-icon">📋</span>
+            <div class="ment-tool-title">Formulario de diagnóstico</div>
+            <div class="ment-tool-desc">Rellénalo antes de la primera sesión. Jaime y Miren llegan ya contextualizados, sin perder tiempo en preguntas básicas.</div>
+          </div>
+          <div class="ment-tool-bottom">
+            <span class="ment-tool-tag">Acceso tras confirmar mentoría</span>
+            <span class="ment-tool-lock">🔒 Privado</span>
+          </div>
+        </div>
+        <div class="ment-tool">
+          <div class="ment-tool-top">
+            <span class="ment-tool-icon">✨</span>
+            <div class="ment-tool-title">Constructor de CV con IA</div>
+            <div class="ment-tool-desc">Genera tu CV, carta de presentación y análisis de gaps con el lenguaje real del sector. Entrenado con las palabras de los entrevistados del podcast.</div>
+          </div>
+          <div class="ment-tool-bottom">
+            <span class="ment-tool-tag">Acceso tras sesión de diagnóstico</span>
+            <span class="ment-tool-lock">🔒 Privado</span>
+          </div>
+        </div>
+        <div class="ment-tool">
+          <div class="ment-tool-top">
+            <span class="ment-tool-icon">🗺️</span>
+            <div class="ment-tool-title">Plan de carrera interactivo</div>
+            <div class="ment-tool-desc">Define tus hitos a 30, 90 días, 6 y 12 meses. Tú lo construyes, Jaime y Miren dan feedback en la siguiente sesión.</div>
+          </div>
+          <div class="ment-tool-bottom">
+            <span class="ment-tool-tag">Acceso tras sesión de diagnóstico</span>
+            <span class="ment-tool-lock">🔒 Privado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA final -->
+    <div class="ctac fia" style="text-align:center;">
+      <div class="ctal">¿Hablamos?</div>
+      <h3 class="ctah" style="text-align:center;margin:0 auto 14px;max-width:500px;">Reserva tu Discovery Call<br>gratuita — 30 minutos</h3>
+      <p class="ctap" style="text-align:center;margin:0 auto 28px;max-width:420px;">Sin compromiso. Te explicamos el programa, valoramos juntos si tiene sentido y resolvemos todas tus dudas.</p>
+      <a href="mailto:podcast@masquepildoras.com?subject=Solicitud%20Discovery%20Call%20Mentoría" class="ctabtn" style="margin:0 auto;">
+        podcast@masquepildoras.com →
+      </a>
+    </div>
+
+  </div>
+</section>
 
 
 <footer>
@@ -1079,6 +1528,7 @@ window.addEventListener('scroll',()=>{
         <a href="https://www.instagram.com/masquepildoraspodcast/" target="_blank">Instagram</a>
         <a href="#eps">Episodios</a>
         <a href="#pat">Partners</a>
+        <a href="#mentoria">Mentoría</a>
       </div>
     </div>
     <div class="fbot">
