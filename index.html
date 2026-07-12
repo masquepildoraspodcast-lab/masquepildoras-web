@@ -37,9 +37,21 @@
   --text:#0d1f4e;--muted:#4a6090;--border:rgba(13,31,78,0.1);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(200,222,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(13,31,78,0.08);transition:box-shadow .3s;}
+html{scroll-behavior:smooth;scroll-padding-top:118px;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;padding-top:44px;}
+nav{position:fixed;top:44px;left:0;right:0;z-index:100;padding:16px 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(200,222,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(13,31,78,0.08);transition:box-shadow .3s;}
+#mqp-partnerbar{position:fixed;top:0;left:0;right:0;height:44px;z-index:101;background:linear-gradient(90deg,var(--navy),var(--blue));overflow:hidden;border-bottom:1px solid rgba(255,255,255,0.12);}
+#mqp-partnerbar .mqp-track{position:relative;height:100%;}
+#mqp-partnerbar .mqp-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;color:#fff;font-size:13.5px;font-weight:500;padding:0 16px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .5s ease,transform .5s ease;}
+#mqp-partnerbar .mqp-slide.is-active{opacity:1;visibility:visible;transform:none;}
+#mqp-partnerbar .mqp-tag{font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,0.16);color:#fff;padding:2px 8px;border-radius:20px;font-weight:600;white-space:nowrap;}
+#mqp-partnerbar strong{font-weight:700;color:var(--gold);white-space:nowrap;}
+#mqp-partnerbar .mqp-claim{opacity:.92;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#mqp-partnerbar .mqp-arrow{transition:transform .2s;}
+#mqp-partnerbar .mqp-slide:hover .mqp-arrow{transform:translateX(4px);}
+#mqp-partnerbar .mqp-slide:hover .mqp-claim{text-decoration:underline;}
+@media (max-width:640px){#mqp-partnerbar .mqp-claim{display:none;}#mqp-partnerbar .mqp-slide{font-size:13px;gap:8px;}}
+@media (prefers-reduced-motion:reduce){#mqp-partnerbar .mqp-slide{transition:opacity .2s;transform:none;}}
 .nl{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:var(--navy);text-decoration:none;}
 .nl span{color:var(--accent);}
 .nls{display:flex;gap:32px;list-style:none;align-items:center;}
@@ -503,6 +515,23 @@ footer{background:var(--navy);padding:52px 56px 28px;}
 </script>
 </head>
 <body>
+
+<div id="mqp-partnerbar" role="region" aria-label="Nuestros patrocinadores">
+  <div class="mqp-track">
+    <a class="mqp-slide is-active" href="https://poweredu.link/bepharma-masquepildoras" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','partner_click',{partner:'be_pharma',placement:'top_banner'});}">
+      <span class="mqp-tag">Patrocinador</span>
+      <strong>Be&nbsp;Pharma</strong>
+      <span class="mqp-claim">El máster para crecer en la industria farmacéutica</span>
+      <span class="mqp-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="mqp-slide" href="https://klorofila.es/?utm_source=masquepildoraspodcast&amp;utm_medium=patrocinio&amp;utm_campaign=patrocinio-podcast-2026&amp;utm_content=top_banner" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','partner_click',{partner:'klorofila',placement:'top_banner'});}">
+      <span class="mqp-tag">Patrocinador</span>
+      <strong>KLOROFiLA</strong>
+      <span class="mqp-claim">Marketing que convierte tu visibilidad en negocio</span>
+      <span class="mqp-arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</div>
 
 <nav id="nav">
   <a href="#" class="nl"><span>+</span>Que Píldoras</a>
@@ -1300,6 +1329,25 @@ window.addEventListener('scroll',()=>{
   }else{
     init();
   }
+})();
+</script>
+
+<script>
+/* Banner rotatorio de patrocinadores */
+(function(){
+  var bar=document.getElementById('mqp-partnerbar');
+  if(!bar) return;
+  var slides=bar.querySelectorAll('.mqp-slide');
+  if(slides.length<2) return;
+  var i=0, timer=null;
+  function show(n){slides.forEach(function(s,k){s.classList.toggle('is-active',k===n);});}
+  function next(){i=(i+1)%slides.length;show(i);}
+  function start(){stop();timer=setInterval(next,6000);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  bar.addEventListener('mouseenter',stop);
+  bar.addEventListener('mouseleave',start);
+  document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
+  start();
 })();
 </script>
 </body>
