@@ -639,13 +639,13 @@ footer{background:var(--navy);padding:52px 56px 28px;}
     </div>
 
     <!-- BANNER PRÓXIMO EPISODIO (fuera del carrusel) -->
-    <div class="eps-next fia" aria-label="Próximo episodio">
-      <div class="eps-next-img" style="background:none;"><img src="images/ep06-german.jpg" alt="Germán Domecq — Executive Director de expansión internacional en pharma" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:12px;" loading="lazy"></div>
+    <div class="eps-next fia" aria-label="Próxima temporada">
+      <div class="eps-next-img"><span class="eps-placeholder-icon">T2</span></div>
       <div class="eps-next-body">
-        <span class="eps-next-badge">En camino · 16 de julio</span>
-        <h3 class="eps-next-title">Ep. 06 · Germán Domecq — Expansión internacional en pharma</h3>
-        <p class="eps-next-sub">Cómo se llevan los tratamientos a países donde todavía no están disponibles: estrategia, alianzas y negociación intercultural. Con Germán Domecq, Executive Director de expansión internacional y desarrollo de nuevos mercados.</p>
-        <a href="/episodios/ep-06-german-domecq-expansion-internacional.html" style="display:inline-block;margin-top:14px;color:var(--accent);font-weight:600;font-size:14px;text-decoration:none;">Ver avance del episodio →</a>
+        <span class="eps-next-badge">Nueva temporada · Septiembre</span>
+        <h3 class="eps-next-title">Volvemos en septiembre con la Temporada 2</h3>
+        <p class="eps-next-sub">Hacemos una pausa de verano. En septiembre arrancamos una nueva temporada con más historias reales desde dentro de la industria farmacéutica — sin filtros y sin guion. Suscríbete para no perderte el estreno.</p>
+        <a href="https://www.youtube.com/@masquepildoraspodcast?sub_confirmation=1" target="_blank" rel="noopener" style="display:inline-block;margin-top:14px;color:var(--accent);font-weight:600;font-size:14px;text-decoration:none;">Suscríbete para el estreno →</a>
       </div>
     </div>
 
@@ -653,8 +653,23 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       <div class="eps-carousel">
         <button class="eps-arrow prev" type="button" aria-label="Episodio anterior">‹</button>
         <div class="eps-track">
+          <!-- EP 06 GERMÁN -->
+          <div class="eps-slide active" data-eps="6">
+            <img src="images/ep06-german.jpg" alt="Germán Domecq - Expansión internacional en pharma" class="eps-slide-img" onclick="openEpisodeModal(6, 'https://youtu.be/kxPsKK6CK7E')" loading="lazy">
+            <div class="eps-slide-body">
+              <h3>Ep. 06 · Expansión internacional en pharma</h3>
+              <div class="eps-guest">Germán Domecq</div>
+              <div class="eps-role">Executive Director · Expansión internacional y nuevos mercados</div>
+              <p class="eps-desc">Cómo se llevan los tratamientos a países donde todavía no están disponibles: estrategia, alianzas y negociación intercultural en uno de los roles más globales de la industria.</p>
+              <div class="eps-slide-actions">
+                <a href="javascript:void(0)" onclick="openEpisodeModal(6, 'https://youtu.be/kxPsKK6CK7E')" class="eps-btn eps-btn-play">▶ Reproducir</a>
+                <a href="/episodios/ep-06-german-domecq-expansion-internacional.html" class="eps-btn eps-btn-more">Ver ficha completa →</a>
+              </div>
+            </div>
+          </div>
+
           <!-- EP 05 CRISTINA -->
-          <div class="eps-slide active" data-eps="5">
+          <div class="eps-slide" data-eps="5">
             <img src="images/ep05-cristina.jpg" alt="Cristina González Junco - 20 años en Medical Affairs" class="eps-slide-img" onclick="openEpisodeModal(5, 'https://youtu.be/49Q31WXeRC0')" loading="lazy">
             <div class="eps-slide-body">
               <h3>Ep. 05 · 20 años en Medical Affairs</h3>
@@ -732,7 +747,8 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       </div>
 
       <div class="eps-dots">
-        <button class="eps-dot active" type="button" data-eps="5" aria-label="Ir al episodio 5"></button>
+        <button class="eps-dot active" type="button" data-eps="6" aria-label="Ir al episodio 6"></button>
+        <button class="eps-dot" type="button" data-eps="5" aria-label="Ir al episodio 5"></button>
         <button class="eps-dot" type="button" data-eps="4" aria-label="Ir al episodio 4"></button>
         <button class="eps-dot" type="button" data-eps="3" aria-label="Ir al episodio 3"></button>
         <button class="eps-dot" type="button" data-eps="2" aria-label="Ir al episodio 2"></button>
@@ -742,7 +758,11 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       <div class="eps-menu">
         <h4 class="eps-menu-title">Selecciona un episodio</h4>
         <div class="eps-menu-items">
-          <button class="eps-menu-item active" type="button" data-eps="5">
+          <button class="eps-menu-item active" type="button" data-eps="6">
+            <span class="eps-mn">Ep. 06</span>
+            <span class="eps-mg">Germán</span>
+          </button>
+          <button class="eps-menu-item" type="button" data-eps="5">
             <span class="eps-mn">Ep. 05</span>
             <span class="eps-mg">Cristina</span>
           </button>
@@ -1281,8 +1301,8 @@ window.addEventListener('scroll',()=>{
 <script>
 /* === CARRUSEL DE EPISODIOS === */
 (function(){
-  const order=[5,4,3,2,1];
-  let current=5;
+  const order=[6,5,4,3,2,1];
+  let current=6;
   function show(ep){
     document.querySelectorAll('.eps-slide').forEach(s=>s.classList.remove('active'));
     document.querySelectorAll('.eps-dot').forEach(d=>d.classList.remove('active'));
