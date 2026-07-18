@@ -212,7 +212,8 @@ footer{background:var(--navy);padding:52px 56px 28px;}
 /* === BANNER PRÓXIMO EPISODIO === */
 .eps-next{display:grid;grid-template-columns:180px 1fr;gap:28px;align-items:center;background:linear-gradient(135deg,var(--sky3),var(--sky4));border:1px solid rgba(45,111,212,0.18);border-radius:16px;padding:24px 28px;margin-bottom:32px;position:relative;overflow:hidden;}
 .eps-next::before{content:'';position:absolute;top:0;right:0;width:280px;height:100%;background:radial-gradient(circle at 100% 50%,rgba(45,111,212,0.08),transparent 70%);pointer-events:none;}
-.eps-next-img{width:100%;aspect-ratio:1/1;border-radius:12px;background:linear-gradient(135deg,var(--sky),var(--sky2));display:flex;align-items:center;justify-content:center;position:relative;}
+.eps-next-img{width:100%;aspect-ratio:1/1;border-radius:12px;background:linear-gradient(135deg,var(--sky),var(--sky2));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.eps-next-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;}
 .eps-next-img .eps-placeholder-icon{font-family:'Playfair Display',serif;font-size:76px;font-weight:900;color:var(--navy);opacity:.32;letter-spacing:-2px;line-height:1;}
 .eps-next-body{position:relative;z-index:1;}
 .eps-next-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(45,111,212,0.14);color:var(--accent);font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;border-radius:20px;margin-bottom:10px;border:1px solid rgba(45,111,212,0.28);}
@@ -709,7 +710,7 @@ footer{background:var(--navy);padding:52px 56px 28px;}
 
     <!-- BANNER PRÓXIMO EPISODIO (fuera del carrusel) -->
     <div class="eps-next fia" aria-label="Próximos episodios">
-      <div class="eps-next-img"><span class="eps-placeholder-icon">SEP</span></div>
+      <div class="eps-next-img"><img src="images/volvemos-septiembre.jpg" alt="+Que Píldoras — cerrado por vacaciones, volvemos en septiembre con nuevos episodios" loading="lazy"></div>
       <div class="eps-next-body">
         <span class="eps-next-badge">Nuevos episodios · Septiembre</span>
         <h3 class="eps-next-title">Volveremos en septiembre con nuevos episodios</h3>
