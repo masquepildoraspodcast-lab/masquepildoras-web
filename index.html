@@ -735,8 +735,23 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       <div class="eps-carousel">
         <button class="eps-arrow prev" type="button" aria-label="Episodio anterior">‹</button>
         <div class="eps-track">
+          <!-- EP 07 MARTA -->
+          <div class="eps-slide active" data-eps="7">
+            <img src="images/ep07-marta.jpg" alt="Marta Rodríguez Pardo - De médico a Medical Affairs" class="eps-slide-img" onclick="openEpisodeModal(7, 'https://youtu.be/MOpaOlOVFPA')" loading="lazy">
+            <div class="eps-slide-body">
+              <h3>Ep. 07 · De médico a Medical Affairs</h3>
+              <div class="eps-guest">Marta Rodríguez Pardo</div>
+              <div class="eps-role">Medical Advisor · médica de familia de formación</div>
+              <p class="eps-desc">Dejar el hospital para dar el salto a la industria: Marta cuenta por qué una médica se pasa a Medical Affairs, qué habilidades del hospital le sirven y los mitos de quienes cambian la bata por pharma.</p>
+              <div class="eps-slide-actions">
+                <a href="javascript:void(0)" onclick="openEpisodeModal(7, 'https://youtu.be/MOpaOlOVFPA')" class="eps-btn eps-btn-play">▶ Reproducir</a>
+                <a href="/episodios/ep-07-marta-rodriguez-de-medico-a-pharma.html" class="eps-btn eps-btn-more">Ver ficha completa →</a>
+              </div>
+            </div>
+          </div>
+
           <!-- EP 06 GERMÁN -->
-          <div class="eps-slide active" data-eps="6">
+          <div class="eps-slide" data-eps="6">
             <img src="images/ep06-german.jpg" alt="Germán Domecq - Expansión internacional en pharma" class="eps-slide-img" onclick="openEpisodeModal(6, 'https://youtu.be/kxPsKK6CK7E')" loading="lazy">
             <div class="eps-slide-body">
               <h3>Ep. 06 · Expansión internacional en pharma</h3>
@@ -829,7 +844,8 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       </div>
 
       <div class="eps-dots">
-        <button class="eps-dot active" type="button" data-eps="6" aria-label="Ir al episodio 6"></button>
+        <button class="eps-dot active" type="button" data-eps="7" aria-label="Ir al episodio 7"></button>
+        <button class="eps-dot" type="button" data-eps="6" aria-label="Ir al episodio 6"></button>
         <button class="eps-dot" type="button" data-eps="5" aria-label="Ir al episodio 5"></button>
         <button class="eps-dot" type="button" data-eps="4" aria-label="Ir al episodio 4"></button>
         <button class="eps-dot" type="button" data-eps="3" aria-label="Ir al episodio 3"></button>
@@ -840,7 +856,11 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       <div class="eps-menu">
         <h4 class="eps-menu-title">Selecciona un episodio</h4>
         <div class="eps-menu-items">
-          <button class="eps-menu-item active" type="button" data-eps="6">
+          <button class="eps-menu-item active" type="button" data-eps="7">
+            <span class="eps-mn">Ep. 07</span>
+            <span class="eps-mg">Marta</span>
+          </button>
+          <button class="eps-menu-item" type="button" data-eps="6">
             <span class="eps-mn">Ep. 06</span>
             <span class="eps-mg">Germán</span>
           </button>
@@ -1461,8 +1481,8 @@ window.addEventListener('scroll',()=>{
 <script>
 /* === CARRUSEL DE EPISODIOS === */
 (function(){
-  const order=[6,5,4,3,2,1];
-  let current=6;
+  const order=[7,6,5,4,3,2,1];
+  let current=7;
   function show(ep){
     document.querySelectorAll('.eps-slide').forEach(s=>s.classList.remove('active'));
     document.querySelectorAll('.eps-dot').forEach(d=>d.classList.remove('active'));
