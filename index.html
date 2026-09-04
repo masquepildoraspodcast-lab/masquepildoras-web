@@ -712,15 +712,7 @@ footer{background:var(--navy);padding:52px 56px 28px;}
 
 <section class="eps-sec" id="eps">
   <div class="si">
-    <div class="epsh fia">
-      <div>
-        <span class="ey">Nuestros episodios</span>
-        <h2 class="st">Los pioneros que<br>rompieron el silencio</h2>
-      </div>
-      <a href="https://www.youtube.com/@masquepildoraspodcast" target="_blank" class="evt">Ver todos los episodios →</a>
-    </div>
-
-    <!-- BANNER PRÓXIMO EPISODIO (fuera del carrusel) -->
+    <!-- BANNER PRÓXIMO EPISODIO (arriba del todo, antes de la cabecera) -->
     <div class="eps-next fia" aria-label="Próximo episodio">
       <div class="eps-next-img"><img src="images/ep07-marta.jpg" alt="Marta Rodríguez Pardo — nuevo episodio de +Que Píldoras disponible el 9 de septiembre" loading="lazy"></div>
       <div class="eps-next-body">
@@ -731,7 +723,48 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       </div>
     </div>
 
+    <div class="epsh fia">
+      <div>
+        <span class="ey">Nuestros episodios</span>
+        <h2 class="st">Los pioneros que<br>rompieron el silencio</h2>
+      </div>
+      <a href="https://www.youtube.com/@masquepildoraspodcast" target="_blank" class="evt">Ver todos los episodios →</a>
+    </div>
+
     <div class="eps-carousel-wrap fia">
+      <div class="eps-menu" style="margin:0 0 24px;">
+        <h4 class="eps-menu-title">Selecciona un episodio</h4>
+        <div class="eps-menu-items">
+          <button class="eps-menu-item active" type="button" data-eps="7">
+            <span class="eps-mn">Ep. 07</span>
+            <span class="eps-mg">Marta</span>
+          </button>
+          <button class="eps-menu-item" type="button" data-eps="6">
+            <span class="eps-mn">Ep. 06</span>
+            <span class="eps-mg">Germán</span>
+          </button>
+          <button class="eps-menu-item" type="button" data-eps="5">
+            <span class="eps-mn">Ep. 05</span>
+            <span class="eps-mg">Cristina</span>
+          </button>
+          <button class="eps-menu-item" type="button" data-eps="4">
+            <span class="eps-mn">Ep. 04</span>
+            <span class="eps-mg">Laura</span>
+          </button>
+          <button class="eps-menu-item" type="button" data-eps="3">
+            <span class="eps-mn">Ep. 03</span>
+            <span class="eps-mg">Fernando</span>
+          </button>
+          <button class="eps-menu-item" type="button" data-eps="2">
+            <span class="eps-mn">Ep. 02</span>
+            <span class="eps-mg">Pablo</span>
+          </button>
+          <button class="eps-menu-item" type="button" data-eps="1">
+            <span class="eps-mn">Ep. 01</span>
+            <span class="eps-mg">Jaime &amp; Miren</span>
+          </button>
+        </div>
+      </div>
       <div class="eps-carousel">
         <button class="eps-arrow prev" type="button" aria-label="Episodio anterior">‹</button>
         <div class="eps-track">
@@ -852,45 +885,13 @@ footer{background:var(--navy);padding:52px 56px 28px;}
         <button class="eps-dot" type="button" data-eps="2" aria-label="Ir al episodio 2"></button>
         <button class="eps-dot" type="button" data-eps="1" aria-label="Ir al episodio 1"></button>
       </div>
-
-      <div class="eps-menu">
-        <h4 class="eps-menu-title">Selecciona un episodio</h4>
-        <div class="eps-menu-items">
-          <button class="eps-menu-item active" type="button" data-eps="7">
-            <span class="eps-mn">Ep. 07</span>
-            <span class="eps-mg">Marta</span>
-          </button>
-          <button class="eps-menu-item" type="button" data-eps="6">
-            <span class="eps-mn">Ep. 06</span>
-            <span class="eps-mg">Germán</span>
-          </button>
-          <button class="eps-menu-item" type="button" data-eps="5">
-            <span class="eps-mn">Ep. 05</span>
-            <span class="eps-mg">Cristina</span>
-          </button>
-          <button class="eps-menu-item" type="button" data-eps="4">
-            <span class="eps-mn">Ep. 04</span>
-            <span class="eps-mg">Laura</span>
-          </button>
-          <button class="eps-menu-item" type="button" data-eps="3">
-            <span class="eps-mn">Ep. 03</span>
-            <span class="eps-mg">Fernando</span>
-          </button>
-          <button class="eps-menu-item" type="button" data-eps="2">
-            <span class="eps-mn">Ep. 02</span>
-            <span class="eps-mg">Pablo</span>
-          </button>
-          <button class="eps-menu-item" type="button" data-eps="1">
-            <span class="eps-mn">Ep. 01</span>
-            <span class="eps-mg">Jaime &amp; Miren</span>
-          </button>
-        </div>
-      </div>
     </div>
 
-    <div class="sponsor-tabs fia" id="patrocinadores" style="margin:60px 0; text-align:center; scroll-margin-top:120px;">
-      <span class="ey fia" style="display:block;">Patrocinadores</span>
-      <h2 class="st fia" style="margin:0 auto 28px; max-width:640px;">Quienes hacen posible +Que Píldoras</h2>
+    <div id="patrocinadores" style="margin-top:60px; scroll-margin-top:120px;">
+      <span class="ey fia">Patrocinadores</span>
+      <h2 class="st fia">Quienes hacen posible<br>+Que Píldoras</h2>
+    </div>
+    <div class="sponsor-tabs fia" style="margin:24px 0 60px; text-align:center;">
       <div style="display:flex; gap:20px; justify-content:center; margin-bottom:30px; flex-wrap:wrap;">
         <button onclick="switchTab('bepharma')" class="tab-btn active" id="tab-bepharma" style="padding:12px 24px; border:2px solid #2d6fd4; background:#2d6fd4; color:white; border-radius:8px; font-weight:600; cursor:pointer; transition:all 0.3s;">BePharma Institute</button>
         <button onclick="switchTab('klorofila')" class="tab-btn" id="tab-klorofila" style="padding:12px 24px; border:2px solid #2d6fd4; background:white; color:#2d6fd4; border-radius:8px; font-weight:600; cursor:pointer; transition:all 0.3s;">Klorofila</button>
