@@ -714,12 +714,12 @@ footer{background:var(--navy);padding:52px 56px 28px;}
   <div class="si">
     <!-- BANNER PRÓXIMO EPISODIO (arriba del todo, antes de la cabecera) -->
     <div class="eps-next fia" aria-label="Próximo episodio">
-      <div class="eps-next-img"><img src="images/ep07-marta.jpg" alt="Marta Rodríguez Pardo — nuevo episodio de +Que Píldoras disponible el 9 de septiembre" loading="lazy"></div>
+      <div class="eps-next-img"><img src="images/ep08-jaime-aguirre.jpg" alt="Jaime Aguirre — nuevo episodio de +Que Píldoras disponible el miércoles 23 de septiembre" loading="lazy"></div>
       <div class="eps-next-body">
-        <span class="eps-next-badge">Nuevo episodio · 9 de septiembre</span>
-        <h3 class="eps-next-title">Volvemos de vacaciones con un nuevo episodio</h3>
-        <p class="eps-next-sub">El <strong>9 de septiembre</strong> arrancamos la vuelta con <strong>Marta Rodríguez Pardo</strong>, médico de familia que dejó el hospital para dar el salto a Medical Affairs. Por qué lo hizo, qué habilidades del hospital le sirven en la industria y los mitos de quienes cambian la bata por pharma.</p>
-        <a href="/episodios/ep-07-marta-rodriguez-de-medico-a-pharma.html" style="display:inline-block;margin-top:14px;color:var(--accent);font-weight:600;font-size:14px;text-decoration:none;">Ver la ficha del episodio →</a>
+        <span class="eps-next-badge">Nuevo episodio · miércoles 23 de septiembre</span>
+        <h3 class="eps-next-title">El error que cometen los grandes líderes</h3>
+        <p class="eps-next-sub">El <strong>miércoles 23</strong> llega <strong>Jaime Aguirre</strong>, coach de alta dirección y ex directivo de oncología en pharma: cómo se lidera de verdad en la industria, qué ocurre dentro de un comité de dirección y por qué el ego es el error que más se repite entre grandes líderes.</p>
+        <a href="/episodios/ep-08-jaime-aguirre-liderazgo-alta-direccion.html" style="display:inline-block;margin-top:14px;color:var(--accent);font-weight:600;font-size:14px;text-decoration:none;">Ver la ficha del episodio →</a>
       </div>
     </div>
 
@@ -735,7 +735,11 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       <div class="eps-menu" style="margin:0 0 24px;">
         <h4 class="eps-menu-title">Selecciona un episodio</h4>
         <div class="eps-menu-items">
-          <button class="eps-menu-item active" type="button" data-eps="7">
+          <button class="eps-menu-item active" type="button" data-eps="8">
+            <span class="eps-mn">Ep. 08</span>
+            <span class="eps-mg">Jaime A.</span>
+          </button>
+          <button class="eps-menu-item" type="button" data-eps="7">
             <span class="eps-mn">Ep. 07</span>
             <span class="eps-mg">Marta</span>
           </button>
@@ -768,8 +772,23 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       <div class="eps-carousel">
         <button class="eps-arrow prev" type="button" aria-label="Episodio anterior">‹</button>
         <div class="eps-track">
+          <!-- EP 08 JAIME AGUIRRE -->
+          <div class="eps-slide active" data-eps="8">
+            <img src="images/ep08-jaime-aguirre.jpg" alt="Jaime Aguirre - El error que cometen los grandes líderes" class="eps-slide-img" onclick="openEpisodeModal(8, 'https://youtu.be/sfIYDElsGDI')" loading="lazy">
+            <div class="eps-slide-body">
+              <h3>Ep. 08 · El error que cometen los grandes líderes</h3>
+              <div class="eps-guest">Jaime Aguirre</div>
+              <div class="eps-role">Coach de alta dirección · ex Director de Oncología</div>
+              <p class="eps-desc">Liderazgo real en pharma: cómo se llega a la alta dirección, qué ocurre en un comité de dirección, cómo se decide con información incompleta y por qué el ego es el error que más se repite.</p>
+              <div class="eps-slide-actions">
+                <a href="javascript:void(0)" onclick="openEpisodeModal(8, 'https://youtu.be/sfIYDElsGDI')" class="eps-btn eps-btn-play">▶ Reproducir</a>
+                <a href="/episodios/ep-08-jaime-aguirre-liderazgo-alta-direccion.html" class="eps-btn eps-btn-more">Ver ficha completa →</a>
+              </div>
+            </div>
+          </div>
+
           <!-- EP 07 MARTA -->
-          <div class="eps-slide active" data-eps="7">
+          <div class="eps-slide" data-eps="7">
             <img src="images/ep07-marta.jpg" alt="Marta Rodríguez Pardo - De médico a Medical Affairs" class="eps-slide-img" onclick="openEpisodeModal(7, 'https://youtu.be/MOpaOlOVFPA')" loading="lazy">
             <div class="eps-slide-body">
               <h3>Ep. 07 · De médico a Medical Affairs</h3>
@@ -877,7 +896,8 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       </div>
 
       <div class="eps-dots">
-        <button class="eps-dot active" type="button" data-eps="7" aria-label="Ir al episodio 7"></button>
+        <button class="eps-dot active" type="button" data-eps="8" aria-label="Ir al episodio 8"></button>
+        <button class="eps-dot" type="button" data-eps="7" aria-label="Ir al episodio 7"></button>
         <button class="eps-dot" type="button" data-eps="6" aria-label="Ir al episodio 6"></button>
         <button class="eps-dot" type="button" data-eps="5" aria-label="Ir al episodio 5"></button>
         <button class="eps-dot" type="button" data-eps="4" aria-label="Ir al episodio 4"></button>
@@ -1485,8 +1505,8 @@ window.addEventListener('scroll',()=>{
 <script>
 /* === CARRUSEL DE EPISODIOS === */
 (function(){
-  const order=[7,6,5,4,3,2,1];
-  let current=7;
+  const order=[8,7,6,5,4,3,2,1];
+  let current=8;
   function show(ep){
     document.querySelectorAll('.eps-slide').forEach(s=>s.classList.remove('active'));
     document.querySelectorAll('.eps-dot').forEach(d=>d.classList.remove('active'));
