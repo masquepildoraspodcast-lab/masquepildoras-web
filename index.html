@@ -267,31 +267,6 @@ footer{background:var(--navy);padding:52px 56px 28px;}
   .epcard-thumb{aspect-ratio:16/10;}
 }
 .patro-sec{background:var(--white);}
-/* === Formación · BePharma Masters === */
-.formacion-sec{background:var(--sky4);}
-.mst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-top:34px;}
-.mst-card{display:flex;flex-direction:column;gap:9px;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 22px;text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:0 6px 20px rgba(13,31,78,0.05);}
-.mst-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,31,78,0.14);border-color:rgba(45,111,212,0.35);}
-.mst-tag{font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--accent);text-transform:uppercase;}
-.mst-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:900;color:var(--navy);line-height:1.2;letter-spacing:-.3px;}
-.mst-desc{font-size:13.5px;color:var(--muted);line-height:1.55;flex:1;}
-.mst-cta{font-size:13px;font-weight:700;color:var(--accent);margin-top:2px;}
-.mst-foot{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;justify-content:space-between;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 26px;}
-.mst-brand{font-family:'Playfair Display',serif;font-weight:900;font-size:22px;color:var(--navy);letter-spacing:-.4px;}
-.mst-brand span{color:var(--accent);}
-.mst-perks{font-size:13px;color:var(--muted);font-weight:600;flex:1;min-width:220px;}
-.mst-mainbtn{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-weight:700;font-size:14px;padding:13px 22px;border-radius:10px;text-decoration:none;white-space:nowrap;transition:transform .2s,box-shadow .2s;}
-.mst-mainbtn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(13,31,78,0.22);}
-/* === Colaborador de medios · PM Farma === */
-.media-sec{background:var(--white);}
-.media-band{display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin-top:18px;background:var(--sky4);border:1px solid var(--border);border-radius:18px;padding:30px 34px;}
-.media-logo{flex-shrink:0;display:block;}
-.media-logo img{width:210px;max-width:62vw;height:auto;display:block;}
-.media-txt{flex:1;min-width:260px;}
-.media-h{font-family:'Playfair Display',serif;font-size:20px;font-weight:800;color:var(--navy);line-height:1.3;letter-spacing:-.3px;}
-.media-link{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:var(--accent);text-decoration:none;}
-.media-link:hover{text-decoration:underline;}
-@media(max-width:640px){.media-band{padding:24px;gap:18px;}.mst-foot{padding:20px;}}
 /* imagen del hero como enlace a episodios */
 .ci-link{display:block;position:relative;cursor:pointer;text-decoration:none;border-radius:24px;}
 .ci-link .ci-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);width:64px;height:64px;border-radius:50%;background:rgba(13,31,78,0.55);color:#fff;display:flex;align-items:center;justify-content:center;font-size:23px;padding-left:4px;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;}
@@ -1018,45 +993,6 @@ footer{background:var(--navy);padding:52px 56px 28px;}
   </div>
 </section>
 
-<section class="formacion-sec" id="formacion">
-  <div class="si">
-    <span class="ey fia">Formación recomendada</span>
-    <h2 class="st fia">Fórmate en la industria farmacéutica</h2>
-    <p class="sl2 fia">Si escuchando +Que Píldoras te han entrado ganas de crecer en pharma, el siguiente paso es formarte. Nuestro patrocinador <strong>BePharma Institute</strong> ofrece Masters online 100% enfocados en la industria, con clases en directo y <strong>prácticas garantizadas</strong> en compañías farmacéuticas.</p>
-    <div class="mst-grid fia">
-      <a class="mst-card" href="https://poweredu.link/bepharma-masquepildoras-general" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','partner_click',{partner:'be_pharma',placement:'formacion',content:'medical_affairs'});}">
-        <span class="mst-tag">Máster · 9 meses · Online</span>
-        <h3 class="mst-name">Medical Affairs, MSL y Medical Advisor</h3>
-        <p class="mst-desc">El área que protagoniza muchos de nuestros episodios. Fórmate para entrar como MSL, Medical Advisor o en Medical Affairs.</p>
-        <span class="mst-cta">Más información →</span>
-      </a>
-      <a class="mst-card" href="https://poweredu.link/bepharma-masquepildoras-general" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','partner_click',{partner:'be_pharma',placement:'formacion',content:'mba_pharma_health'});}">
-        <span class="mst-tag">MBA · 12 meses · Online</span>
-        <h3 class="mst-name">MBA Pharma &amp; Health</h3>
-        <p class="mst-desc">Da el salto a la dirección: estrategia, negocio y liderazgo en el sector salud, como cuentan nuestros invitados de alta dirección.</p>
-        <span class="mst-cta">Más información →</span>
-      </a>
-      <a class="mst-card" href="https://poweredu.link/bepharma-masquepildoras-general" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','partner_click',{partner:'be_pharma',placement:'formacion',content:'master_industria'});}">
-        <span class="mst-tag">Máster · 12 meses · Online</span>
-        <h3 class="mst-name">Máster en la Industria Farmacéutica</h3>
-        <p class="mst-desc">Tu puerta de entrada al sector: de cero a profesional altamente demandado, con prácticas garantizadas en empresas top.</p>
-        <span class="mst-cta">Más información →</span>
-      </a>
-      <a class="mst-card" href="https://poweredu.link/bepharma-masquepildoras-general" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','partner_click',{partner:'be_pharma',placement:'formacion',content:'ia_farma'});}">
-        <span class="mst-tag">Máster · 9 meses · Online</span>
-        <h3 class="mst-name">IA en la Industria Farmacéutica</h3>
-        <p class="mst-desc">Domina la inteligencia artificial aplicada a pharma, una de las áreas con más recorrido y demanda del sector.</p>
-        <span class="mst-cta">Más información →</span>
-      </a>
-    </div>
-    <div class="mst-foot fia">
-      <div class="mst-brand">Be<span>Pharma</span> Institute</div>
-      <div class="mst-perks">✔ Prácticas garantizadas &nbsp;·&nbsp; ✔ 96% de contratos indefinidos &nbsp;·&nbsp; ✔ Clases en directo con profesionales en activo</div>
-      <a class="mst-mainbtn" href="https://poweredu.link/bepharma-masquepildoras-general" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','partner_click',{partner:'be_pharma',placement:'formacion',content:'todos_los_programas'});}">Ver todos los programas →</a>
-    </div>
-  </div>
-</section>
-
 <section class="testi-sec" id="testimonios">
   <div class="si">
     <span class="ey fia">Comunidad</span>
@@ -1107,19 +1043,6 @@ footer{background:var(--navy);padding:52px 56px 28px;}
           <div class="met"><span class="metn">💡</span><span class="metl">Si tienes una idea, pongámosla en marcha</span></div>
         </div>
         <a href="mailto:hola@masquepildoraspodcast.com" class="ctabtn">✉ hola@masquepildoraspodcast.com</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="media-sec" id="medios">
-  <div class="si">
-    <span class="ey fia">Colaborador de medios</span>
-    <div class="media-band fia">
-      <a class="media-logo" href="https://www.pmfarma.com" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','media_partner_click',{partner:'pm_farma'});}"><img src="images/pmfarma-logo.svg" alt="PM Farma — Portal iberoamericano de marketing farmacéutico" loading="lazy"></a>
-      <div class="media-txt">
-        <h2 class="media-h">PM Farma y +Que Píldoras sellan una colaboración para asegurar que nuestro altavoz le llegue a mucha más gente</h2>
-        <a class="media-link" href="https://www.pmfarma.com" target="_blank" rel="noopener" onclick="if(typeof gtag==='function'){gtag('event','media_partner_click',{partner:'pm_farma'});}">Visita PM Farma →</a>
       </div>
     </div>
   </div>
