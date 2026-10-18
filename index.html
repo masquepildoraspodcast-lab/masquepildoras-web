@@ -80,13 +80,23 @@ nav{position:fixed;top:44px;left:0;right:0;z-index:100;padding:16px 56px;display
 .bp:hover{background:var(--accent);transform:translateY(-2px);}
 .bg2{display:inline-flex;align-items:center;gap:8px;background:rgba(13,31,78,0.08);color:var(--navy);padding:15px 28px;border-radius:10px;font-size:14px;font-weight:500;text-decoration:none;border:1.5px solid rgba(13,31,78,0.18);transition:all .2s;}
 .bg2:hover{background:rgba(13,31,78,0.14);transform:translateY(-2px);}
-.hr2{display:flex;justify-content:center;align-items:center;position:relative;}
-.ciw{position:relative;width:100%;max-width:420px;}
+.hr2{display:flex;flex-direction:column;justify-content:flex-start;align-items:center;align-self:start;position:relative;}
+.ciw{position:relative;width:100%;max-width:360px;}
 .ci{width:100%;border-radius:24px;box-shadow:0 40px 80px rgba(13,31,78,0.18);display:block;animation:flt 7s ease-in-out infinite;}
 @keyframes flt{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
 .cb{position:absolute;background:#fff;border-radius:12px;padding:10px 16px;font-size:12px;font-weight:700;color:var(--navy);box-shadow:0 8px 32px rgba(13,31,78,0.12);white-space:nowrap;}
 .cb1{top:-14px;left:-16px;animation:flt 5s ease-in-out infinite 1s;}
 .cb2{bottom:20px;right:-16px;animation:flt 6s ease-in-out infinite 2s;}
+.ciw .cb2{display:none;}
+.herolead{position:relative;z-index:4;margin:20px 0 0;background:#fdf8ee;border-radius:18px;padding:20px 22px 18px;box-shadow:0 20px 48px rgba(13,31,78,0.22);border-top:3px solid #c9a84c;}
+.hl-tag{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#b9933a;margin-bottom:9px;}
+.hl-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--navy);line-height:1.15;margin-bottom:7px;letter-spacing:-.3px;}
+.hl-sub{font-size:13px;color:var(--accent);line-height:1.45;margin-bottom:14px;}
+.hl-btn{display:block;text-align:center;background:var(--navy);color:#fff;border-radius:10px;padding:13px 20px;font-size:15px;font-weight:700;text-decoration:none;transition:background .2s,transform .2s;}
+.hl-btn:hover{background:var(--blue);transform:translateY(-1px);}
+.hl-note{font-size:11.5px;color:var(--muted);margin-top:11px;line-height:1.5;}
+.hl-note a{color:var(--accent);text-decoration:none;font-weight:600;}
+.hl-note a:hover{text-decoration:underline;}
 .plat{background:var(--white);padding:18px 56px;border-bottom:1px solid var(--border);}
 .plati{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:36px;flex-wrap:wrap;}
 .platl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
@@ -215,8 +225,9 @@ footer{background:var(--navy);padding:52px 56px 28px;}
   .nls a{display:block;padding:14px 2px;font-size:16px;}
   .nls .nc{display:block;text-align:center;margin-top:12px;padding:13px 22px;}
   .hc{grid-template-columns:1fr;padding:40px 20px;gap:40px;}
-  .hr2{order:-1;}.ciw{max-width:300px;margin:0 auto;}
+  .hr2{order:-1;}.ciw{max-width:340px;margin:0 auto;}
   .cb1,.cb2{display:none;}
+  .herolead{margin:14px auto 0;}
   .plat{padding:14px 20px;}
   section{padding:60px 20px;}
   .hg{grid-template-columns:1fr;}
@@ -841,6 +852,13 @@ footer{background:var(--navy);padding:52px 56px 28px;}
         <div class="cb cb1">🎙️ ¡escúchanos!</div>
         <a href="#eps" class="ci-link" aria-label="Ver todos los episodios"><img src="images/portada.jpg" alt="+Que Píldoras podcast por Jaime Manzanera y Miren Alonso" class="ci" loading="lazy"><span class="ci-play" aria-hidden="true">&#9658;</span></a>
         <div class="cb cb2">💊 Porque detrás de cada tratamiento hay mucho más que píldoras...</div>
+        <div class="herolead">
+          <div class="hl-tag"><span aria-hidden="true" style="font-size:13px">&#8681;</span> Guía gratuita</div>
+          <h3 class="hl-title">Cómo entrar y crecer en Pharma</h3>
+          <p class="hl-sub">Roles, rutas y lo que de verdad valoran los laboratorios. En PDF, a tu correo.</p>
+          <a class="hl-btn" href="/recursos.html" onclick="if(typeof gtag==='function'){gtag('event','guia_cta_home',{placement:'hero'});}">Descargar la guía gratis</a>
+          <p class="hl-note">PDF gratuito · consejos reales · experiencia de verdad, nada de teoría. Y si quieres más, <a href="#contact">contáctanos y te ayudamos</a>.</p>
+        </div>
       </div>
     </div>
   </div>
