@@ -147,35 +147,9 @@ footer a{color:var(--accent);text-decoration:none;}
       <div class="form-h">Descárgala gratis</div>
       <div class="form-sub">Te la enviamos al instante a tu correo.</div>
 
-      <!-- FORM: se sustituirá por el formulario embebido de Brevo -->
-      <form id="lead-form" method="post" action="#" onsubmit="return false;">
-        <div class="field">
-          <label for="lf-name">Nombre</label>
-          <input id="lf-name" name="NOMBRE" type="text" placeholder="Tu nombre" required>
-        </div>
-        <div class="field">
-          <label for="lf-email">Email</label>
-          <input id="lf-email" name="EMAIL" type="email" placeholder="tucorreo@email.com" required>
-        </div>
-        <div class="field">
-          <label for="lf-estado">¿En qué punto estás? (opcional)</label>
-          <select id="lf-estado" name="ESTADO">
-            <option value="">Selecciona…</option>
-            <option>Estudiante / recién titulado</option>
-            <option>Vengo de otro sector</option>
-            <option>Ya trabajo en pharma</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <label class="consent">
-          <input type="checkbox" name="CONSENT" required>
-          <span>He leído y acepto la <a href="/privacidad.html" target="_blank">política de privacidad</a> y acepto recibir la guía y comunicaciones de +Que Píldoras. Puedo darme de baja cuando quiera.</span>
-        </label>
-        <button class="submit" type="submit">Descargar la guía gratis</button>
-        <p class="form-note">Sin spam. Solo contenido útil del sector.</p>
-      </form>
-
-      <div class="esp-placeholder">⚙️ Vista previa — este formulario se conectará a Brevo para capturar el lead y enviar el PDF automáticamente.</div>
+      <!-- Formulario de Brevo (capta el lead en la lista "Leads guía pharma") -->
+      <iframe title="Descarga la guía gratis" width="100%" height="460" src="https://1ca96abc.sibforms.com/v2/serve/MUIFAHIeutW1k4GI5mkQGOJYLvzAP6Y8e-k4PZvUwum-bFTOwUDTpaSSN6hplTW_mJyG2sBL2Jj8tpm7vI7GNXoQ-PYsrtFSfhPSQs0Q9ZBNRHlHrwHn7sr13mVHbqZauKBEpKyVuz-eNVbKHFAmK6jL-u8f77rz0hmrtPgQ3KbsORzrtIxbCRWaWpQ1Rsz3WhNGirt55Nn5Hbu6Jw==" frameborder="0" scrolling="auto" allowfullscreen style="display:block;width:100%;max-width:100%;border:0;"></iframe>
+      <p class="form-note">Al enviarlo aceptas la <a href="/privacidad.html" target="_blank" style="color:var(--accent)">política de privacidad</a>. Sin spam.</p>
     </div>
   </div>
 
