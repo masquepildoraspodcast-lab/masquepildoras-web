@@ -290,7 +290,9 @@ footer{background:var(--navy);padding:52px 56px 28px;}
 .patro-sec{background:var(--white);}
 /* === Formación · BePharma Masters === */
 .formacion-sec{background:var(--sky4);}
-.mst-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;margin-top:34px;}
+.mst-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px;}
+@media(max-width:960px){.mst-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.mst-grid{grid-template-columns:1fr;}}
 .mst-card{display:flex;flex-direction:column;gap:9px;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:24px 22px;text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s;box-shadow:0 6px 20px rgba(13,31,78,0.05);}
 .mst-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,31,78,0.14);border-color:rgba(45,111,212,0.35);}
 .mst-tag{font-size:11px;font-weight:700;letter-spacing:.4px;color:var(--accent);text-transform:uppercase;}
