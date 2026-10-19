@@ -22,6 +22,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://masquepildoraspodcast.com/colaboraciones/pm-farma.html</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
   <!-- Episodios -->
   <url>
     <loc>https://masquepildoraspodcast.com/episodios/ep-10-bepharma-master-industria-farmaceutica.html</loc>
