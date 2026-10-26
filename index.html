@@ -844,7 +844,14 @@ footer{background:var(--navy);padding:52px 56px 28px;}
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-LZ5ZWD5HXR');
+  /* Tráfico interno: abrir la web con ?interno=1 marca este dispositivo (?interno=0 lo desmarca) */
+  var mqpInterno=false;
+  try{var q=location.search;
+    if(/[?&]interno=1/.test(q))localStorage.setItem('mqp_interno','1');
+    if(/[?&]interno=0/.test(q))localStorage.removeItem('mqp_interno');
+    mqpInterno=localStorage.getItem('mqp_interno')==='1';}catch(e){}
+  if(mqpInterno)gtag('set',{traffic_type:'internal'});
+  gtag('config', 'G-LZ5ZWD5HXR', mqpInterno?{traffic_type:'internal'}:{});
 </script>
 </head>
 <body>
