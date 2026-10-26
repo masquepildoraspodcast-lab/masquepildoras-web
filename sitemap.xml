@@ -31,6 +31,12 @@
   </url>
   <!-- Episodios -->
   <url>
+    <loc>https://masquepildoraspodcast.com/episodios/ep-11-oscar-gomez-klorofila-industria-desde-fuera.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://masquepildoraspodcast.com/episodios/ep-10-bepharma-master-industria-farmaceutica.html</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
