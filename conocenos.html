@@ -196,5 +196,19 @@ footer a{color:var(--accent);text-decoration:none;}
   start();
 })();
 </script>
+<script>
+/* GA4: un evento propio por patrocinador y por programa (se detecta por el destino del enlace) */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href]'); if(!a||typeof gtag!=='function') return;
+  var h=a.href, ev='';
+  if(/thepower\.education\/bepharma\/msl/.test(h)) ev='click_master_msl';
+  else if(/thepower\.education\/bepharma\/mba/.test(h)) ev='click_master_mba';
+  else if(/thepower\.education\/bepharma\/industria/.test(h)) ev='click_master_industria';
+  else if(/thepower\.education\/bepharma\/ia-pharma/.test(h)) ev='click_master_ia';
+  else if(/poweredu\.link\/bepharma|thepower\.education\/bepharma/.test(h)) ev='click_bepharma';
+  else if(/klorofila\.es/.test(h)) ev='click_klorofila';
+  if(ev) gtag('event',ev,{link_url:h,link_text:(a.textContent||'').trim().slice(0,80)});
+},true);
+</script>
 </body>
 </html>

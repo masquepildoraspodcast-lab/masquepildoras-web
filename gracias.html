@@ -38,5 +38,10 @@ p{font-size:16px;margin-bottom:22px;}
   <a class="btn" href="/recursos/guia-para-entrar-en-la-industria-farmaceutica.pdf" target="_blank" rel="noopener" download onclick="if(typeof gtag==='function'){gtag('event','guia_descarga',{placement:'gracias'});}">&#11015; Descargar la guía (PDF)</a>
   <p class="small">¿No se descarga? <a href="/recursos/guia-para-entrar-en-la-industria-farmaceutica.pdf" target="_blank" rel="noopener">Haz clic aquí</a>. &nbsp;·&nbsp; <a href="/#eps">Volver a los episodios</a></p>
 </div>
+<script>
+/* GA4: lead de la guía = el formulario de Brevo redirige aquí tras enviarse */
+(function(){var k='mqp_guia_lead';try{if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}
+if(typeof gtag==='function')gtag('event','guia_lead',{method:'brevo_form'});})();
+</script>
 </body>
 </html>
