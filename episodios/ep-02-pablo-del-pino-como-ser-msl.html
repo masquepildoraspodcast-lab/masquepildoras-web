@@ -130,6 +130,34 @@ h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(30px,5vw,46px);l
 .pbtn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;border:1.5px solid var(--border);text-decoration:none;font-size:14px;font-weight:600;color:var(--navy);background:var(--white);transition:all .2s;}
 .pbtn:hover{border-color:var(--accent);transform:translateY(-2px);}
 .pbtn .dot{width:9px;height:9px;border-radius:50%;}
+.toc{position:sticky;top:var(--toc-top,96px);z-index:50;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:22px -24px 22px;padding:10px 24px;background:rgba(247,251,255,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(13,31,78,0.08);}
+.toc::-webkit-scrollbar{display:none;}
+.toc a{flex:0 0 auto;padding:7px 14px;border-radius:999px;border:1px solid rgba(13,31,78,0.14);background:#fff;font-size:13.5px;font-weight:600;color:var(--navy);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,border-color .2s;}
+.toc a:hover{border-color:var(--accent);color:var(--accent);}
+.toc a.on{background:var(--navy);border-color:var(--navy);color:#fff;}
+#resumen.section-h{margin-top:6px;}
+.resumen-box:not(.open) p:not(:first-child),.resumen-box:not(.open) .chips{display:none;}
+.resumen-box:not(.open) p:first-child{margin-bottom:8px;}
+.rmore{display:inline-block;margin:0 0 4px;padding:0;border:0;background:none;font:inherit;font-size:15px;font-weight:600;color:var(--accent);cursor:pointer;}
+.rmore:hover{text-decoration:underline;}
+.media-row{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px;margin:30px 0 10px;}
+.media-row .video{margin:0;}
+.media-row .platforms{margin:18px 0 0;}
+.media-side{position:relative;}
+.media-panel{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:16px 4px 6px 14px;box-shadow:0 10px 30px rgba(13,31,78,0.06);}
+.media-panel .section-h{font-size:18px;margin:0 0 6px;}
+.media-panel .mhint{font-size:12.5px;color:var(--muted);margin:0 12px 8px 0;}
+.media-panel .moments{flex:1;overflow-y:auto;margin:0;padding-right:12px;}
+.media-panel .moments a{gap:10px;padding:8px 6px;margin:0 -6px;border-radius:8px;font-size:13.5px;line-height:1.4;}
+.media-panel .moments a:hover{background:var(--off);}
+.media-panel .moments a.on{background:var(--off);color:var(--navy);font-weight:600;}
+.media-panel .moments .t{min-width:36px;font-size:12.5px;}
+@media (max-width:900px){
+  .media-row{grid-template-columns:1fr;width:auto;margin:26px 0 10px;gap:22px;}
+  .media-panel{position:static;}
+  .media-panel .moments{max-height:340px;}
+}
+.section-h{scroll-margin-top:calc(var(--toc-top,96px) + 70px);}
 .section-h{font-family:'Fraunces',serif;font-weight:600;font-size:24px;color:var(--navy);margin:44px 0 16px;}
 .prose p{margin-bottom:16px;font-size:16.5px;color:#2b3d63;}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;}
@@ -199,24 +227,39 @@ footer a{color:var(--accent);text-decoration:none;}
   <h1>El error que te impide llegar a ser MSL</h1>
   <p class="guest-line">Pablo del Pino <span>&#183; International Sr. Medical Advisor &amp; MSL Manager · Uriach</span></p>
 
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/AOFsuPPDRlc" title="Ep. 02 · El error que te impide ser MSL" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <div class="toc" id="toc" role="navigation" aria-label="Secciones del episodio">
+    <a href="#resumen">Resumen</a>
+    <a href="#momentos">Momentos clave</a>
+    <a href="#descubre">Qué descubrirás</a>
+    <a href="#invitado">Invitado</a>
+    <a href="#faq">Preguntas</a>
+    <a href="#mas-episodios">Más episodios</a>
   </div>
 
-  <div class="platforms">
-    <a class="pbtn" href="https://youtu.be/AOFsuPPDRlc" target="_blank" rel="noopener"><span class="dot" style="background:#FF0000"></span>Ver en YouTube</a>
-    <a class="pbtn" href="/#eps"><span class="dot" style="background:#1DB954"></span>Todas las plataformas</a>
-  </div>
-
-  <h2 class="section-h">Sobre este episodio</h2>
-  <div class="prose">
+  <h2 class="section-h" id="resumen">Sobre este episodio</h2>
+  <div class="prose resumen-box">
     <p>El rol de <strong>MSL (Medical Science Liaison)</strong> es uno de los más deseados de Medical Affairs, y también uno de los peor entendidos. En este episodio, Pablo del Pino desmonta el camino que muchos creen que lleva hasta ahí.</p>
     <p>Hablamos de qué habilidades pesan de verdad, de los errores más frecuentes de quienes intentan dar el salto y de cómo es el trabajo real de un MSL, más allá de la idea que circula por LinkedIn.</p>
     <p>Una guía honesta para cualquiera que quiera construir una carrera en Medical Affairs sabiendo dónde pone el pie.</p>
     <div class="chips"><span class="chip">MSL</span><span class="chip">Medical Affairs</span><span class="chip">Carrera farma</span><span class="chip">Habilidades</span></div>
   </div>
 
-  <h2 class="section-h">Momentos clave</h2>
+  <button type="button" class="rmore" aria-expanded="false">Leer más</button>
+
+  <div class="media-row">
+    <div class="media-main">
+      <div class="video">
+    <iframe src="https://www.youtube.com/embed/AOFsuPPDRlc" title="Ep. 02 · El error que te impide ser MSL" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+      <div class="platforms">
+    <a class="pbtn" href="https://youtu.be/AOFsuPPDRlc" target="_blank" rel="noopener"><span class="dot" style="background:#FF0000"></span>Ver en YouTube</a>
+    <a class="pbtn" href="/#eps"><span class="dot" style="background:#1DB954"></span>Todas las plataformas</a>
+  </div>
+    </div>
+    <aside class="media-side">
+      <div class="media-panel">
+      <h2 class="section-h" id="momentos">Momentos clave</h2>
+      <p class="mhint">Pulsa un momento y el vídeo salta a ese minuto.</p>
   <ul class="moments">
     <li><a href="https://www.youtube.com/watch?v=AOFsuPPDRlc&amp;t=69s" target="_blank" rel="noopener"><span class="t">1:09</span><span>Quién es Pablo: veterinario que ha pasado por marketing, ventas, ensayos clínicos y Medical Affairs.</span></a></li>
     <li><a href="https://www.youtube.com/watch?v=AOFsuPPDRlc&amp;t=111s" target="_blank" rel="noopener"><span class="t">1:51</span><span>Un aprendizaje de cada rol: del “no tener vergüenza” en ventas al orden del monitor de ensayos.</span></a></li>
@@ -229,8 +272,11 @@ footer a{color:var(--accent);text-decoration:none;}
     <li><a href="https://www.youtube.com/watch?v=AOFsuPPDRlc&amp;t=1160s" target="_blank" rel="noopener"><span class="t">19:20</span><span>Consejo para empezar: exprime la beca y cuida el networking.</span></a></li>
     <li><a href="https://www.youtube.com/watch?v=AOFsuPPDRlc&amp;t=1309s" target="_blank" rel="noopener"><span class="t">21:49</span><span>El sector dentro de 10 años: IA y análisis de datos.</span></a></li>
   </ul>
+      </div>
+    </aside>
+  </div>
 
-  <h2 class="section-h">Qué vas a descubrir</h2>
+  <h2 class="section-h" id="descubre">Qué vas a descubrir</h2>
   <ul class="discover">
     <li>Cómo se construye una carrera pasando por varios departamentos.</li>
     <li>Qué hace realmente el departamento médico más allá de los papers.</li>
@@ -240,7 +286,7 @@ footer a{color:var(--accent);text-decoration:none;}
     <li>Qué papel jugará la IA en el departamento médico.</li>
   </ul>
 
-  <h2 class="section-h">Sobre el invitado</h2>
+  <h2 class="section-h" id="invitado">Sobre el invitado</h2>
   <div class="prose">
     <p><strong>Pablo del Pino</strong> es International Senior Medical Advisor y MSL Manager en Uriach. Veterinario de formación, pasó por marketing, ventas y la monitorización de ensayos clínicos antes de encontrar su sitio en Medical Affairs, donde hoy también lidera equipo. Su perfil poliédrico le da una visión poco habitual de cómo se construye una carrera dentro de la industria.</p>
     <div class="platforms" style="margin-top:14px">
@@ -248,7 +294,7 @@ footer a{color:var(--accent);text-decoration:none;}
     </div>
   </div>
 
-  <h2 class="section-h">Preguntas frecuentes</h2>
+  <h2 class="section-h" id="faq">Preguntas frecuentes</h2>
   <div class="faq">
     <div class="faq-item">
       <h3 class="faq-q">¿Qué hace un MSL (Medical Science Liaison)?</h3>
@@ -276,7 +322,7 @@ footer a{color:var(--accent);text-decoration:none;}
   </div>
 
   <div class="related">
-    <h2 class="section-h" style="margin-top:0">Más episodios</h2>
+    <h2 class="section-h" id="mas-episodios" style="margin-top:0">Más episodios</h2>
     <a href="/episodios/ep-05-cristina-gonzalez-medical-affairs.html"><span class="rn">Ep. 05</span><br><span class="rt">20 años en Medical Affairs — Cristina González Junco</span></a>
     <a href="/episodios/ep-04-laura-barreiro-quien-decide-en-pharma.html"><span class="rn">Ep. 04</span><br><span class="rt">¿Quién decide en pharma? — Laura Barreiro</span></a>
     <a href="/episodios/ep-03-fernando-zaragoza-medical-affairs.html"><span class="rn">Ep. 03</span><br><span class="rt">De ambulancia a Medical Affairs — Fernando Zaragoza</span></a>
@@ -319,6 +365,36 @@ document.addEventListener('click',function(e){
   else if(/klorofila\.es/.test(h)) ev='click_klorofila';
   if(ev) gtag('event',ev,{link_url:h,link_text:(a.textContent||'').trim().slice(0,80)});
 },true);
+</script>
+<script>
+(function(){var toc=document.getElementById('toc');if(!toc)return;
+var nav=document.querySelector('nav');
+function setTop(){if(nav)document.documentElement.style.setProperty('--toc-top',Math.round(nav.getBoundingClientRect().bottom)+'px');}
+setTop();window.addEventListener('resize',setTop);
+var links=[].slice.call(toc.querySelectorAll('a'));
+var secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+function spy(){var y=toc.getBoundingClientRect().bottom+90,cur=-1;
+secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=y)cur=i;});
+if((window.innerHeight+window.scrollY)>=document.body.scrollHeight-4)cur=secs.length-1;
+links.forEach(function(a,i){var on=i===cur;a.classList.toggle('on',on);
+if(on&&toc.scrollWidth>toc.clientWidth){var l=a.offsetLeft-toc.clientWidth/2+a.offsetWidth/2;toc.scrollTo({left:l,behavior:'smooth'});}});}
+var t;window.addEventListener('scroll',function(){if(t)return;t=requestAnimationFrame(function(){t=0;spy();});},{passive:true});spy();
+links.forEach(function(a){a.addEventListener('click',function(){if(typeof gtag==='function')gtag('event','episode_toc_click',{section:a.getAttribute('href').slice(1)});});});
+})();
+</script>
+<script>
+(function(){var fr=document.querySelector('.media-row .video iframe');if(!fr)return;
+var base=fr.src.split('?')[0],box=fr.parentNode,list=[].slice.call(document.querySelectorAll('.media-panel .moments a'));
+list.forEach(function(a){a.addEventListener('click',function(e){var m=a.href.match(/[?&]t=(\d+)/);if(!m)return;e.preventDefault();
+fr.src=base+'?start='+m[1]+'&autoplay=1&rel=0';
+list.forEach(function(b){b.classList.toggle('on',b===a);});
+var r=box.getBoundingClientRect();if(r.top<80||r.bottom>window.innerHeight)box.scrollIntoView({behavior:'smooth',block:'center'});
+if(typeof gtag==='function')gtag('event','episode_moment_click',{moment:m[1]});});});
+})();
+</script>
+<script>
+(function(){var b=document.querySelector('.rmore');if(!b)return;var box=document.querySelector('.resumen-box');
+b.addEventListener('click',function(){var o=box.classList.toggle('open');b.textContent=o?'Leer menos':'Leer más';b.setAttribute('aria-expanded',o);});})();
 </script>
 </body>
 </html>
