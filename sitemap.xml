@@ -31,6 +31,13 @@
   </url>
   <!-- Episodios -->
   <url>
+    <loc>https://masquepildoraspodcast.com/episodios/ep-12-especial-trabajar-en-farma-parte-1.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://masquepildoraspodcast.com/episodios/ep-11-oscar-gomez-klorofila-industria-desde-fuera.html</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
