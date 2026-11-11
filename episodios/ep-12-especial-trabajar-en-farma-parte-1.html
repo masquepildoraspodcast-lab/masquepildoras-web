@@ -206,6 +206,18 @@ a.part-nav:hover{border-color:var(--accent);transform:translateY(-2px);}
 .part-nav .pn-k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);white-space:nowrap;}
 .part-nav .pn-t{font-weight:600;color:var(--navy);font-size:15.5px;}
 .part-nav .pn-a{margin-left:auto;color:var(--accent);font-weight:700;}
+.pildoras{display:grid;grid-template-columns:repeat(auto-fill,minmax(178px,1fr));gap:14px;margin-top:8px;}
+.pildora{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--white);text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s;}
+.pildora:hover{transform:translateY(-3px);border-color:var(--accent);box-shadow:0 12px 28px rgba(13,31,78,0.1);}
+.pildora .pv{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,var(--navy),var(--blue) 60%,var(--accent));display:flex;flex-direction:column;justify-content:space-between;padding:14px;color:#fff;}
+.pildora .pv-tag{align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,0.16);padding:3px 9px;border-radius:20px;}
+.pildora .pv-title{font-family:'Fraunces',serif;font-weight:600;font-size:18px;line-height:1.2;}
+.pildora .pv-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,0.92);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:16px;padding-left:3px;transition:transform .2s;}
+.pildora:hover .pv-play{transform:translate(-50%,-60%) scale(1.08);}
+.pildora .pd{padding:12px 14px 14px;font-size:13.5px;color:#2b3d63;line-height:1.5;flex:1;}
+.pildora .pt{display:block;margin-top:8px;font-size:12.5px;font-weight:700;color:var(--accent);}
+.pildoras-note{margin-top:12px;font-size:13.5px;color:var(--muted);}
+@media (max-width:640px){.pildoras{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:8px -24px 0;padding:0 24px 6px;scrollbar-width:none;}.pildoras::-webkit-scrollbar{display:none;}.pildora{flex:0 0 68%;scroll-snap-align:start;}}
 .lessons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:8px;}
 .lesson{display:flex;flex-direction:column;padding:18px 18px 16px;border:1px solid var(--border);border-radius:14px;text-decoration:none;background:var(--white);transition:border-color .2s,transform .2s,box-shadow .2s;}
 .lesson:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 10px 26px rgba(13,31,78,0.08);}
@@ -287,6 +299,7 @@ footer a{color:var(--accent);text-decoration:none;}
   <div class="toc" id="toc" role="navigation" aria-label="Secciones del episodio">
     <a href="#resumen">Resumen</a>
     <a href="#momentos">Momentos clave</a>
+    <a href="#pildoras">Píldoras en vídeo</a>
     <a href="#aprendizajes">Aprendizajes</a>
     <a href="#descubre">Qué descubrirás</a>
     <a href="#invitado">Presentadores</a>
@@ -343,6 +356,19 @@ footer a{color:var(--accent);text-decoration:none;}
   </div>
 
   <div class="part-nav"><span class="pn-k">Parte 2</span><span class="pn-t">Feedback, liderazgo, el paciente, la IA y lo que viene: disponible el miércoles 2 de diciembre</span></div>
+
+  <h2 class="section-h" id="pildoras">Píldoras en vídeo</h2>
+  <div class="prose"><p>Los temas clave de esta primera parte, en píldoras. Pulsa en cualquiera y el vídeo salta a ese momento.</p></div>
+  <div class="pildoras">
+    <a class="pildora" href="https://www.youtube.com/watch?v=XxlSK4j6gKk&amp;t=423s" target="_blank" rel="noopener" data-t="423"><span class="pv"><span class="pv-tag">Píldora 1</span><span class="pv-play" aria-hidden="true">&#9654;</span><span class="pv-title">De laboratorio a ensayos clínicos</span></span><span class="pd">El salto de Miren: del doctorado sin financiación a los ensayos clínicos, cerca del paciente.<span class="pt">Ver este momento · 7:03</span></span></a>
+    <a class="pildora" href="https://www.youtube.com/watch?v=XxlSK4j6gKk&amp;t=661s" target="_blank" rel="noopener" data-t="661"><span class="pv"><span class="pv-tag">Píldora 2</span><span class="pv-play" aria-hidden="true">&#9654;</span><span class="pv-title">Superar el miedo en los cambios de carrera</span></span><span class="pd">Por qué tener miedo al dar el salto no es malo: habla de alguien responsable que valora su decisión.<span class="pt">Ver este momento · 11:01</span></span></a>
+    <a class="pildora" href="https://www.youtube.com/watch?v=XxlSK4j6gKk&amp;t=781s" target="_blank" rel="noopener" data-t="781"><span class="pv"><span class="pv-tag">Píldora 3</span><span class="pv-play" aria-hidden="true">&#9654;</span><span class="pv-title">Adaptar el CV para la industria</span></span><span class="pd">Los errores típicos al venir de la academia y cómo trasladar tu experiencia a lo que busca la industria.<span class="pt">Ver este momento · 13:01</span></span></a>
+    <a class="pildora" href="https://www.youtube.com/watch?v=XxlSK4j6gKk&amp;t=1411s" target="_blank" rel="noopener" data-t="1411"><span class="pv"><span class="pv-tag">Píldora 4</span><span class="pv-play" aria-hidden="true">&#9654;</span><span class="pv-title">El mito del doctorado a MSL</span></span><span class="pd">¿Un doctorado te lleva directo al departamento médico? Lo que nos contaron quienes lo tienen.<span class="pt">Ver este momento · 23:31</span></span></a>
+    <a class="pildora" href="https://www.youtube.com/watch?v=XxlSK4j6gKk&amp;t=1560s" target="_blank" rel="noopener" data-t="1560"><span class="pv"><span class="pv-tag">Píldora 5</span><span class="pv-play" aria-hidden="true">&#9654;</span><span class="pv-title">El rol de los representantes médicos</span></span><span class="pd">Qué hace de verdad un delegado médico y dónde está la línea con el departamento médico.<span class="pt">Ver este momento · 26:00</span></span></a>
+    <a class="pildora" href="https://www.youtube.com/watch?v=XxlSK4j6gKk&amp;t=2130s" target="_blank" rel="noopener" data-t="2130"><span class="pv"><span class="pv-tag">Píldora 6</span><span class="pv-play" aria-hidden="true">&#9654;</span><span class="pv-title">Decisiones basadas en datos</span></span><span class="pd">Cómo los datos de mercado y el recorrido del paciente ayudan a decidir la estrategia de un fármaco.<span class="pt">Ver este momento · 35:30</span></span></a>
+    <a class="pildora" href="https://www.youtube.com/watch?v=XxlSK4j6gKk&amp;t=2254s" target="_blank" rel="noopener" data-t="2254"><span class="pv"><span class="pv-tag">Píldora 7</span><span class="pv-play" aria-hidden="true">&#9654;</span><span class="pv-title">Acceso global a medicamentos</span></span><span class="pd">Por qué los fármacos no llegan a la vez a todos los países y qué hace falta para abrir mercados.<span class="pt">Ver este momento · 37:34</span></span></a>
+  </div>
+  <p class="pildoras-note">Muy pronto, cada píldora en formato vídeo corto.</p>
 
   <h2 class="section-h" id="aprendizajes">Lo que nos han enseñado nuestros invitados</h2>
   <div class="lessons">
@@ -496,6 +522,12 @@ if(typeof gtag==='function')gtag('event','episode_moment_click',{moment:m[1]});}
 <script>
 (function(){var b=document.querySelector('.rmore');if(!b)return;var box=document.querySelector('.resumen-box');
 b.addEventListener('click',function(){var o=box.classList.toggle('open');b.textContent=o?'Leer menos':'Leer más';b.setAttribute('aria-expanded',o);});})();
+</script>
+<script>
+(function(){var fr=document.querySelector('.media-row .video iframe');if(!fr)return;var base=fr.src.split('?')[0];
+[].slice.call(document.querySelectorAll('.pildora[data-t]')).forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=a.getAttribute('data-t');
+fr.src=base+'?start='+t+'&autoplay=1&rel=0';fr.parentNode.scrollIntoView({behavior:'smooth',block:'center'});
+if(typeof gtag==='function')gtag('event','episode_pildora_click',{moment:t,title:a.querySelector('.pv-title').textContent});});});})();
 </script>
 </body>
 </html>
