@@ -257,6 +257,9 @@ footer{background:var(--navy);padding:52px 56px 28px;}
 .eps-next-img img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px;}
 .eps-next-img .eps-placeholder-icon{font-family:'Playfair Display',serif;font-size:76px;font-weight:900;color:var(--navy);opacity:.32;letter-spacing:-2px;line-height:1;}
 .eps-next-body{position:relative;z-index:1;}
+.eps-next.eps-next-wide{grid-template-columns:300px 1fr;}
+.eps-next-wide .eps-next-img{aspect-ratio:76/43;}
+
 .eps-next-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(45,111,212,0.14);color:var(--accent);font-weight:700;font-size:10px;letter-spacing:2px;text-transform:uppercase;border-radius:20px;margin-bottom:10px;border:1px solid rgba(45,111,212,0.28);}
 .eps-next-badge::before{content:'●';font-size:8px;color:var(--accent);animation:epsBlink 1.6s ease-in-out infinite;}
 @keyframes epsBlink{0%,100%{opacity:1;}50%{opacity:.3;}}
@@ -265,6 +268,7 @@ footer{background:var(--navy);padding:52px 56px 28px;}
 @media(max-width:640px){
   .eps-next{grid-template-columns:1fr;padding:20px;gap:16px;}
   .eps-next-img{max-width:140px;margin:0 auto;}
+  .eps-next-wide .eps-next-img{max-width:100%;}
   .eps-next-img .eps-placeholder-icon{font-size:60px;}
   .eps-next-title{font-size:20px;}
 }
@@ -966,8 +970,8 @@ footer{background:var(--navy);padding:52px 56px 28px;}
       <p class="hl-note">PDF gratuito · consejos reales · experiencia de verdad, nada de teoría. Y si quieres más, <a href="#contact">contáctanos y te ayudamos</a>.</p>
     </div>
     <!-- BANNER PRÓXIMO EPISODIO (arriba del todo, antes de la cabecera) -->
-    <div class="eps-next fia" aria-label="Próximo episodio">
-      <div class="eps-next-img"><img src="images/especial-jaime-miren.jpg" alt="Jaime Manzanera y Miren Alonso — especial de +Que Píldoras disponible el miércoles 18 de noviembre" loading="lazy"></div>
+    <div class="eps-next eps-next-wide fia" aria-label="Próximo episodio">
+      <div class="eps-next-img"><img src="images/especial-riverside.jpg" alt="Miren Alonso y Jaime Manzanera grabando el especial de +Que Píldoras, disponible el miércoles 18 de noviembre" loading="lazy"></div>
       <div class="eps-next-body">
         <span class="eps-next-badge">Episodio especial · miércoles 18 de noviembre</span>
         <h3 class="eps-next-title">Trabajar en farma: errores, aprendizajes y consejos</h3>
